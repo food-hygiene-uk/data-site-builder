@@ -1,0 +1,122 @@
+name: Generate Ratings Site
+
+# Control concurrent executions
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+# Define trigger events
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Manual trigger
+  schedule:
+    - cron: "0 4 * * *" # Run at 4 AM UTC daily
+
+# Define minimum required permissions
+permissions:
+  contents: write # Required for pushing to repository
+
+jobs:
+  command-outputs:
+    name: Set "outputs" from command execution
+    runs-on: ubuntu-latest
+    # Map a step output to a job output
+    outputs:
+      DENO_VERSION: ${{ steps.commands.outputs.DENO_VERSION }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          sparse-checkout: |
+            .deno-version
+          sparse-checkout-cone-mode: false
+
+      - name: Commands
+        id: commands
+        run: |
+          echo "DENO_VERSION=$(cat .deno-version)" >> "$GITHUB_OUTPUT"
+
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # Prevent hanging jobs
+
+    needs: [command-outputs]
+    env:
+      DENO_VERSION: ${{ needs.command-outputs.outputs.DENO_VERSION }}
+
+    steps:
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@136412a57a7081aa63c935a2cc2918f76c34f514 # v1.11.2
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Get GitHub App User ID
+        id: get-user-id
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app_slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+
+      - name: Create workspace directory
+        run: mkdir ./repos/
+
+      - name: Checkout source repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          path: ./repos/source
+          token: ${{ steps.app-token.outputs.token }}
+          fetch-depth: 1
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@909cc5acb0fdd60627fb858598759246509fa755 # v2.0.2
+        with:
+          deno-version: ${{ env.DENO_VERSION }}
+
+      - name: Run Deno lint
+        run: deno lint ./repos/source/
+
+      - name: Run Deno fmt
+        run: deno fmt --check ./repos/source/
+
+      - name: Generate ratings site
+        working-directory: ./repos/source
+        run: deno task build
+
+      - name: Checkout GitHub Pages repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: food-hygiene-uk/data
+          path: ./repos/gh-pages
+          token: ${{ steps.app-token.outputs.token }}
+          fetch-depth: 1
+
+      - name: Prepare public directory
+        run: find ./repos/gh-pages/public -depth -delete
+
+      - name: Move and rename generated site
+        run: mv ./repos/source/dist ./repos/gh-pages/public
+
+      - name: Configure Git
+        working-directory: ./repos/gh-pages
+        run: |
+          git config --local user.name "${{ steps.app-token.outputs.app_slug }}[bot]"
+          git config --local user.email "${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app_slug }}[bot]@users.noreply.github.com"
+
+      - name: Commit and push changes
+        working-directory: ./repos/gh-pages
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/food-hygiene-uk/data.git
+
+          if ! git diff --quiet; then
+            git add .
+            git commit -m "Update site"
+            git push origin HEAD:${{ github.ref_name }} || { echo "Failed to push changes"; exit 1; }
+          else
+            echo "No changes detected"
+          fi

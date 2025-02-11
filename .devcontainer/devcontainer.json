@@ -1,0 +1,27 @@
+{
+  "name": "Deno Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "options": [
+      "--build-arg=DENO_VERSION=2.1.9"
+    ]
+  },
+  "postCreateCommand": "deno cache src/generate-site.mts",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "deno.enable": true,
+        "git.enableSmartCommit": true,
+        "git.confirmSync": false,
+        "git.autofetch": true
+      },
+      "extensions": [
+        "denoland.vscode-deno",
+        "github.vscode-github-actions",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.live-server",
+        "yuyinws.vscode-array-index"
+      ]
+    }
+  }
+}

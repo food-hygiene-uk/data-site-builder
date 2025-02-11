@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    "ms-vscode.live-server",
+    "ms-vscode-remote.remote-containers"
+  ]
+}

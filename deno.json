@@ -1,0 +1,32 @@
+{
+  "imports": {
+    "@std/fs": "jsr:@std/fs@^1.0.11",
+    "@std/path": "jsr:@std/path@^1.0.8"
+  },
+  "tasks": {
+    "pre-commit": {
+      "description": "Updates and validadates the code as done in CI",
+      "command": "deno fmt && deno lint && deno check src/generate-site.mts"
+    },
+    "build": {
+      "description": "Builds the site",
+      "command": "deno run --allow-env=CI --allow-net=api.ratings.food.gov.uk:443,ratings.food.gov.uk:443 --allow-read=. --allow-write=./build,./dist src/generate-site.mts"
+    }
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 80,
+    "semiColons": true,
+    "proseWrap": "preserve",
+    "singleQuote": false,
+    "useTabs": false
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended"
+      ]
+    }
+  },
+  "exclude": []
+}
