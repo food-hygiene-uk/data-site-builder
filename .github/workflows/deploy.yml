@@ -82,7 +82,7 @@ jobs:
       - name: Run Deno fmt
         run: deno fmt --check ./repos/source/
 
-      - name: Generate ratings site
+      - name: Generate site
         working-directory: ./repos/source
         run: deno task build
 
@@ -118,5 +118,7 @@ jobs:
             git commit -m "Update site"
             git push origin HEAD:${{ github.ref_name }} || { echo "Failed to push changes"; exit 1; }
           else
+            ls -l ./public/files/api/ || { echo "Error reading ./public/files/api/" }
+            git status
             echo "No changes detected"
           fi
