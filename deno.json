@@ -1,7 +1,8 @@
 {
   "imports": {
     "@std/fs": "jsr:@std/fs@^1.0.11",
-    "@std/path": "jsr:@std/path@^1.0.8"
+    "@std/path": "jsr:@std/path@^1.0.8",
+    "zod": "npm:zod@^3.24.1"
   },
   "tasks": {
     "pre-commit": {
@@ -10,7 +11,7 @@
     },
     "build": {
       "description": "Builds the site",
-      "command": "deno run --allow-env=CI --allow-net=api.ratings.food.gov.uk:443,ratings.food.gov.uk:443 --allow-read=. --allow-write=./build,./dist src/generate-site.mts"
+      "command": "deno run --allow-env=CI --allow-net=api.ratings.food.gov.uk:443,ratings.food.gov.uk:443 --allow-read=./build,./dist,./ --allow-write=./build,./dist src/generate-site.mts"
     }
   },
   "fmt": {

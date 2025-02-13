@@ -2,7 +2,8 @@
   "version": "4",
   "specifiers": {
     "jsr:@std/fs@^1.0.11": "1.0.11",
-    "jsr:@std/path@^1.0.8": "1.0.8"
+    "jsr:@std/path@^1.0.8": "1.0.8",
+    "npm:zod@^3.24.1": "3.24.2"
   },
   "jsr": {
     "@std/fs@1.0.11": {
@@ -15,10 +16,16 @@
       "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
     }
   },
+  "npm": {
+    "zod@3.24.2": {
+      "integrity": "sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ=="
+    }
+  },
   "workspace": {
     "dependencies": [
       "jsr:@std/fs@^1.0.11",
-      "jsr:@std/path@^1.0.8"
+      "jsr:@std/path@^1.0.8",
+      "npm:zod@^3.24.1"
     ]
   }
 }
