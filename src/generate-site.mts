@@ -4,6 +4,8 @@ import * as api from "./ratings-api/rest.mts";
 import { join } from "@std/path/join";
 import { authoritiesResponseSchema } from "./ratings-api/schema.mts";
 
+console.time("generate-site");
+
 // Ensure build/dist directories exist
 await emptyDir("build");
 await ensureDir("build/files");
@@ -146,3 +148,5 @@ for (const language of ["en-GB", "cy-GB"] as const) {
 }
 
 await copy("build", "dist", { overwrite: true });
+
+console.timeEnd("generate-site");
