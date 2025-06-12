@@ -1,38 +1,38 @@
 {
   "imports": {
-    "@playwright/test": "npm:@playwright/test@1.52.0",
+    "@playwright/test": "npm:@playwright/test@1.53.0",
     "@std/assert": "jsr:@std/assert@1.0.13",
-    "@std/fs": "jsr:@std/fs@1.0.17",
+    "@std/fs": "jsr:@std/fs@1.0.18",
     "@std/path": "jsr:@std/path@1.1.0",
-    "@std/testing": "jsr:@std/testing@1.0.13",
-    "@typescript-eslint/eslint-plugin": "npm:@typescript-eslint/eslint-plugin@8.32.1",
-    "@typescript-eslint/parser": "npm:@typescript-eslint/parser@8.32.1",
-    "@vento/vento": "jsr:@vento/vento@1.12.16",
+    "@std/testing": "jsr:@std/testing@1.0.14",
+    "@typescript-eslint/eslint-plugin": "npm:@typescript-eslint/eslint-plugin@8.34.0",
+    "@typescript-eslint/parser": "npm:@typescript-eslint/parser@8.34.0",
+    "@vento/vento": "jsr:@vento/vento@1.13.2",
     "components/": "./src/components/",
     "cssnano-preset-advanced": "npm:cssnano-preset-advanced@7.0.7",
     "cssnano": "npm:cssnano@7.0.7",
     "eslint-config-prettier": "npm:eslint-config-prettier@10.1.5",
     "eslint-plugin-import": "npm:eslint-plugin-import@2.31.0",
-    "eslint-plugin-jsdoc": "npm:eslint-plugin-jsdoc@50.6.17",
+    "eslint-plugin-jsdoc": "npm:eslint-plugin-jsdoc@50.8.0",
     "eslint-plugin-promise": "npm:eslint-plugin-promise@7.2.1",
     "eslint-plugin-unicorn": "npm:eslint-plugin-unicorn@59.0.1",
-    "eslint": "npm:eslint@9.27.0",
+    "eslint": "npm:eslint@9.28.0",
     "fast-check": "npm:fast-check@4.1.1",
     "http-server": "npm:http-server@14.1.1",
     "jiti": "npm:jiti@2.4.2",
-    "playwright": "npm:playwright@1.52.0",
-    "postcss": "npm:postcss@8.5.3",
+    "playwright": "npm:playwright@1.53.0",
+    "postcss": "npm:postcss@8.5.5",
     "prettier": "npm:prettier@3.5.3",
     "scripts/": "./src/scripts/",
     "stylelint-config-standard": "npm:stylelint-config-standard@38.0.0",
-    "stylelint": "npm:stylelint@16.19.1",
+    "stylelint": "npm:stylelint@16.20.0",
     "uglify-js": "npm:uglify-js@3.19.3",
-    "zod": "npm:zod@3.25.30"
+    "zod": "npm:zod@3.25.63"
   },
   "tasks": {
     "build": {
       "description": "Builds the site",
-      "command": "BROWSERSLIST_ROOT_PATH=. deno run --allow-env=CI,BROWSERSLIST,BROWSERSLIST_CONFIG,BROWSERSLIST_DISABLE_CACHE,BROWSERSLIST_IGNORE_OLD_DATA,BROWSERSLIST_ROOT_PATH,BROWSERSLIST_STATS,NODE_ENV,TERM,UGLIFY_BUG_REPORT --deny-env=NO_COLOR,FORCE_COLOR,BROWSERSLIST_ENV --allow-net=api.ratings.food.gov.uk:443,ratings.food.gov.uk:443 --allow-read=./,./assets,./build,./dist,./src --allow-write=./build,./dist --allow-sys=homedir,uid src/generate-site.mts"
+      "command": "deno install && BROWSERSLIST_ROOT_PATH=. deno run --allow-env=CI,BROWSERSLIST,BROWSERSLIST_CONFIG,BROWSERSLIST_DISABLE_CACHE,BROWSERSLIST_IGNORE_OLD_DATA,BROWSERSLIST_ROOT_PATH,BROWSERSLIST_STATS,NODE_ENV,TERM,UGLIFY_BUG_REPORT --deny-env=NO_COLOR,FORCE_COLOR,BROWSERSLIST_ENV --allow-net=api.ratings.food.gov.uk:443,ratings.food.gov.uk:443 --allow-read=./,./assets,./build,./dist,./src --allow-write=./build,./dist --allow-sys=homedir,uid src/generate-site.mts"
     },
     "deno:lock-update": {
       "description": "Updates the lock file",
