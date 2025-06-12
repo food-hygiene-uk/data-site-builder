@@ -1,8 +1,12 @@
-import { copy, emptyDir, ensureDir } from "@std/fs";
+import { z } from "zod"; // Import z
+import { copy, emptyDir, ensureDir, walk } from "@std/fs";
 import { config } from "./lib/config/config.mts";
 import * as api from "./ratings-api/rest.mts";
-import { join } from "@std/path/join";
-import { authoritiesResponseSchema } from "./ratings-api/schema.mts";
+import { join } from "@std/path";
+import {
+  authoritiesResponseSchema,
+  dataSchema,
+} from "./ratings-api/schema.mts"; // Import dataSchema
 import { generateApiIndexPage } from "./pages/api-index/api-index.mts";
 import { openDataFilesIndex } from "./pages/open-data-files-index/open-data-files-index.mts";
 
@@ -36,6 +40,95 @@ const sitemapXmlPath = "dist/sitemap.xml";
 let sitemapXmlContent = await Deno.readTextFile(sitemapXmlPath);
 sitemapXmlContent = sitemapXmlContent.replaceAll("<loc>/", `<loc>${baseURL}/`);
 await Deno.writeTextFile(sitemapXmlPath, sitemapXmlContent);
+
+/**
+ * Reformats a JSON file to sort establishments by FHRSID and make diffs cleaner.
+ *
+ * @param filePath - The path to the JSON file.
+ */
+const reformatJsonFile = async (filePath: string) => {
+  try {
+    const fileContent = await Deno.readTextFile(filePath);
+    // Use dataSchema to parse the JSON content
+    const jsonData = dataSchema.parse(JSON.parse(fileContent));
+
+    if (
+      Array.isArray(jsonData?.FHRSEstablishment?.EstablishmentCollection)
+    ) {
+      // Sort the EstablishmentCollection
+      jsonData.FHRSEstablishment.EstablishmentCollection.sort((a, b) =>
+        a.FHRSID - b.FHRSID
+      );
+
+      let newJsonString = "{\n";
+      newJsonString += `  "FHRSEstablishment": {\n`;
+      // Add other keys from FHRSEstablishment if they exist and need specific formatting
+      // For now, assuming EstablishmentCollection is the primary content to format.
+      // If other keys exist within FHRSEstablishment, they would be handled here.
+      // e.g., newJsonString += `  "OtherKeyInFHRSEstablishment": ${JSON.stringify(jsonData.FHRSEstablishment.OtherKeyInFHRSEstablishment)},\n`;
+
+      newJsonString += `    "EstablishmentCollection": [\n`;
+      for (
+        const [index, est] of jsonData.FHRSEstablishment.EstablishmentCollection
+          .entries()
+      ) {
+        newJsonString += `      ${JSON.stringify(est)}`; // Each establishment on one line
+        if (
+          index < jsonData.FHRSEstablishment.EstablishmentCollection.length - 1
+        ) {
+          newJsonString += ",";
+        }
+        newJsonString += "\n";
+      }
+      newJsonString += "    ]\n";
+      newJsonString += "  }\n";
+      // Handle other top-level keys if they exist (e.g., meta, links from the original API response if they were part of dataSchema)
+      // For now, assuming FHRSEstablishment is the only top-level key defined in dataSchema that we are processing this way.
+      // If dataSchema included other top-level keys like 'meta' or 'links' that are siblings to FHRSEstablishment,
+      // they would need to be stringified here. Example:
+      // if (jsonData.meta) {
+      //   newJsonString += `,\n  "meta": ${JSON.stringify(jsonData.meta, null, 2)}`;
+      // }
+      newJsonString += "}\n";
+
+      await Deno.writeTextFile(filePath, newJsonString); // Removed extra newline, as newJsonString ends with one.
+      console.log(`Reformatted: ${filePath}`);
+    } else {
+      console.warn(
+        `Warning: Could not find FHRSEstablishment.EstablishmentCollection in ${filePath}`, // Updated warning
+      );
+    }
+  } catch (error) {
+    // If it's a ZodError, it means parsing failed according to dataSchema
+    if (error instanceof z.ZodError) {
+      console.error(
+        `Error parsing file ${filePath} with dataSchema:`,
+        error.issues,
+      );
+    } else {
+      console.error(`Error processing file ${filePath}:`, error);
+    }
+  }
+};
+
+/**
+ * Finds and reformats all JSON files in the open data directory.
+ */
+const formatOpenDataFiles = async () => {
+  const openDataFilesDirectory = join("build", "files", "open-data-files");
+  console.log(`Looking for JSON files in: ${openDataFilesDirectory}`);
+  for await (
+    const entry of walk(openDataFilesDirectory, {
+      exts: [".json"],
+      includeDirs: false,
+      maxDepth: 1,
+    })
+  ) {
+    if (entry.isFile) {
+      await reformatJsonFile(entry.path);
+    }
+  }
+};
 
 export const getBuildFileName = (dataURL: string) => {
   const match = dataURL.match(/\/([^/]*\.(json|xml))$/);
@@ -99,6 +192,8 @@ await Promise.all(
     }
   }),
 );
+
+await formatOpenDataFiles();
 
 for (const language of ["en-GB", "cy-GB"] as const) {
   for (const type of ["json", "xml"] as const) {

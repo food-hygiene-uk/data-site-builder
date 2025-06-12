@@ -39,7 +39,7 @@ const generateDirectoryIndex = async (
         const linkText = entry.isDirectory ? `${entry.name}/` : entry.name;
         return `    <li><a href="${href}">${linkText}</a></li>`;
       })
-      .join(String.raw`\n`);
+      .join("\n");
 
     const htmlContent = `<!DOCTYPE html>
 <html lang="en">
