@@ -1,6 +1,39 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:recommended"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//^deno.json$//", "//^deno.jsonc$//"],
+      "matchStrings": [
+        "^\"\\w\": \"npm:(?<depName>\\w)@(?<currentValue>\\d+\\.\\d+\\.\\d+)$"
+      ],
+      "datasourceTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//^deno.json$//", "//^deno.jsonc$//"],
+      "matchStrings": [
+        "^\"\\w\": \"jsr:(?<depName>@(?<namespace>.+?)/(?<package>.+?))@(?<currentValue>\\d+\\.\\d+\\.\\d+)$"
+      ],
+      "datasourceTemplate": "deno",
+      "registryUrlTemplate": "https://jsr.io/{{depName}}@{{currentValue}}"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^.deno-version$/"],
+      "matchStrings": ["^(?<currentValue>\\d+\\.\\d+\\.\\d+)$"],
+      "depNameTemplate": "denoland/deno",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.devcontainer/devcontainer\\.json$/"],
+      "matchStrings": [
+        "--build-arg=DENO_VERSION=(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "depNameTemplate": "denoland/deno",
+      "datasourceTemplate": "github-releases"
+    }
   ]
 }

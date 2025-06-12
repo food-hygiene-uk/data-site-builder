@@ -2,9 +2,7 @@
   "name": "Deno Dev Container",
   "build": {
     "dockerfile": "Dockerfile",
-    "options": [
-      "--build-arg=DENO_VERSION=2.1.9"
-    ]
+    "options": ["--build-arg=DENO_VERSION=2.3.5"]
   },
   "postCreateCommand": "deno cache src/generate-site.mts",
   "customizations": {
@@ -17,9 +15,14 @@
       },
       "extensions": [
         "denoland.vscode-deno",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
         "github.vscode-github-actions",
         "ms-azuretools.vscode-docker",
+        "ms-playwright.playwright",
         "ms-vscode.live-server",
+        "oscarotero.vento-syntax",
+        "stylelint.vscode-stylelint",
         "yuyinws.vscode-array-index"
       ]
     }

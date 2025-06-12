@@ -3,6 +3,8 @@ import { config } from "./lib/config/config.mts";
 import * as api from "./ratings-api/rest.mts";
 import { join } from "@std/path/join";
 import { authoritiesResponseSchema } from "./ratings-api/schema.mts";
+import { generateApiIndexPage } from "./pages/api-index/api-index.mts";
+import { openDataFilesIndex } from "./pages/open-data-files-index/open-data-files-index.mts";
 
 console.time("generate-site");
 
@@ -32,10 +34,7 @@ await Deno.writeTextFile(robotsTxtPath, robotsTxtContent);
 // Update sitemap.xml to include BASE_URL
 const sitemapXmlPath = "dist/sitemap.xml";
 let sitemapXmlContent = await Deno.readTextFile(sitemapXmlPath);
-sitemapXmlContent = sitemapXmlContent.replaceAll(
-  /<loc>\//g,
-  `<loc>${baseURL}/`,
-);
+sitemapXmlContent = sitemapXmlContent.replaceAll("<loc>/", `<loc>${baseURL}/`);
 await Deno.writeTextFile(sitemapXmlPath, sitemapXmlContent);
 
 export const getBuildFileName = (dataURL: string) => {
@@ -52,51 +51,54 @@ const authoritiesResponse = authoritiesResponseSchema.parse(
 );
 // Use all authorities in CI, otherwise just use the first one
 const apiAuthorities = Deno.env.get("CI") ? authoritiesResponse.authorities : [
-  authoritiesResponse.authorities.find((authority) =>
-    ["Scotland", "Wales", "Northern Ireland"].includes(
-      authority.RegionName,
-    ) === false
+  authoritiesResponse.authorities.find(
+    (authority) =>
+      ["Scotland", "Wales", "Northern Ireland"].includes(
+        authority.RegionName,
+      ) === false,
   )!,
-  authoritiesResponse.authorities.find((authority) =>
-    authority.RegionName === "Northern Ireland"
+  authoritiesResponse.authorities.find(
+    (authority) => authority.RegionName === "Northern Ireland",
   )!,
-  authoritiesResponse.authorities.find((authority) =>
-    authority.RegionName === "Scotland"
+  authoritiesResponse.authorities.find(
+    (authority) => authority.RegionName === "Scotland",
   )!,
-  authoritiesResponse.authorities.find((authority) =>
-    authority.RegionName === "Wales"
+  authoritiesResponse.authorities.find(
+    (authority) => authority.RegionName === "Wales",
   )!,
 ];
 
-await Promise.all(apiAuthorities.map(async (localAuthority) => {
-  const downloads = [];
+await Promise.all(
+  apiAuthorities.map(async (localAuthority) => {
+    const downloads = [];
 
-  const xmlDataURL = localAuthority.FileName;
-  const xmlFilename = getBuildFileName(xmlDataURL);
-  downloads.push({ url: xmlDataURL, filename: xmlFilename });
+    const xmlDataURL = localAuthority.FileName;
+    const xmlFilename = getBuildFileName(xmlDataURL);
+    downloads.push({ url: xmlDataURL, filename: xmlFilename });
 
-  const jsonDataURL = localAuthority.FileName.replace(/\.xml$/, ".json");
-  const jsonFilename = getBuildFileName(jsonDataURL);
-  downloads.push({ url: jsonDataURL, filename: jsonFilename });
+    const jsonDataURL = localAuthority.FileName.replace(/\.xml$/, ".json");
+    const jsonFilename = getBuildFileName(jsonDataURL);
+    downloads.push({ url: jsonDataURL, filename: jsonFilename });
 
-  if (localAuthority.FileNameWelsh !== null) {
-    const xmlDataURLWelsh = localAuthority.FileNameWelsh;
-    const xmlFilenameWelsh = getBuildFileName(xmlDataURLWelsh);
-    downloads.push({ url: xmlDataURLWelsh, filename: xmlFilenameWelsh });
+    if (localAuthority.FileNameWelsh !== null) {
+      const xmlDataURLWelsh = localAuthority.FileNameWelsh;
+      const xmlFilenameWelsh = getBuildFileName(xmlDataURLWelsh);
+      downloads.push({ url: xmlDataURLWelsh, filename: xmlFilenameWelsh });
 
-    const jsonDataURLWelsh = localAuthority.FileNameWelsh.replace(
-      /\.xml$/,
-      ".json",
-    );
-    const jsonFilenameWelsh = getBuildFileName(jsonDataURLWelsh);
-    downloads.push({ url: jsonDataURLWelsh, filename: jsonFilenameWelsh });
-  }
+      const jsonDataURLWelsh = localAuthority.FileNameWelsh.replace(
+        /\.xml$/,
+        ".json",
+      );
+      const jsonFilenameWelsh = getBuildFileName(jsonDataURLWelsh);
+      downloads.push({ url: jsonDataURLWelsh, filename: jsonFilenameWelsh });
+    }
 
-  for (const { url, filename } of downloads) {
-    const data = await api.localAuthorityData(url);
-    await Deno.writeTextFile(filename, data);
-  }
-}));
+    for (const { url, filename } of downloads) {
+      const data = await api.localAuthorityData(url);
+      await Deno.writeTextFile(filename, data);
+    }
+  }),
+);
 
 for (const language of ["en-GB", "cy-GB"] as const) {
   for (const type of ["json", "xml"] as const) {
@@ -148,5 +150,8 @@ for (const language of ["en-GB", "cy-GB"] as const) {
 }
 
 await copy("build", "dist", { overwrite: true });
+
+await generateApiIndexPage();
+await openDataFilesIndex();
 
 console.timeEnd("generate-site");

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Endpoint Files</title>
+  <meta name="description" content="Index of available API endpoint files, grouped by type and language.">
+  <style>
+    {{ pageCSS }}
+  </style>
+</head>
+<body>
+  <h1>API Endpoint Files</h1>
+  <p>This page lists the available API endpoint files, grouped by type (e.g., Authorities, Business Types) and language.</p>
+  {{ if tablesData === undefined || tablesData.length === 0 }}
+  <p>No API endpoint files available.</p>
+  {{ else }}
+    {{ for type of tablesData }}
+      <h2>{{ type.displayName }}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="col-language">Language</th>
+            <th class="col-json">JSON</th>
+            <th class="col-xml">XML</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ for language of type.languages }}
+            <tr>
+              <td class="col-language">{{ language.name }}</td>
+              <td class="col-json">
+                {{ if language.files.json }}
+                  <a href="{{ language.files.json }}">{{ language.files.json }}</a>
+                {{ else }}
+                  N/A
+                {{ /if }}
+              </td>
+              <td class="col-xml">
+                {{ if language.files.xml }}
+                  <a href="{{ language.files.xml }}">{{ language.files.xml }}</a>
+                {{ else }}
+                  N/A
+                {{ /if }}
+              </td>
+            </tr>
+          {{ /for }}
+        </tbody>
+      </table>
+    {{ /for }}
+  {{ /if }}
+</body>
+</html>

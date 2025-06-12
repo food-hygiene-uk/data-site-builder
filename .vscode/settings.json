@@ -1,3 +1,4 @@
 {
-  "livePreview.serverRoot": "/dist/"
+  "livePreview.serverRoot": "/dist/",
+  "eslint.format.enable": true
 }

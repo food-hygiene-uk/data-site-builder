@@ -1,6 +1,6 @@
 const fetchInit = {
-  "headers": {
-    "accept": "application/json",
+  headers: {
+    accept: "application/json",
     "accept-language": "",
     "sec-ch-ua":
       '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
@@ -12,22 +12,22 @@ const fetchInit = {
     "sec-gpc": "1",
     "x-api-version": "2",
   },
-  "referrer": "https://ratings.food.gov.uk/",
-  "referrerPolicy": "strict-origin-when-cross-origin",
-  "body": null,
-  "method": "GET",
-  "mode": "cors",
-  "credentials": "omit",
+  referrer: "https://ratings.food.gov.uk/",
+  referrerPolicy: "strict-origin-when-cross-origin",
+  body: null,
+  method: "GET",
+  mode: "cors",
+  credentials: "omit",
 } satisfies RequestInit;
 
-type FetchInitOptions = {
-  language?: "cy-GB" | "en-GB";
-  type?: "json" | "xml";
-} | undefined;
+type FetchInitOptions =
+  | {
+    language?: "cy-GB" | "en-GB";
+    type?: "json" | "xml";
+  }
+  | undefined;
 
-const createFetchInit = (
-  options: FetchInitOptions,
-): RequestInit => {
+const createFetchInit = (options: FetchInitOptions): RequestInit => {
   const language = options?.language === "cy-GB" ? "cy-GB" : "";
   const type = `applicaion/${options?.type ?? "json"}`;
 
@@ -35,7 +35,7 @@ const createFetchInit = (
     ...fetchInit,
     headers: {
       ...fetchInit.headers,
-      "accept": type,
+      accept: type,
       "accept-language": language,
     },
   };
@@ -46,10 +46,11 @@ export const authorities = async (
 ): Promise<string> => {
   const init = createFetchInit(options);
 
-  return await (await fetch(
+  const response = await fetch(
     "https://api.ratings.food.gov.uk/authorities",
     init,
-  )).text();
+  );
+  return await response.text();
 };
 
 export const businessTypes = async (
@@ -57,10 +58,11 @@ export const businessTypes = async (
 ): Promise<string> => {
   const init = createFetchInit(options);
 
-  return await (await fetch(
+  const response = await fetch(
     "https://api.ratings.food.gov.uk/businesstypes",
     init,
-  )).text();
+  );
+  return await response.text();
 };
 
 export const countries = async (
@@ -68,32 +70,25 @@ export const countries = async (
 ): Promise<string> => {
   const init = createFetchInit(options);
 
-  return await (await fetch(
+  const response = await fetch(
     "https://api.ratings.food.gov.uk/countries",
     init,
-  )).text();
+  );
+  return await response.text();
 };
 
-export const ratings = async (
-  options?: FetchInitOptions,
-): Promise<string> => {
+export const ratings = async (options?: FetchInitOptions): Promise<string> => {
   const init = createFetchInit(options);
 
-  return await (await fetch(
-    "https://api.ratings.food.gov.uk/ratings",
-    init,
-  )).text();
+  const response = await fetch("https://api.ratings.food.gov.uk/ratings", init);
+  return await response.text();
 };
 
-export const regions = async (
-  options?: FetchInitOptions,
-): Promise<string> => {
+export const regions = async (options?: FetchInitOptions): Promise<string> => {
   const init = createFetchInit(options);
 
-  return await (await fetch(
-    "https://api.ratings.food.gov.uk/regions",
-    init,
-  )).text();
+  const response = await fetch("https://api.ratings.food.gov.uk/regions", init);
+  return await response.text();
 };
 
 export const schemeTypes = async (
@@ -101,10 +96,11 @@ export const schemeTypes = async (
 ): Promise<string> => {
   const init = createFetchInit(options);
 
-  return await (await fetch(
+  const response = await fetch(
     "https://api.ratings.food.gov.uk/schemetypes",
     init,
-  )).text();
+  );
+  return await response.text();
 };
 
 export const scoreDescriptors = async (
@@ -112,15 +108,14 @@ export const scoreDescriptors = async (
 ): Promise<string> => {
   const init = createFetchInit(options);
 
-  return await (await fetch(
+  const response = await fetch(
     "https://api.ratings.food.gov.uk/scoredescriptors",
     init,
-  )).text();
+  );
+  return await response.text();
 };
 
-export const localAuthorityData = async (
-  url: string,
-): Promise<string> => {
+export const localAuthorityData = async (url: string): Promise<string> => {
   // It appears the redirect handler is rate limited, but the data files are not.
   // This skips the redirect handler and fetches the data directly.
   // This may break if the redirect handler is repointed elsewhere.
@@ -129,5 +124,6 @@ export const localAuthorityData = async (
     "https://ratings.food.gov.uk/api/open-data-files/",
   );
 
-  return (await fetch(redirectedURL, fetchInit)).text();
+  const response = await fetch(redirectedURL, fetchInit);
+  return response.text();
 };
