@@ -105,8 +105,15 @@
   },
   "lint": {
     "rules": {
-      "tags": ["recommended"]
+      "tags": ["recommended"],
+      "exclude": ["require-await"]
     }
   },
-  "exclude": []
+  "exclude": [
+    "build/",
+    "dist/",
+    "playwright-report/",
+    "test-results/"
+  ],
+  "nodeModulesDir": "auto"
 }
