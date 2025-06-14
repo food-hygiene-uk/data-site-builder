@@ -18,6 +18,7 @@
     "eslint-plugin-unicorn": "npm:eslint-plugin-unicorn@59.0.1",
     "eslint": "npm:eslint@9.28.0",
     "fast-check": "npm:fast-check@4.1.1",
+    "fast_xml_parser": "npm:fast-xml-parser@5.2.5",
     "http-server": "npm:http-server@14.1.1",
     "jiti": "npm:jiti@2.4.2",
     "playwright": "npm:playwright@1.53.0",
@@ -109,11 +110,6 @@
       "exclude": ["require-await"]
     }
   },
-  "exclude": [
-    "build/",
-    "dist/",
-    "playwright-report/",
-    "test-results/"
-  ],
+  "exclude": ["build/", "dist/", "playwright-report/", "test-results/"],
   "nodeModulesDir": "auto"
 }

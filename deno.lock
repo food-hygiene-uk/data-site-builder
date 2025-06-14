@@ -33,9 +33,11 @@
     "npm:eslint-plugin-jsdoc@50.8.0": "50.8.0_eslint@9.28.0__jiti@2.4.2_jiti@2.4.2",
     "npm:eslint-plugin-promise@7.2.1": "7.2.1_eslint@9.28.0__jiti@2.4.2_jiti@2.4.2",
     "npm:eslint-plugin-unicorn@59.0.1": "59.0.1_eslint@9.28.0__jiti@2.4.2_jiti@2.4.2",
+    "npm:eslint@*": "9.28.0_jiti@2.4.2",
     "npm:eslint@9.28.0": "9.28.0_jiti@2.4.2",
     "npm:estree-walker@3.0.3": "3.0.3",
     "npm:fast-check@4.1.1": "4.1.1",
+    "npm:fast-xml-parser@5.2.5": "5.2.5",
     "npm:http-server@14.1.1": "14.1.1",
     "npm:jiti@2.4.2": "2.4.2",
     "npm:meriyah@6.0.5": "6.0.5",
@@ -44,6 +46,7 @@
     "npm:prettier@*": "3.5.3",
     "npm:prettier@3.5.3": "3.5.3",
     "npm:stylelint-config-standard@38.0.0": "38.0.0_stylelint@16.20.0__@csstools+css-tokenizer@3.0.4__@csstools+css-parser-algorithms@3.0.5___@csstools+css-tokenizer@3.0.4__postcss-selector-parser@7.1.0__postcss@8.5.5",
+    "npm:stylelint@*": "16.20.0_@csstools+css-tokenizer@3.0.4_@csstools+css-parser-algorithms@3.0.5__@csstools+css-tokenizer@3.0.4_postcss-selector-parser@7.1.0_postcss@8.5.5",
     "npm:stylelint@16.20.0": "16.20.0_@csstools+css-tokenizer@3.0.4_@csstools+css-parser-algorithms@3.0.5__@csstools+css-tokenizer@3.0.4_postcss-selector-parser@7.1.0_postcss@8.5.5",
     "npm:uglify-js@3.19.3": "3.19.3",
     "npm:zod@3.25.63": "3.25.63"
@@ -1266,6 +1269,13 @@
     },
     "fast-uri@3.0.6": {
       "integrity": "sha512-Atfo14OibSv5wAp4VWNsFYE1AchQRTv9cBGWET4pZWHzYshFSS9NQI6I57rdKn9croWVMbYFbLhJ+yJvmZIIHw=="
+    },
+    "fast-xml-parser@5.2.5": {
+      "integrity": "sha512-pfX9uG9Ki0yekDHx2SiuRIyFdyAr1kMIMitPvb0YBo8SUfKvia7w7FIyd/l6av85pFYRhZscS75MwMnbvY+hcQ==",
+      "dependencies": [
+        "strnum"
+      ],
+      "bin": true
     },
     "fastest-levenshtein@1.0.16": {
       "integrity": "sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg=="
@@ -2604,6 +2614,9 @@
     "strip-json-comments@3.1.1": {
       "integrity": "sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig=="
     },
+    "strnum@2.1.1": {
+      "integrity": "sha512-7ZvoFTiCnGxBtDqJ//Cu6fWtZtc7Y3x+QOirG15wztbdngGSkht27o2pyGWrVy0b4WAy3jbKmnoK6g5VlVNUUw=="
+    },
     "stylehacks@7.0.5_postcss@8.5.5": {
       "integrity": "sha512-5kNb7V37BNf0Q3w+1pxfa+oiNPS++/b4Jil9e/kPDgrk1zjEd6uR7SZeJiYaLYH6RRSC1XX2/37OTeU/4FvuIA==",
       "dependencies": [
@@ -3015,6 +3028,7 @@
       "npm:eslint-plugin-unicorn@59.0.1",
       "npm:eslint@9.28.0",
       "npm:fast-check@4.1.1",
+      "npm:fast-xml-parser@5.2.5",
       "npm:http-server@14.1.1",
       "npm:jiti@2.4.2",
       "npm:playwright@1.53.0",
