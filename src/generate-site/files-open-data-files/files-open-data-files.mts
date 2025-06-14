@@ -28,9 +28,11 @@ export const sortEstablishmentsInXml = (sourceXml: string): string => {
     parseAttributeValue: true,
   });
 
-  let parsedObject: LocalAuthorityData;
+  let parsedObject: LocalAuthorityData & { "?xml": { "@_version": string } };
   try {
     parsedObject = parser.parse(sourceXml);
+    // Force to "1.0" instead of "1"
+    parsedObject["?xml"]["@_version"] = "1.0";
   } catch (parseError) {
     console.error(
       "XML parsing failed during sort operation:",
@@ -68,6 +70,7 @@ export const sortEstablishmentsInXml = (sourceXml: string): string => {
   const builder = new XMLBuilder({
     ignoreAttributes: false,
     format: false, // No general pretty-print; specific formatting is handled later
+    suppressBooleanAttributes: false,
     suppressEmptyNode: true, // Suppress empty tags like <Geocode/> instead of <Geocode></Geocode>
     unpairedTags: ["link", "meta"], // Example of unpaired tags if needed
   });

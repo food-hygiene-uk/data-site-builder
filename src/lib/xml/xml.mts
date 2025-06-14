@@ -17,6 +17,7 @@ export const prettyPrintXml = (sourceXml: string): string => {
   const builder = new XMLBuilder({
     ignoreAttributes: false,
     format: true,
+    suppressBooleanAttributes: false,
   });
 
   return builder.build(parsedObject);
