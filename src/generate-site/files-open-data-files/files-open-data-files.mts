@@ -8,6 +8,30 @@ import { join } from "@std/path";
 import { walk } from "@std/fs";
 import * as api from "../../ratings-api/rest.mts";
 import { Establishment, LocalAuthorityData } from "../../ratings-api/types.mts";
+import { sleep } from "../../lib/sleep/sleep.mts";
+
+/**
+ * Sorts the EstablishmentCollection by FHRSID in ascending order.
+ * Handles cases where FHRSID might not be a valid number.
+ *
+ * @param establishmentCollection - The collection of establishments to sort.
+ */
+const sortEstablishments = (
+  establishmentCollection:
+    LocalAuthorityData["FHRSEstablishment"]["EstablishmentCollection"],
+): void => {
+  establishmentCollection.sort((a: Establishment, b: Establishment) => {
+    const idA = Number(a.FHRSID);
+    const idB = Number(b.FHRSID);
+
+    // Handle cases where FHRSID might not be a valid number
+    if (Number.isNaN(idA) && Number.isNaN(idB)) return 0;
+    if (Number.isNaN(idA)) return 1; // Push NaNs (or unparseable) to the end
+    if (Number.isNaN(idB)) return -1; // Keep non-NaNs first
+
+    return idA - idB;
+  });
+};
 
 /**
  * Parses an XML string, sorts EstablishmentDetail elements by FHRSID,
@@ -21,14 +45,24 @@ import { Establishment, LocalAuthorityData } from "../../ratings-api/types.mts";
 export const sortEstablishmentsInXml = (sourceXml: string): string => {
   const parser = new XMLParser({
     ignoreAttributes: false,
-    // Ensure EstablishmentDetail is treated as an array, critical for sorting
-    isArray: (_name, jpath, _isLeafNode, _isAttribute) =>
-      jpath === "FHRSEstablishment.EstablishmentCollection.EstablishmentDetail",
     parseTagValue: true,
     parseAttributeValue: true,
   });
 
-  let parsedObject: LocalAuthorityData & { "?xml": { "@_version": string } };
+  // Define the XML-specific shape for FHRSEstablishment
+  type FHRSEstablishmentXmlShape = Omit<
+    LocalAuthorityData["FHRSEstablishment"],
+    "EstablishmentCollection"
+  > & {
+    EstablishmentCollection?: {
+      EstablishmentDetail: LocalAuthorityData["FHRSEstablishment"]["EstablishmentCollection"];
+    };
+  };
+
+  let parsedObject: Omit<LocalAuthorityData, "FHRSEstablishment"> & {
+    FHRSEstablishment?: FHRSEstablishmentXmlShape;
+    "?xml": { "@_version": string };
+  };
   try {
     parsedObject = parser.parse(sourceXml);
     // Force to "1.0" instead of "1"
@@ -42,24 +76,14 @@ export const sortEstablishmentsInXml = (sourceXml: string): string => {
     return sourceXml; // Return original XML if parsing fails
   }
 
-  const establishmentCollection = parsedObject?.FHRSEstablishment
-    ?.EstablishmentCollection;
+  const establishmentDetail = parsedObject?.FHRSEstablishment
+    ?.EstablishmentCollection?.EstablishmentDetail;
 
   if (
-    Array.isArray(establishmentCollection) &&
-    establishmentCollection.length > 0
+    Array.isArray(establishmentDetail) === true &&
+    establishmentDetail.length > 0
   ) {
-    establishmentCollection.sort((a: Establishment, b: Establishment) => {
-      const idA = Number(a.FHRSID);
-      const idB = Number(b.FHRSID);
-
-      // Handle cases where FHRSID might not be a valid number
-      if (Number.isNaN(idA) && Number.isNaN(idB)) return 0;
-      if (Number.isNaN(idA)) return 1; // Push NaNs (or unparseable) to the end
-      if (Number.isNaN(idB)) return -1; // Keep non-NaNs first
-
-      return idA - idB;
-    });
+    sortEstablishments(establishmentDetail);
   } else {
     // Not an error if not found, file might be structured differently or empty of these elements.
     console.log(
@@ -171,23 +195,23 @@ const processSingleOpenDataJsonFile = async (filePath: string) => {
     const jsonData = parsedJson as typeof dataSchema._type;
 
     if (Array.isArray(jsonData?.FHRSEstablishment?.EstablishmentCollection)) {
-      jsonData.FHRSEstablishment.EstablishmentCollection.sort(
-        (a, b) => a.FHRSID - b.FHRSID,
+      sortEstablishments(
+        jsonData.FHRSEstablishment.EstablishmentCollection,
       );
-
-      const newJsonString = JSON.stringify(jsonData).replaceAll(
-        // This can easily flake if the structure changes
-        /("Header":|"EstablishmentCollection":|{"FHRSID":|]}}$)/g,
-        "\n$1",
-      );
-
-      await Deno.writeTextFile(filePath, newJsonString);
-      console.log(`Reformatted: ${filePath}`);
     } else {
       console.warn(
-        `Warning: Could not find FHRSEstablishment.EstablishmentCollection in ${filePath}`, // Updated warning
+        `Warning: Could not find FHRSEstablishment.EstablishmentCollection in ${filePath}`,
       );
     }
+
+    const newJsonString = JSON.stringify(jsonData).replaceAll(
+      // This can easily flake if the structure changes
+      /("Header":|"EstablishmentCollection":|{"FHRSID":|]}}$)/g,
+      "\n$1",
+    );
+
+    await Deno.writeTextFile(filePath, newJsonString);
+    console.log(`Reformatted: ${filePath}`);
   } catch (error) {
     // If it's a ZodError, it means parsing failed according to dataSchema
     if (error instanceof z.ZodError) {
@@ -270,6 +294,7 @@ export const getFilesOpenDataFiles = async (
       for (const { url, filename } of downloads) {
         const data = await api.localAuthorityData(url);
         await Deno.writeTextFile(filename, data);
+        await sleep(1000);
       }
     }),
   );

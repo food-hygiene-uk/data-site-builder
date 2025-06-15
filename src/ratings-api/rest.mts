@@ -125,5 +125,20 @@ export const localAuthorityData = async (url: string): Promise<string> => {
   );
 
   const response = await fetch(redirectedURL, fetchInit);
-  return response.text();
+  const content = await response.text();
+
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch local authority data from ${redirectedURL}: ${response.status} ${response.statusText} - ${content}`,
+    );
+  }
+
+  // This may be redundant, the response status is currently unknown.
+  if (content.includes("504 Gateway Time-out")) {
+    throw new Error(
+      `504 Gateway Time-out error fetching local authority data from ${redirectedURL}. This may be a temporary issue. Please try again later. - ${response.status} ${response.statusText}`,
+    );
+  }
+
+  return content;
 };

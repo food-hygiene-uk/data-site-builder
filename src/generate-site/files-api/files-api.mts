@@ -2,6 +2,7 @@ import { join } from "@std/path";
 import { walk } from "@std/fs";
 import { prettyPrintXml as prettyPrintXml } from "../../lib/xml/xml.mts";
 import * as api from "../../ratings-api/rest.mts";
+import { sleep } from "../../lib/sleep/sleep.mts";
 
 const APIBuildPath = join("build", "files", "api");
 
@@ -74,14 +75,6 @@ const formatApiFiles = async (): Promise<void> => {
     );
   }
 };
-
-/**
- * Delays execution for a given number of milliseconds.
- *
- * @param ms - Milliseconds to sleep.
- * @returns A promise that resolves after the specified delay.
- */
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const getFilesApi = async (): Promise<void> => {
   for (const language of ["en-GB", "cy-GB"] as const) {
