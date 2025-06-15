@@ -1,3 +1,5 @@
+import { sleep } from "../lib/sleep/sleep.mts";
+
 const fetchInit = {
   headers: {
     accept: "application/json",
@@ -124,21 +126,55 @@ export const localAuthorityData = async (url: string): Promise<string> => {
     "https://ratings.food.gov.uk/api/open-data-files/",
   );
 
-  const response = await fetch(redirectedURL, fetchInit);
-  const content = await response.text();
+  let attempts = 0;
+  const maxAttempts = 5;
+  let delay = 1000; // Initial delay of 1 second
 
-  if (!response.ok) {
-    throw new Error(
-      `Failed to fetch local authority data from ${redirectedURL}: ${response.status} ${response.statusText} - ${content}`,
-    );
+  while (attempts < maxAttempts) {
+    attempts++;
+    try {
+      const response = await fetch(redirectedURL, fetchInit);
+      const content = await response.text();
+
+      if (response.ok) {
+        return content;
+      }
+
+      if (response.status === 504 && attempts < maxAttempts) {
+        console.warn(
+          `Attempt ${attempts} failed for ${redirectedURL}: 504 Gateway Timeout. Retrying in ${
+            delay / 1000
+          }s...`,
+        );
+        await sleep(delay);
+        delay *= 2; // Exponential backoff
+        continue;
+      }
+
+      throw new Error(
+        `Failed to fetch local authority data from ${redirectedURL} after ${attempts} attempts: ${response.status} ${response.statusText} - ${content}`,
+      );
+    } catch (error: unknown) {
+      if (attempts >= maxAttempts) {
+        throw new Error(
+          `Failed to fetch local authority data from ${redirectedURL} after ${attempts} attempts. Last error: ${
+            (error as Error).message
+          }`,
+        );
+      }
+      // For network errors or other non-HTTP errors, retry with backoff
+      console.warn(
+        `Attempt ${attempts} failed for ${redirectedURL} with error: ${
+          (error as Error).message
+        }. Retrying in ${delay / 1000}s...`,
+      );
+      await sleep(delay);
+      delay *= 2; // Exponential backoff
+    }
   }
-
-  // This may be redundant, the response status is currently unknown.
-  if (content.includes("504 Gateway Time-out")) {
-    throw new Error(
-      `504 Gateway Time-out error fetching local authority data from ${redirectedURL}. This may be a temporary issue. Please try again later. - ${response.status} ${response.statusText}`,
-    );
-  }
-
-  return content;
+  // This line should ideally not be reached if logic is correct,
+  // but as a fallback, throw an error.
+  throw new Error(
+    `Failed to fetch local authority data from ${redirectedURL} after ${maxAttempts} attempts.`,
+  );
 };
