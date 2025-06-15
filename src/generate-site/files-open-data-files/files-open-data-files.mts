@@ -50,14 +50,17 @@ export const sortEstablishmentsInXml = (sourceXml: string): string => {
   });
 
   // Define the XML-specific shape for FHRSEstablishment
-  type FHRSEstablishmentXmlShape = Omit<
-    LocalAuthorityData["FHRSEstablishment"],
-    "EstablishmentCollection"
-  > & {
-    EstablishmentCollection?: {
-      EstablishmentDetail: LocalAuthorityData["FHRSEstablishment"]["EstablishmentCollection"];
+  type FHRSEstablishmentXmlShape =
+    & Omit<
+      LocalAuthorityData["FHRSEstablishment"],
+      "EstablishmentCollection"
+    >
+    & {
+      EstablishmentCollection?: {
+        EstablishmentDetail:
+          LocalAuthorityData["FHRSEstablishment"]["EstablishmentCollection"];
+      };
     };
-  };
 
   let parsedObject: Omit<LocalAuthorityData, "FHRSEstablishment"> & {
     FHRSEstablishment?: FHRSEstablishmentXmlShape;
@@ -77,7 +80,8 @@ export const sortEstablishmentsInXml = (sourceXml: string): string => {
   }
 
   const establishmentDetail = parsedObject?.FHRSEstablishment
-    ?.EstablishmentCollection?.EstablishmentDetail;
+    ?.EstablishmentCollection
+    ?.EstablishmentDetail;
 
   if (
     Array.isArray(establishmentDetail) === true &&
@@ -195,9 +199,7 @@ const processSingleOpenDataJsonFile = async (filePath: string) => {
     const jsonData = parsedJson as typeof dataSchema._type;
 
     if (Array.isArray(jsonData?.FHRSEstablishment?.EstablishmentCollection)) {
-      sortEstablishments(
-        jsonData.FHRSEstablishment.EstablishmentCollection,
-      );
+      sortEstablishments(jsonData.FHRSEstablishment.EstablishmentCollection);
     } else {
       console.warn(
         `Warning: Could not find FHRSEstablishment.EstablishmentCollection in ${filePath}`,
