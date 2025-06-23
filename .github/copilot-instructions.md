@@ -51,7 +51,6 @@ This project is a static website generator that creates HTML, CSS, and JavaScrip
 ### CSS
 
 - All styles must support both light and dark modes
-
   - because the site allows theme preference and falls back to browser settings the components/root/styles.css file sets up the use of color-scheme.
   - Use `light-dark()` for every color in the CSS files. This function will return the correct color based on the user's preference.
 
