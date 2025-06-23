@@ -2,7 +2,7 @@
   "name": "Deno Dev Container",
   "build": {
     "dockerfile": "Dockerfile",
-    "options": ["--build-arg=DENO_VERSION=2.3.5"]
+    "options": ["--build-arg=DENO_VERSION=2.3.6"]
   },
   "postCreateCommand": "deno cache src/generate-site.mts",
   "customizations": {
