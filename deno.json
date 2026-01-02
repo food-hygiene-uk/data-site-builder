@@ -37,7 +37,7 @@
     },
     "deno:lock-update": {
       "description": "Updates the lock file",
-      "command": "deno install && deno cache --frozen=false src/generate-site.mts && deno install"
+      "command": "deno cache --frozen=false src/generate-site.mts && deno install"
     },
     "deno:update-dependencies": {
       "description": "Updates Deno dependencies",
@@ -49,7 +49,7 @@
     },
     "git:pre-commit": {
       "description": "Updates and validadates the code as done in CI",
-      "command": "deno install && deno task deno:lock-update && deno task prettier:debug-check && deno task prettier:write && deno task stylelint:fix && deno fmt && deno test && deno lint && deno task eslint:check && deno task stylelint:check && deno check src/generate-site.mts"
+      "command": "deno install && deno task deno:lock-update && deno test --coverage && deno lint && deno task eslint:check && deno task stylelint:check && deno task prettier:debug-check && deno task prettier:write && deno fmt && deno check ."
     },
     "playwright:install": {
       "description": "Installs Playwright dependencies",
