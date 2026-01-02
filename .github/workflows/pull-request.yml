@@ -40,13 +40,38 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Ensure SHA pinned actions
+        uses: zgosalvez/github-actions-ensure-sha-pinned-actions@9e9574ef04ea69da568d6249bd69539ccc704e74 # v4.0.0
+
       - name: Setup Deno
         uses: denoland/setup-deno@e95548e56dfa95d4e1a28d6f422fafe75c4c26fb # v2.0.3
         with:
           deno-version: ${{ env.DENO_VERSION }}
 
+      - name: Deno install
+        run: deno install
+
+      - name: Run Deno test
+        run: deno test .
+
+      - name: Run ESLint
+        run: deno task eslint:check
+
       - name: Run Deno lint
         run: deno lint .
 
-      - name: Run Deno fmt
-        run: deno fmt --check .
+      - name: Run formatter
+        run: |
+          deno task prettier:write ; status=$?
+          if [ $status -eq 2 ]; then
+            echo "Something’s wrong with Prettier."
+            exit 2
+          fi
+          deno fmt
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Error: Unformatted files detected. Please commit changes after running the formatter."
+            exit 1
+          fi
+
+      - name: Run Deno check
+        run: deno check src/generate-site.mts
