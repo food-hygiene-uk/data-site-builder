@@ -110,6 +110,13 @@
       "exclude": ["require-await"]
     }
   },
-  "exclude": ["build/", "coverage/", "dist/", "node-modules/","playwright-report/", "test-results/"],
+  "exclude": [
+    "build/",
+    "coverage/",
+    "dist/",
+    "node-modules/",
+    "playwright-report/",
+    "test-results/"
+  ],
   "nodeModulesDir": "auto"
 }
