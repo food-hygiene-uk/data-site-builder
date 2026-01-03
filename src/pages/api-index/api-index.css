@@ -29,7 +29,7 @@ td {
   border: 1px solid light-dark(#ddd, #444);
   padding: 8px;
   text-align: left;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 th {

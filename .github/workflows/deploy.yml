@@ -1,4 +1,4 @@
-name: Generate Ratings Site
+name: Deploy
 
 # Control concurrent executions
 concurrency:
@@ -6,16 +6,13 @@ concurrency:
 
 # Define trigger events
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch: # Manual trigger
   schedule:
-    - cron: "0 4 * * *" # Run at 4 AM UTC daily
+    - cron: "15 0 * * *" # Daily at 00:15 UTC
 
-# Define minimum required permissions
 permissions:
-  contents: write # Required for pushing to repository
+  contents: write
+  pull-requests: write
 
 jobs:
   command-outputs:
@@ -31,6 +28,7 @@ jobs:
           sparse-checkout: |
             .deno-version
           sparse-checkout-cone-mode: false
+          fetch-depth: 1
 
       - name: Commands
         id: commands
@@ -77,10 +75,12 @@ jobs:
           deno-version: ${{ env.DENO_VERSION }}
 
       - name: Run Deno lint
-        run: deno lint ./repos/source/
+        working-directory: ./repos/source
+        run: deno lint .
 
       - name: Run Deno fmt
-        run: deno fmt --check ./repos/source/
+        working-directory: ./repos/source
+        run: deno fmt --check .
 
       - name: Generate site
         working-directory: ./repos/source
@@ -95,7 +95,8 @@ jobs:
           fetch-depth: 1
 
       - name: Prepare public directory
-        run: find ./repos/gh-pages/public -depth -delete
+        working-directory: ./repos/gh-pages
+        run: find ./public -depth -delete
 
       - name: Move and rename generated site
         run: mv ./repos/source/dist ./repos/gh-pages/public
@@ -116,7 +117,7 @@ jobs:
           if ! git diff --quiet || ! git ls-files --others --exclude-standard --quiet; then
             git add .
             git commit -m "Update site"
-            git push origin HEAD:${{ github.ref_name }} || { echo "Failed to push changes"; exit 1; }
+            git push origin HEAD:main || { echo "Failed to push changes"; exit 1; }
           else
             echo "No changes detected"
           fi

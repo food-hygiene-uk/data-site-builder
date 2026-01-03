@@ -4,6 +4,7 @@ import {
   businessTypesResponseSchema,
   countriesResponseSchema,
   dataSchema,
+  establishmentSchema,
   ratingsResponseSchema,
   regionsResponseSchema,
   schemeTypesResponseSchema,
@@ -25,6 +26,4 @@ export type ScoreDescriptorsResponse = z.infer<
 
 export type LocalAuthorityData = z.infer<typeof dataSchema>;
 
-export type Establishment = z.infer<
-  typeof dataSchema
->["FHRSEstablishment"]["EstablishmentCollection"][number];
+export type Establishment = z.infer<typeof establishmentSchema>;

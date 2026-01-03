@@ -1,0 +1,194 @@
+{
+  "sources": [
+    {
+      "url": "https://ratings.food.gov.uk/open-data-resources/lookupData/ScoreDescriptors.xml",
+      "extractDate": "2014-10-27T16:02:16.3646745+00:00"
+    },
+    {
+      "url": "https://ratings.food.gov.uk/open-data-resources/lookupData/ScoreDescriptorsCy.xml",
+      "extractDate": "2014-10-27T16:10:15.9460745+00:00"
+    },
+    {
+      "url": "https://www.food.gov.uk/sites/default/files/media/document/Version%208%20Brand%20Standard%20-%20for%20FSA%20website%20Jan%202025%20-%20updated%20link.pdf",
+      "extractDate": "2023-06"
+    }
+  ],
+  "scoreDescriptors": {
+    "Confidence": {
+      "0": {
+        "description": {
+          "en": "Very good",
+          "cy": "Da iawn"
+        },
+        "detail": {
+          "en": "Excellent record of compliance.<br>Food safety advice available inhouse or access to, and use of, technical advice from a Primary Authority or Home Authority, trade associations and/or from Guides to Good Practice or assurance schemes commensurate with type of business.<br>Food Business Operator/Manager knowledgeable and competent.<br>Has effective self checks with satisfactory documented food safety management procedures commensurate with type of business, and may have external audit processes in place.<br>Audit by Competent Authority confirms good compliance with food safety procedures.",
+          "cy": null
+        }
+      },
+      "5": {
+        "description": {
+          "en": "Good",
+          "cy": "Da"
+        },
+        "detail": {
+          "en": "Good record of compliance.<br>Food safety advice available inhouse or access to, and use of, technical advice from a Primary or Home Authority, trade associations and/or from Guides to Good Practice or assurance scheme commensurate with type of business.<br>Effective management control of hazards.<br>Having effective self-checks with satisfactory documented food safety management procedures commensurate with type of business.<br>Audit by Competent Authority confirms general compliance with procedures with minor nonconformities not identified as critical to food safety.",
+          "cy": null
+        }
+      },
+      "10": {
+        "description": {
+          "en": "Generally satisfactory",
+          "cy": "Boddhaol ar y cyfan"
+        },
+        "detail": {
+          "en": "Satisfactory record of compliance.<br>Access to relevant food safety advice source and/or Guides to Good Practice or assurance schemes commensurate with type of business.<br>Understanding of significant hazards and control measures in place.<br>Has implemented satisfactory food safety management procedures or is making satisfactory progress towards documented food safety management procedures commensurate with type of business.<br>Officers will need to ensure that a business is demonstrating it is actually ‘making satisfactory progress’ towards food safety management procedures. A score of 10 can be awarded for more than one intervention cycle if: <ul><li>the previous non-compliances have been addressed but different non-compliances have arisen; and</li><li>the overall risk has not increased.</li></ul>",
+          "cy": null
+        }
+      },
+      "20": {
+        "description": {
+          "en": "Major improvement necessary",
+          "cy": "Angen gwella yn sylweddol"
+        },
+        "detail": {
+          "en": "Significantly varying record of compliance.<br>Insufficient food safety knowledge and understanding. Poor appreciation of hazards, risks and control measures.<br>No food safety management procedures or unsatisfactory progress in terms of developing, documenting and implementing food safety management procedures, commensurate with type of business, since the last intervention rating.<br>Some reluctance in recognising or accepting the need for food safety and hygiene control procedures.",
+          "cy": null
+        }
+      },
+      "30": {
+        "description": {
+          "en": "Urgent improvement necessary",
+          "cy": "Angen gwella ar frys"
+        },
+        "detail": {
+          "en": "Poor track record of compliance. Little or no food safety knowledge and understanding. Little or no appreciation of hazards, risks or quality control. No food safety management procedures. Does not recognise or accept the need for food safety and hygiene controls.",
+          "cy": null
+        }
+      }
+    },
+    "Hygiene": {
+      "0": {
+        "description": {
+          "en": "Very good",
+          "cy": "Da iawn"
+        },
+        "detail": {
+          "en": "High standard of compliance with statutory obligations and industry codes of recommended practice, conforms to accepted good practices in the trade. ",
+          "cy": null
+        }
+      },
+      "5": {
+        "description": {
+          "en": "Good",
+          "cy": "Da"
+        },
+        "detail": {
+          "en": "Good standard of compliance with statutory obligations and industry codes of recommended practice* with only minor contraventions.",
+          "cy": null
+        }
+      },
+      "10": {
+        "description": {
+          "en": "Generally satisfactory",
+          "cy": "Boddhaol ar y cyfan"
+        },
+        "detail": {
+          "en": "Some non-compliance with statutory obligations and industry codes of recommended practice* that are not considered significant in terms of risk (but may become significant if not addressed). Standards are being maintained or improved. ",
+          "cy": null
+        }
+      },
+      "15": {
+        "description": {
+          "en": "Improvement necessary",
+          "cy": "Angen gwella"
+        },
+        "detail": {
+          "en": "Some major non-compliance with statutory obligations – more work required to prevent fall in standards.",
+          "cy": null
+        }
+      },
+      "20": {
+        "description": {
+          "en": "Major improvement necessary",
+          "cy": "Angen gwella yn sylweddol"
+        },
+        "detail": {
+          "en": "General failure to satisfy statutory obligations – standards generally low. ",
+          "cy": null
+        }
+      },
+      "25": {
+        "description": {
+          "en": "Urgent improvement necessary",
+          "cy": "Angen gwella ar frys"
+        },
+        "detail": {
+          "en": "Almost total non-compliance with statutory obligations.",
+          "cy": null
+        }
+      }
+    },
+    "Structural": {
+      "0": {
+        "description": {
+          "en": "Very good",
+          "cy": "Da iawn"
+        },
+        "detail": {
+          "en": "High standard of compliance with statutory obligations and industry codes of recommended practice; conforms to accepted good practices in the trade.",
+          "cy": null
+        }
+      },
+      "5": {
+        "description": {
+          "en": "Good",
+          "cy": "Da"
+        },
+        "detail": {
+          "en": "Good standard of compliance with statutory obligations and industry codes of recommended practice with only minor contraventions.",
+          "cy": null
+        }
+      },
+      "10": {
+        "description": {
+          "en": "Generally satisfactory",
+          "cy": "Boddhaol ar y cyfan"
+        },
+        "detail": {
+          "en": "Some non-compliance with statutory obligations and industry codes of recommended practice that are not considered significant in terms of risk (but may become significant if not addressed). Standards are being maintained or improved.",
+          "cy": null
+        }
+      },
+      "15": {
+        "description": {
+          "en": "Improvement necessary",
+          "cy": "Angen gwella"
+        },
+        "detail": {
+          "en": "Some major non-compliance with statutory obligations – more work required to prevent fall in standards.",
+          "cy": null
+        }
+      },
+      "20": {
+        "description": {
+          "en": "Major improvement necessary",
+          "cy": "Angen gwella yn sylweddol"
+        },
+        "detail": {
+          "en": "General failure to satisfy statutory obligations – standards generally low. ",
+          "cy": null
+        }
+      },
+      "25": {
+        "description": {
+          "en": "Urgent improvement necessary",
+          "cy": "Angen gwella ar frys"
+        },
+        "detail": {
+          "en": "Almost total non-compliance with statutory obligations.",
+          "cy": null
+        }
+      }
+    }
+  }
+}

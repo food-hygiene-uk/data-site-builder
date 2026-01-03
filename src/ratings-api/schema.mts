@@ -1,33 +1,6 @@
 import { z } from "zod";
+import scoreDescriptors from "./score-descriptors.json" with { type: "json" };
 import { constructZodLiteralUnionType } from "../lib/zod/zod.mts";
-
-const scoreDescriptors = {
-  scoreDescriptors: {
-    Confidence: {
-      "0": {},
-      "5": {},
-      "10": {},
-      "20": {},
-      "30": {},
-    },
-    Hygiene: {
-      "0": {},
-      "5": {},
-      "10": {},
-      "15": {},
-      "20": {},
-      "25": {},
-    },
-    Structural: {
-      "0": {},
-      "5": {},
-      "10": {},
-      "15": {},
-      "20": {},
-      "25": {},
-    },
-  },
-};
 
 const apiRegions = [
   "East Counties",
@@ -44,161 +17,129 @@ const apiRegions = [
   "Wales",
 ] as const;
 
-const metaSchema = z
-  .object({
-    dataSource: z.string(),
-    extractDate: z.string(),
-    itemCount: z.number(),
-    returncode: z.string().nullable(),
-    totalCount: z.number(),
-    totalPages: z.number(),
-    pageSize: z.number(),
-    pageNumber: z.number(),
-  })
-  .passthrough();
+const metaSchema = z.strictObject({
+  dataSource: z.string(),
+  extractDate: z.string(),
+  itemCount: z.number(),
+  returncode: z.string().nullable(),
+  totalCount: z.number(),
+  totalPages: z.number(),
+  pageSize: z.number(),
+  pageNumber: z.number(),
+});
 
 const linksSchema = z.array(
-  z
-    .object({
-      rel: z.string(),
-      href: z.string(),
-    })
-    .passthrough(),
+  z.strictObject({
+    rel: z.string(),
+    href: z.string(),
+  }),
 );
 
-export const authoritiesResponseSchema = z
-  .object({
-    authorities: z.array(
-      z
-        .object({
-          LocalAuthorityId: z.number(),
-          LocalAuthorityIdCode: z.string(),
-          Name: z.string(),
-          FriendlyName: z.string(),
-          Url: z.string(),
-          SchemeUrl: z.string(),
-          Email: z.string(),
-          RegionName: z.enum(apiRegions),
-          FileName: z.string(),
-          FileNameWelsh: z.string().nullable(),
-          EstablishmentCount: z.number(),
-          CreationDate: z.string().datetime({ local: true }),
-          LastPublishedDate: z.string().datetime({ local: true }),
-          SchemeType: z.number(),
-          links: linksSchema,
-        })
-        .passthrough(),
-    ),
-    meta: metaSchema,
-    links: linksSchema,
-  })
-  .passthrough();
+export const authoritiesResponseSchema = z.strictObject({
+  authorities: z.array(
+    z.strictObject({
+      LocalAuthorityId: z.number(),
+      LocalAuthorityIdCode: z.string(),
+      Name: z.string(),
+      FriendlyName: z.string(),
+      Url: z.string(),
+      SchemeUrl: z.string(),
+      Email: z.string(),
+      RegionName: z.enum(apiRegions),
+      FileName: z.string(),
+      FileNameWelsh: z.string().nullable(),
+      EstablishmentCount: z.number(),
+      CreationDate: z.string().datetime({ local: true }),
+      LastPublishedDate: z.string().datetime({ local: true }),
+      SchemeType: z.number(),
+      links: linksSchema,
+    }),
+  ),
+  meta: metaSchema,
+  links: linksSchema,
+});
 
-export const businessTypesResponseSchema = z
-  .object({
-    businessTypes: z.array(
-      z
-        .object({
-          BusinessTypeId: z.number(),
-          BusinessTypeName: z.string(),
-          links: linksSchema,
-        })
-        .passthrough(),
-    ),
-    meta: metaSchema,
-    links: linksSchema,
-  })
-  .passthrough();
+export const businessTypesResponseSchema = z.strictObject({
+  businessTypes: z.array(
+    z.strictObject({
+      BusinessTypeId: z.number(),
+      BusinessTypeName: z.string(),
+      links: linksSchema,
+    }),
+  ),
+  meta: metaSchema,
+  links: linksSchema,
+});
 
-export const countriesResponseSchema = z
-  .object({
-    countries: z.array(
-      z
-        .object({
-          id: z.number(),
-          name: z.string(),
-          nameKey: z.string(),
-          code: z.string(),
-          links: linksSchema,
-        })
-        .passthrough(),
-    ),
-    meta: metaSchema,
-    links: linksSchema,
-  })
-  .passthrough();
+export const countriesResponseSchema = z.strictObject({
+  countries: z.array(
+    z.strictObject({
+      id: z.number(),
+      name: z.string(),
+      nameKey: z.string(),
+      code: z.string(),
+      links: linksSchema,
+    }),
+  ),
+  meta: metaSchema,
+  links: linksSchema,
+});
 
-export const ratingsResponseSchema = z
-  .object({
-    ratings: z.array(
-      z
-        .object({
-          ratingId: z.number(),
-          ratingName: z.string(),
-          ratingKey: z.string(),
-          ratingKeyName: z.string(),
-          schemeTypeId: z.number(),
-          links: linksSchema,
-        })
-        .passthrough(),
-    ),
-    meta: metaSchema,
-    links: linksSchema,
-  })
-  .passthrough();
+export const ratingsResponseSchema = z.strictObject({
+  ratings: z.array(
+    z.strictObject({
+      ratingId: z.number(),
+      ratingName: z.string(),
+      ratingKey: z.string(),
+      ratingKeyName: z.string(),
+      schemeTypeId: z.number(),
+      links: linksSchema,
+    }),
+  ),
+  meta: metaSchema,
+  links: linksSchema,
+});
 
-export const regionsResponseSchema = z
-  .object({
-    regions: z.array(
-      z
-        .object({
-          id: z.number(),
-          name: z.string(),
-          nameKey: z.string(),
-          code: z.string(),
-          links: linksSchema,
-        })
-        .passthrough(),
-    ),
-    meta: metaSchema,
-    links: linksSchema,
-  })
-  .passthrough();
+export const regionsResponseSchema = z.strictObject({
+  regions: z.array(
+    z.strictObject({
+      id: z.number(),
+      name: z.string(),
+      nameKey: z.string(),
+      code: z.string(),
+      links: linksSchema,
+    }),
+  ),
+  meta: metaSchema,
+  links: linksSchema,
+});
 
-export const schemeTypesResponseSchema = z
-  .object({
-    schemeTypes: z.array(
-      z
-        .object({
-          schemeTypeid: z.number(),
-          schemeTypeName: z.string(),
-          schemeTypeKey: z.string(),
-          links: linksSchema.optional(),
-        })
-        .passthrough(),
-    ),
-    meta: metaSchema,
-    links: linksSchema.optional(),
-  })
-  .passthrough();
+export const schemeTypesResponseSchema = z.strictObject({
+  schemeTypes: z.array(
+    z.strictObject({
+      schemeTypeid: z.number(),
+      schemeTypeName: z.string(),
+      schemeTypeKey: z.string(),
+      links: linksSchema.optional(),
+    }),
+  ),
+  meta: metaSchema,
+  links: linksSchema.optional(),
+});
 
-export const scoreDescriptorsResponseSchema = z
-  .object({
-    scoreDescriptors: z.array(
-      z
-        .object({
-          Id: z.number(),
-          ScoreCategory: z.string(),
-          Score: z.number(),
-          Description: z.string(),
-          links: linksSchema,
-        })
-        .passthrough(),
-    ),
-    meta: metaSchema,
-    links: linksSchema,
-  })
-  .passthrough();
+export const scoreDescriptorsResponseSchema = z.strictObject({
+  scoreDescriptors: z.array(
+    z.strictObject({
+      Id: z.number(),
+      ScoreCategory: z.string(),
+      Score: z.number(),
+      Description: z.string(),
+      links: linksSchema,
+    }),
+  ),
+  meta: metaSchema,
+  links: linksSchema,
+});
 
 // Extract valid scores
 const validHygieneScores = Object.freeze(
@@ -319,155 +260,182 @@ export const schemeNoRatingScoreFHRS: (keyof typeof ratingValue.FHRS)[] = [
   "Exempt",
 ];
 
+// Shared address fields used across establishment address variants
+const addressFields = z.strictObject({
+  // FHRSID 1714030 is missing AddressLine1, but has AddressLine2. So AddressLine1 needs to be optional. (last checked 2024-11-23)
+  AddressLine1: z.string().optional(),
+  // FHRSID 1385728 is missing the real first line of the address, so the second line is in AddressLine1.
+  // So AddressLine2, AddressLine3, and AddressLine4 need to be optional. (last checked 2024-11-20)
+  AddressLine2: z.string().optional(),
+  AddressLine3: z.string().optional(),
+  AddressLine4: z.string().optional(),
+  // FHRSID 1496369 is a mobile caterer, it has an address, but no postcode.
+  // So PostCode needs to be optional. (last checked 2024-11-20)
+  PostCode: z.string().optional(),
+});
+
+// addressFields is used internally to compose strict address variants; no exported type needed.
+
 const fhrsValidRatingKeys = (key: keyof typeof ratingValue.FHRS) => {
   return z
     .literal(ratingValue.FHRS[key].ratingKey_en)
     .or(z.literal(ratingValue.FHRS[key].ratingKey_cy));
 };
 
-const ratingValueFHRS = z
-  .object({
+// Build strict rating variants for FHRS
+const ratingValueFHRSObjects = [
+  z.strictObject({
     SchemeType: z.literal("FHRS"),
-  })
-  .passthrough()
-  .and(
-    z.discriminatedUnion("RatingValue", [
-      z
-        .object({
-          RatingValue: z.literal("never"),
-          RatingKey: z.string(),
-          RatingDate: z.literal("never"),
-          Scores: z.literal(null),
-        })
-        .passthrough(),
-      ...schemeNoRatingScoreFHRS.map((key) =>
-        z
-          .object({
-            RatingValue: z.literal(key),
-            RatingKey: fhrsValidRatingKeys(key),
-            RatingDate: z.literal(null),
-            Scores: z.literal(null),
-          })
-          .passthrough()
-      ),
-      ...Object.keys(ratingValue.FHRS)
-        .filter(
-          (key) =>
-            schemeNoRatingScoreFHRS.includes(
-              key as keyof typeof ratingValue.FHRS,
-            ) === false,
-        )
-        .map((key) =>
-          z
-            .object({
-              RatingValue: z.literal(key),
-              RatingKey: fhrsValidRatingKeys(
-                key as keyof typeof ratingValue.FHRS,
-              ),
-              // FHRSID 1709868 has a rating, but no rating date. So RatingDate needs to be nullable. (last checked 2024-12-18)
-              RatingDate: z.string().nullable(),
-              // FHRSID 351094 has a rating, but no scores. So Scores needs to be nullable. (last checked 2024-11-23)
-              Scores: z
-                .object({
-                  Hygiene: constructZodLiteralUnionType(validHygieneScores),
-                  Structural: constructZodLiteralUnionType(
-                    validStructuralScores,
-                  ),
-                  ConfidenceInManagement: constructZodLiteralUnionType(
-                    validConfidenceScores,
-                  ),
-                })
-                .passthrough()
-                .nullable(),
-            })
-            .passthrough()
-        ),
-    ]),
-  );
-
-const ratingValueFHIS = z
-  .object({
-    SchemeType: z.literal("FHIS"),
-  })
-  .passthrough()
-  .and(
-    z.discriminatedUnion("RatingValue", [
-      z
-        .object({
-          RatingValue: z.literal("never"),
-          RatingKey: z.string(),
-          RatingDate: z.literal("never"),
-          Scores: z.literal(null),
-        })
-        .passthrough(),
-      ...Object.keys(ratingValue.FHIS).map((key) =>
-        z
-          .object({
-            RatingValue: z.literal(key),
-            RatingKey: z.literal(
-              ratingValue.FHIS[key as keyof typeof ratingValue.FHIS].ratingKey,
+    RatingValue: z.literal("never"),
+    RatingKey: z.string(),
+    RatingDate: z.literal("never"),
+    Scores: z.literal(null),
+  }),
+  ...schemeNoRatingScoreFHRS.map((key) =>
+    z.strictObject({
+      SchemeType: z.literal("FHRS"),
+      RatingValue: z.literal(key),
+      RatingKey: fhrsValidRatingKeys(key),
+      RatingDate: z.literal(null),
+      Scores: z.literal(null),
+    })
+  ),
+  ...Object.keys(ratingValue.FHRS)
+    .filter(
+      (key) =>
+        schemeNoRatingScoreFHRS.includes(
+          key as keyof typeof ratingValue.FHRS,
+        ) === false,
+    )
+    .map((key) =>
+      z.strictObject({
+        SchemeType: z.literal("FHRS"),
+        RatingValue: z.literal(key),
+        RatingKey: fhrsValidRatingKeys(key as keyof typeof ratingValue.FHRS),
+        // FHRSID 1709868 has a rating, but no rating date. So RatingDate needs to be nullable. (last checked 2024-12-18)
+        RatingDate: z.string().nullable(),
+        // FHRSID 351094 has a rating, but no scores. So Scores needs to be nullable. (last checked 2024-11-23)
+        Scores: z
+          .strictObject({
+            Hygiene: constructZodLiteralUnionType(validHygieneScores),
+            Structural: constructZodLiteralUnionType(validStructuralScores),
+            ConfidenceInManagement: constructZodLiteralUnionType(
+              validConfidenceScores,
             ),
-            // FHRSID 1436677 is Exempt, but has a rating date. So it can be null or a string. (last checked 2024-11-20)
-            RatingDate: z.string().nullable(),
-            Scores: z.literal(null),
           })
-          .passthrough()
-      ),
-    ]),
-  );
-
-export const dataSchema = z
-  .object({
-    FHRSEstablishment: z
-      .object({
-        EstablishmentCollection: z.array(
-          z
-            .object({
-              FHRSID: z.number(),
-              BusinessName: z.string(),
-              BusinessType: z.string(),
-              LocalAuthorityBusinessID: z.string(),
-            })
-            .passthrough()
-            .and(
-              z.union([
-                z
-                  .object({
-                    Geocode: z
-                      .object({
-                        Latitude: z.string(),
-                        Longitude: z.string(),
-                      })
-                      .passthrough(),
-                    // FHRSID 1714030 is missing AddressLine1, but has AddressLine2. So AddressLine1 needs to be optional. (last checked 2024-11-23)
-                    AddressLine1: z.string().optional(),
-                    // FHRSID 1385728 is missing the real first line of the address, so the second line is in AddressLine1.
-                    // So AddressLine2, AddressLine3, and AddressLine4 need to be optional. (last checed 2024-11-20)
-                    AddressLine2: z.string().optional(),
-                    AddressLine3: z.string().optional(),
-                    AddressLine4: z.string().optional(),
-                    // FHRSID 1496369 is a mobile caterer, it has an address, but no postcode.
-                    // So PostCode needs to be optional. (last checked 2024-11-20)
-                    PostCode: z.string().optional(),
-                  })
-                  .passthrough(),
-                z
-                  .object({
-                    Geocode: z.literal(null),
-                  })
-                  .passthrough(),
-              ]),
-            )
-            .and(z.union([ratingValueFHRS, ratingValueFHIS])),
-        ),
-        Header: z
-          .object({
-            ExtractDate: z.string(),
-            ItemCount: z.number(),
-            ReturnCode: z.string(),
-          })
-          .passthrough(),
+          .nullable(),
       })
-      .passthrough(),
+    ),
+];
+
+// Build strict rating variants for FHIS
+const ratingValueFHISObjects = [
+  z.strictObject({
+    SchemeType: z.literal("FHIS"),
+    RatingValue: z.literal("never"),
+    RatingKey: z.string(),
+    RatingDate: z.literal("never"),
+    Scores: z.literal(null),
+  }),
+  ...Object.keys(ratingValue.FHIS).map((key) =>
+    z.strictObject({
+      SchemeType: z.literal("FHIS"),
+      RatingValue: z.literal(key),
+      RatingKey: z.literal(
+        ratingValue.FHIS[key as keyof typeof ratingValue.FHIS].ratingKey,
+      ),
+      // FHRSID 1436677 is Exempt, but has a rating date. So it can be null or a string. (last checked 2024-11-20)
+      RatingDate: z.string().nullable(),
+      Scores: z.literal(null),
+    })
+  ),
+];
+
+// Strict address variants
+const establishmentAddressVariants = [
+  z
+    .strictObject({
+      Geocode: z.strictObject({
+        Latitude: z.string(),
+        Longitude: z.string(),
+      }),
+    })
+    .merge(addressFields),
+  z
+    .strictObject({
+      Geocode: z.literal(null),
+    })
+    .merge(addressFields),
+];
+
+// Base fields for an Establishment
+// Some authorities include additional metadata fields per establishment; keep them optional but explicit
+const establishmentOptionalAuthorityFields = z.strictObject({
+  LocalAuthorityEmailAddress: z.string().optional(),
+  RightToReply: z.string().optional(),
+});
+
+const establishmentBase = z
+  .strictObject({
+    FHRSID: z.number(),
+    BusinessName: z.string(),
+    BusinessType: z.string(),
+    LocalAuthorityBusinessID: z.union([z.string(), z.number()]),
+    BusinessTypeID: z.number().int().nonnegative(),
+    LocalAuthorityCode: z.string(),
+    LocalAuthorityName: z.string(),
+    LocalAuthorityWebSite: z.string(),
+    NewRatingPending: z.boolean(),
   })
-  .passthrough();
+  .merge(establishmentOptionalAuthorityFields);
+
+// Reusable Establishment schema as a union of fully strict merged variants
+export const establishmentSchema = z.union([
+  ...establishmentAddressVariants.flatMap((addr) =>
+    ratingValueFHRSObjects.map((rating) =>
+      establishmentBase.merge(addr).merge(rating)
+    )
+  ),
+  ...establishmentAddressVariants.flatMap((addr) =>
+    ratingValueFHISObjects.map((rating) =>
+      establishmentBase.merge(addr).merge(rating)
+    )
+  ),
+]);
+
+// Header schema (required in all responses)
+const headerSchema = z.strictObject({
+  ExtractDate: z.string(),
+  ItemCount: z.number().int().nonnegative(),
+  ReturnCode: z.string(),
+});
+
+export const dataSchema = z.strictObject({
+  FHRSEstablishment: z
+    .strictObject({
+      Header: headerSchema,
+      // EstablishmentCollection can be null only when Header.ItemCount === 0
+      EstablishmentCollection: z.array(establishmentSchema).nullable(),
+    })
+    .superRefine((object, context) => {
+      const { ItemCount } = object.Header;
+      // If ItemCount > 0, EstablishmentCollection must NOT be null
+      if (ItemCount > 0 && object.EstablishmentCollection === null) {
+        context.addIssue({
+          code: "custom",
+          path: ["EstablishmentCollection"],
+          message:
+            "EstablishmentCollection cannot be null when Header.ItemCount is greater than 0.",
+        });
+      }
+      // If EstablishmentCollection is null, Header.ItemCount must be 0
+      if (object.EstablishmentCollection === null && ItemCount !== 0) {
+        context.addIssue({
+          code: "custom",
+          path: ["EstablishmentCollection"],
+          message:
+            "EstablishmentCollection may be null only when Header.ItemCount is 0.",
+        });
+      }
+    }),
+});

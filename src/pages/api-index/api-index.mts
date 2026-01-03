@@ -64,6 +64,7 @@ const generateApiIndexData = async (targetDirectory: string) => {
       }
     }
 
+    // eslint-disable-next-line unicorn/no-array-sort
     const sortedApiTypes = [...apiFiles.keys()].sort((a, b) =>
       a.localeCompare(b)
     );
@@ -72,6 +73,7 @@ const generateApiIndexData = async (targetDirectory: string) => {
       const typeDisplayName = type.charAt(0).toUpperCase() +
         type.slice(1).replaceAll("-", " ");
       const languagesMap = apiFiles.get(type)!;
+      // eslint-disable-next-line unicorn/no-array-sort
       const sortedLanguages = [...languagesMap.keys()].sort((a, b) =>
         a.localeCompare(b)
       );

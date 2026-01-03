@@ -1,9 +1,7 @@
+import type { Authorities } from "../../ratings-api/types.mts";
 import { XMLBuilder, XMLParser } from "fast_xml_parser";
 import { z } from "zod";
-import {
-  authoritiesResponseSchema,
-  dataSchema,
-} from "../../ratings-api/schema.mts";
+import { dataSchema } from "../../ratings-api/schema.mts";
 import { join } from "@std/path";
 import { walk } from "@std/fs";
 import * as api from "../../ratings-api/rest.mts";
@@ -20,6 +18,10 @@ const sortEstablishments = (
   establishmentCollection:
     LocalAuthorityData["FHRSEstablishment"]["EstablishmentCollection"],
 ): void => {
+  if (!Array.isArray(establishmentCollection)) {
+    return;
+  }
+
   establishmentCollection.sort((a: Establishment, b: Establishment) => {
     const idA = Number(a.FHRSID);
     const idB = Number(b.FHRSID);
@@ -193,10 +195,7 @@ const processSingleOpenDataJsonFile = async (filePath: string) => {
     const fileContent = await Deno.readTextFile(filePath);
     const parsedJson = JSON.parse(fileContent);
     // If this fails, it will throw an error caught below
-    dataSchema.parse(parsedJson);
-    // We don't want to risk losing any properties that are not in the schema.
-    // So we keep the original structure, not the Zod parsed object.
-    const jsonData = parsedJson as typeof dataSchema._type;
+    const jsonData = dataSchema.parse(parsedJson);
 
     if (Array.isArray(jsonData?.FHRSEstablishment?.EstablishmentCollection)) {
       sortEstablishments(jsonData.FHRSEstablishment.EstablishmentCollection);
@@ -266,7 +265,7 @@ export const getBuildFileName = (dataURL: string) => {
 };
 
 export const getFilesOpenDataFiles = async (
-  apiAuthorities: typeof authoritiesResponseSchema._type.authorities,
+  apiAuthorities: Authorities,
 ): Promise<void> => {
   await Promise.all(
     apiAuthorities.map(async (localAuthority) => {

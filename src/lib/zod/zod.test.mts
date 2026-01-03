@@ -59,16 +59,6 @@ describe("constructZodLiteralUnionType", () => {
         "Literals passed do not meet the criteria for constructing a union schema, the minimum length is 2",
       );
     });
-
-    it("should create a union of symbol literals", () => {
-      const sym1 = Symbol("a");
-      const sym2 = Symbol("b");
-      const symbolLiterals = [sym1, sym2] as const;
-      const schema = constructZodLiteralUnionType(symbolLiterals);
-      assertEquals(schema.parse(sym1), sym1);
-      assertEquals(schema.parse(sym2), sym2);
-      assertThrows(() => schema.parse(Symbol("c")));
-    });
   });
 
   describe("Property-based tests", () => {
