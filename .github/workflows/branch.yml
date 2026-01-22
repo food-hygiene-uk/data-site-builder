@@ -1,8 +1,18 @@
-name: Pull Request
+name: branch.yml - Verify the branch integrity
 
+# Control concurrent executions
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+# Define trigger events
 on:
   pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Manual trigger
 
+# Define minimum required permissions
 permissions:
   contents: read
 
@@ -26,9 +36,9 @@ jobs:
         run: |
           echo "DENO_VERSION=$(cat .deno-version)" >> "$GITHUB_OUTPUT"
 
-  lint:
+  check:
     runs-on: ubuntu-latest
-    timeout-minutes: 30 # Prevent hanging jobs
+    timeout-minutes: 30
 
     needs: [command-outputs]
     env:
@@ -37,8 +47,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-        with:
-          fetch-depth: 1
 
       - name: Ensure SHA pinned actions
         uses: zgosalvez/github-actions-ensure-sha-pinned-actions@6124774845927d14c601359ab8138699fa5b70c3 # v4.0.1
@@ -49,7 +57,7 @@ jobs:
           deno-version: ${{ env.DENO_VERSION }}
 
       - name: Deno install
-        run: deno install
+        run: deno install .
 
       - name: Run Deno test
         run: deno test .
@@ -75,3 +83,6 @@ jobs:
 
       - name: Run Deno check
         run: deno check src/generate-site.mts
+
+      - name: Generate ratings site
+        run: deno task build
