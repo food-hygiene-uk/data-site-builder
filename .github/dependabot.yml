@@ -8,9 +8,21 @@ version: 2
 updates:
   - package-ecosystem: "devcontainers"
     directory: "/"
+    cooldown:
+      default-days: 7
     schedule:
-      interval: weekly
+      interval: "cron"
+      cronjob: "0 9 * * *"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 500
+
   - package-ecosystem: "github-actions"
     directory: "/"
+    cooldown:
+      default-days: 7
     schedule:
-      interval: weekly
+      interval: "cron"
+      cronjob: "0 9 * * *"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 500
+

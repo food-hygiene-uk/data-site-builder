@@ -1,6 +1,24 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchManagers": ["devcontainer"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["dockerfile"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["npm"],
+      "enabled": false
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
