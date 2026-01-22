@@ -57,7 +57,7 @@ jobs:
           deno-version: ${{ env.DENO_VERSION }}
 
       - name: Deno install
-        run: deno install .
+        run: deno install
 
       - name: Run Deno test
         run: deno test .
