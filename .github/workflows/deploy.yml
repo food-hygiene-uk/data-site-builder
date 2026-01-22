@@ -1,4 +1,4 @@
-name: Deploy
+name: deploy.yml - Generate Data Site
 
 # Control concurrent executions
 concurrency:
@@ -52,12 +52,29 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
 
-      - name: Get GitHub App User ID
-        id: get-user-id
+      - name: Get GitHub Commit Credentials
+        id: commit-credentials
         env:
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app_slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+          set -euo pipefail
+
+          BOT_USER="${APP_SLUG}%5Bbot%5D"
+
+          # Query id and login, capture stderr for diagnostics
+          USER_ID="$(gh api "users/${BOT_USER}" --jq .id 2>/tmp/gh-api.err || true)"
+          USER_LOGIN="$(gh api "users/${BOT_USER}" --jq .login 2>/tmp/gh-api.err || true)"
+
+          if [ -z "${USER_ID:-}" ] || [ -z "${USER_LOGIN:-}" ]; then
+            echo "ERROR: failed to get bot user info for ${APP_SLUG}[bot]"
+            echo "gh api stderr (first 200 lines):"
+            sed -n '1,200p' /tmp/gh-api.err
+            exit 1
+          fi
+
+          echo "user-name=${USER_LOGIN}" >> "$GITHUB_OUTPUT"
+          echo "user-email=${USER_ID}+${USER_LOGIN}@users.noreply.github.com" >> "$GITHUB_OUTPUT"
 
       - name: Create workspace directory
         run: mkdir ./repos/
@@ -103,21 +120,25 @@ jobs:
 
       - name: Configure Git
         working-directory: ./repos/gh-pages
+        env:
+          USER_NAME: ${{ steps.commit-credentials.outputs.user-name }}
+          USER_EMAIL: ${{ steps.commit-credentials.outputs.user-email }}
         run: |
-          git config --local user.name "${{ steps.app-token.outputs.app_slug }}[bot]"
-          git config --local user.email "${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app_slug }}[bot]@users.noreply.github.com"
+          git config --local user.name "${{ env.USER_NAME }}"
+          git config --local user.email "${{ env.USER_EMAIL }}"
 
       - name: Commit and push changes
         working-directory: ./repos/gh-pages
         env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/food-hygiene-uk/data.git
 
-          if ! git diff --quiet || ! git ls-files --others --exclude-standard --quiet; then
+          if [ -n "$(git status --porcelain --untracked-files=all)" ]; then
             git add .
             git commit -m "Update site"
-            git push origin HEAD:main || { echo "Failed to push changes"; exit 1; }
+            git push origin HEAD:${{ env.GITHUB_REF_NAME }} || { echo "Failed to push changes"; exit 1; }
           else
             echo "No changes detected"
           fi
