@@ -1,6 +1,6 @@
 ARG DENO_VERSION
 FROM denoland/deno:bin-${DENO_VERSION} AS deno
-FROM mcr.microsoft.com/devcontainers/typescript-node@sha256:634d3ffc8c37508259a23462b838fd85a9e5bb80dcdd0b31d673aa33dc4c8592
+FROM mcr.microsoft.com/devcontainers/typescript-node@sha256:8a013086bcf4a986186fbcb2264b6f16936be32d8b21c756a0fd7ea7d7c203d3
 # 24-bookworm
 
 # Install Git and related tools
