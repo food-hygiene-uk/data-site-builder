@@ -7,10 +7,6 @@
       "enabled": false
     },
     {
-      "matchManagers": ["dockerfile"],
-      "enabled": false
-    },
-    {
       "matchManagers": ["github-actions"],
       "enabled": false
     },

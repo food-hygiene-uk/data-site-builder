@@ -26,16 +26,6 @@ updates:
       timezone: "Europe/London"
     open-pull-requests-limit: 500
 
-  - package-ecosystem: docker
-    directory: /.devcontainer
-    cooldown:
-      default-days: 7
-    schedule:
-      interval: "cron"
-      cronjob: "0 9 * * *"
-      timezone: "Europe/London"
-    open-pull-requests-limit: 500
-
   - package-ecosystem: npm
     directory: /
     cooldown:
