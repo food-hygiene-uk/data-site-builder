@@ -6,12 +6,14 @@ import { generateApiIndexPage } from "./pages/api-index/api-index.mts";
 import { openDataFilesIndex } from "./pages/open-data-files-index/open-data-files-index.mts";
 import { getFilesApi } from "./generate-site/files-api/files-api.mts";
 import { getFilesOpenDataFiles } from "./generate-site/files-open-data-files/files-open-data-files.mts";
+import { generateEstablishments } from "./generate-site/files-establishments/files-establishment.mts";
 
 console.time("generate-site");
 
 // Ensure build/dist directories exist
 await emptyDir("build");
 await ensureDir("build/files");
+await ensureDir("build/files/establishments");
 await ensureDir("build/files/open-data-files");
 await ensureDir("build/files/api");
 
@@ -60,10 +62,10 @@ const apiAuthorities = Deno.env.get("CI") ? authoritiesResponse.authorities : [
 ];
 
 await Promise.all([getFilesApi(), getFilesOpenDataFiles(apiAuthorities)]);
+await generateEstablishments();
 
 await copy("build", "dist", { overwrite: true });
 
-await generateApiIndexPage();
-await openDataFilesIndex();
+await Promise.all([generateApiIndexPage(), openDataFilesIndex()]);
 
 console.timeEnd("generate-site");
