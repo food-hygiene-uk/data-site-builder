@@ -56,17 +56,20 @@ jobs:
         with:
           deno-version: ${{ env.DENO_VERSION }}
 
-      - name: Deno install
-        run: deno install
-
       - name: Run Deno test
-        run: deno test .
+        run: deno test --allow-read=build/test-temp/ --allow-write=build/test-temp/ .
+
+      - name: Run Deno lint
+        run: deno lint .
 
       - name: Run ESLint
         run: deno task eslint:check
 
-      - name: Run Deno lint
-        run: deno lint .
+      - name: Run Stylelint
+        run: deno task stylelint:check
+
+      - name: Run Prettier debug check
+        run: deno task prettier:debug-check
 
       - name: Run formatter
         run: |
@@ -82,7 +85,7 @@ jobs:
           fi
 
       - name: Run Deno check
-        run: deno check src/generate-site.mts
+        run: deno check .
 
-      - name: Generate ratings site
+      - name: Generate site
         run: deno task build

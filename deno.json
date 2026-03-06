@@ -49,7 +49,7 @@
     },
     "git:pre-commit": {
       "description": "Updates and validadates the code as done in CI",
-      "command": "deno install && deno task deno:lock-update && deno test --coverage --allow-read=build/test-temp/ --allow-write=build/test-temp/ && deno lint && deno task eslint:check && deno task stylelint:check && deno task prettier:debug-check && deno task prettier:write && deno fmt && deno check ."
+      "command": "deno install && deno task deno:lock-update && deno test --coverage --allow-read=build/test-temp/ --allow-write=build/test-temp/ . && deno lint && deno task eslint:check && deno task stylelint:check && deno task prettier:debug-check && deno task prettier:write && deno fmt && deno check ."
     },
     "playwright:install": {
       "description": "Installs Playwright dependencies",

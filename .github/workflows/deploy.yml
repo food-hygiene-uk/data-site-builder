@@ -91,13 +91,43 @@ jobs:
         with:
           deno-version: ${{ env.DENO_VERSION }}
 
+      - name: Run Deno test
+        working-directory: ./repos/source
+        run: deno test --allow-read=build/test-temp/ --allow-write=build/test-temp/ .
+
       - name: Run Deno lint
         working-directory: ./repos/source
         run: deno lint .
 
-      - name: Run Deno fmt
+      - name: Run ESLint
         working-directory: ./repos/source
-        run: deno fmt --check .
+        run: deno task eslint:check
+
+      - name: Run Stylelint
+        working-directory: ./repos/source
+        run: deno task stylelint:check
+
+      - name: Run Prettier debug check
+        working-directory: ./repos/source
+        run: deno task prettier:debug-check
+
+      - name: Run formatter
+        working-directory: ./repos/source
+        run: |
+          deno task prettier:write ; status=$?
+          if [ $status -eq 2 ]; then
+            echo "Something’s wrong with Prettier."
+            exit 2
+          fi
+          deno fmt
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Error: Unformatted files detected. Please commit changes after running the formatter."
+            exit 1
+          fi
+
+      - name: Run Deno check
+        working-directory: ./repos/source
+        run: deno check .
 
       - name: Generate site
         working-directory: ./repos/source
