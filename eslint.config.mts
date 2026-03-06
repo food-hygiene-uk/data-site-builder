@@ -140,13 +140,17 @@ export default defineConfig([
   {
     // Ignore patterns
     ignores: [
-      "dist/",
       "build/",
+      "coverage/",
+      "dist/",
+      "node-modules/",
+      "playwright-report/",
+      "test-results/",
+      "tmp/",
       "deno.lock",
       "package.json",
       "deno.json",
       "assets/google*.html",
-      "node_modules/",
       ".vscode/",
     ],
   },

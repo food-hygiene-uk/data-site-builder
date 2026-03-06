@@ -1,8 +1,9 @@
 .DS_STORE
 build/
+coverage/
 dist/
 node_modules/
-coverage/
+tmp/
 
 # Playwright
 test-results/

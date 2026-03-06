@@ -93,7 +93,7 @@ jobs:
 
       - name: Run Deno test
         working-directory: ./repos/source
-        run: deno test --allow-read=build/test-temp/ --allow-write=build/test-temp/ .
+        run: deno test --allow-read=tmp/ --allow-write=tmp/ .
 
       - name: Run Deno lint
         working-directory: ./repos/source

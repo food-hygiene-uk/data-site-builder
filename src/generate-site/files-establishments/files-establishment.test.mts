@@ -40,7 +40,7 @@ const mockDataNoCollection = {
 describe("generateEstablishments", () => {
   describe("Example-based tests", () => {
     it("should create individual JSON files for each establishment", async () => {
-      const temporaryDirectory = join("build", "test-temp");
+      const temporaryDirectory = join("tmp", `test-${crypto.randomUUID()}`);
       await Deno.remove(temporaryDirectory, { recursive: true }).catch(
         () => {},
       );
@@ -98,7 +98,7 @@ describe("generateEstablishments", () => {
     });
 
     it("should handle empty EstablishmentCollection", async () => {
-      const temporaryDirectory = join("build", "test-temp");
+      const temporaryDirectory = join("tmp", `test-${crypto.randomUUID()}`);
       await Deno.remove(temporaryDirectory, { recursive: true }).catch(
         () => {},
       );
@@ -129,7 +129,7 @@ describe("generateEstablishments", () => {
     });
 
     it("should handle missing EstablishmentCollection", async () => {
-      const temporaryDirectory = join("build", "test-temp");
+      const temporaryDirectory = join("tmp", `test-${crypto.randomUUID()}`);
       await Deno.remove(temporaryDirectory, { recursive: true }).catch(
         () => {},
       );
@@ -157,7 +157,7 @@ describe("generateEstablishments", () => {
     });
 
     it("should overwrite duplicate FHRSIDs", async () => {
-      const temporaryDirectory = join("build", "test-temp");
+      const temporaryDirectory = join("tmp", `test-${crypto.randomUUID()}`);
       const openDataDirectory = join(temporaryDirectory, "open-data-files");
       const establishmentsDirectory = join(
         temporaryDirectory,
@@ -238,7 +238,7 @@ describe("generateEstablishments", () => {
         },
       };
 
-      const temporaryDirectory = join("build", "test-temp");
+      const temporaryDirectory = join("tmp", `test-${crypto.randomUUID()}`);
       const openDataDirectory = join(temporaryDirectory, "open-data-files");
       const establishmentsDirectory = join(
         temporaryDirectory,
