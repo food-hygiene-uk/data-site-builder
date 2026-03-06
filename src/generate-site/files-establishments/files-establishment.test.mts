@@ -208,6 +208,8 @@ describe("generateEstablishments", () => {
       await generateEstablishments(openDataDirectory, establishmentsDirectory);
       const outputWelsh = join(establishmentsDirectory, "12345-cy-GB.json");
       assertExists(await Deno.stat(outputWelsh));
+      const cyContent = await Deno.readTextFile(outputWelsh);
+      assertEquals(JSON.parse(cyContent), mockEstablishmentDuplicate);
 
       await Deno.remove(temporaryDirectory, { recursive: true });
     });
