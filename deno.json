@@ -1,6 +1,6 @@
 {
   "imports": {
-    "@playwright/test": "npm:@playwright/test@1.57.0",
+    "@playwright/test": "npm:@playwright/test@1.59.1",
     "@std/assert": "jsr:@std/assert@1.0.19",
     "@std/fs": "jsr:@std/fs@1.0.23",
     "@std/path": "jsr:@std/path@1.1.4",
@@ -21,7 +21,7 @@
     "fast_xml_parser": "npm:fast-xml-parser@5.3.3",
     "http-server": "npm:http-server@14.1.1",
     "jiti": "npm:jiti@2.6.1",
-    "playwright": "npm:playwright@1.57.0",
+    "playwright": "npm:playwright@1.59.1",
     "postcss": "npm:postcss@8.5.14",
     "prettier": "npm:prettier@3.7.4",
     "scripts/": "./src/scripts/",
