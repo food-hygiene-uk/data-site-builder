@@ -36,7 +36,7 @@
     "npm:eslint@9.39.2": "9.39.2_jiti@2.6.1",
     "npm:estree-walker@3.0.3": "3.0.3",
     "npm:fast-check@4.7.0": "4.7.0",
-    "npm:fast-xml-parser@5.3.3": "5.3.3",
+    "npm:fast-xml-parser@5.7.3": "5.7.3",
     "npm:http-server@14.1.1": "14.1.1",
     "npm:jiti@2.6.1": "2.6.1",
     "npm:meriyah@6.0.5": "6.0.5",
@@ -288,6 +288,9 @@
     },
     "@keyv/serialize@1.1.1": {
       "integrity": "sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA=="
+    },
+    "@nodable/entities@2.1.0": {
+      "integrity": "sha512-nyT7T3nbMyBI/lvr6L5TyWbFJAI9FTgVRakNoBqCD+PmID8DzFrrNdLLtHMwMszOtqZa8PAOV24ZqDnQrhQINA=="
     },
     "@nodelib/fs.scandir@2.1.5": {
       "integrity": "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==",
@@ -1297,9 +1300,18 @@
     "fast-uri@3.1.0": {
       "integrity": "sha512-iPeeDKJSWf4IEOasVVrknXpaBV0IApz/gp7S2bb7Z4Lljbl2MGJRqInZiUrQwV16cpzw/D3S5j5Julj/gT52AA=="
     },
-    "fast-xml-parser@5.3.3": {
-      "integrity": "sha512-2O3dkPAAC6JavuMm8+4+pgTk+5hoAs+CjZ+sWcQLkX9+/tHRuTkQh/Oaifr8qDmZ8iEHb771Ea6G8CdwkrgvYA==",
+    "fast-xml-builder@1.1.8": {
+      "integrity": "sha512-sDVBc2gg8pSKvcbE8rBmOyjSGQf0AdsbqvHeIOv3D/uYNoV4eCReQXyDF8Pdv8+m1FHazACypSz2hR7O2S1LLw==",
       "dependencies": [
+        "path-expression-matcher"
+      ]
+    },
+    "fast-xml-parser@5.7.3": {
+      "integrity": "sha512-C0AaNuC+mscy6vrAQKAc/rMq+zAPHodfHGZu4sGVehvAQt/JLG1O5zEcYcXSY5zSqr4YVgxsB+pHXTq0i7eDlg==",
+      "dependencies": [
+        "@nodable/entities",
+        "fast-xml-builder",
+        "path-expression-matcher",
         "strnum"
       ],
       "bin": true
@@ -2049,6 +2061,9 @@
     "path-exists@4.0.0": {
       "integrity": "sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w=="
     },
+    "path-expression-matcher@1.5.0": {
+      "integrity": "sha512-cbrerZV+6rvdQrrD+iGMcZFEiiSrbv9Tfdkvnusy6y0x0GKBXREFg/Y65GhIfm0tnLntThhzCnfKwp1WRjeCyQ=="
+    },
     "path-key@3.1.1": {
       "integrity": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="
     },
@@ -2654,8 +2669,8 @@
     "strip-json-comments@3.1.1": {
       "integrity": "sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig=="
     },
-    "strnum@2.1.2": {
-      "integrity": "sha512-l63NF9y/cLROq/yqKXSLtcMeeyOfnSQlfMSlzFt/K73oIaD8DGaQWd7Z34X9GPiKqP5rbSh84Hl4bOlLcjiSrQ=="
+    "strnum@2.2.3": {
+      "integrity": "sha512-oKx6RUCuHfT3oyVjtnrmn19H1SiCqgJSg+54XqURKp5aCMbrXrhLjRN9TjuwMjiYstZ0MzDrHqkGZ5dFTKd+zg=="
     },
     "stylehacks@7.0.11_postcss@8.5.14": {
       "integrity": "sha512-iODNfhXVLqc5LADs+Y6Oh5wJuK5ZcHbVng8aiK3y9pjMQdc5hLrBW0eFU6FtnpNrE6PoEg/MmFTU4waotj5WNg==",
@@ -3084,7 +3099,7 @@
       "npm:eslint-plugin-unicorn@62.0.0",
       "npm:eslint@9.39.2",
       "npm:fast-check@4.7.0",
-      "npm:fast-xml-parser@5.3.3",
+      "npm:fast-xml-parser@5.7.3",
       "npm:http-server@14.1.1",
       "npm:jiti@2.6.1",
       "npm:playwright@1.57.0",
