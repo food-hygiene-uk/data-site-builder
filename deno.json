@@ -28,7 +28,7 @@
     "stylelint-config-standard": "npm:stylelint-config-standard@39.0.1",
     "stylelint": "npm:stylelint@16.26.1",
     "uglify-js": "npm:uglify-js@3.19.3",
-    "zod": "npm:zod@4.3.4"
+    "zod": "npm:zod@4.4.3"
   },
   "tasks": {
     "build": {
