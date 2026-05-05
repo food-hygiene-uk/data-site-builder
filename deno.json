@@ -13,7 +13,7 @@
     "cssnano": "npm:cssnano@7.1.8",
     "eslint-config-prettier": "npm:eslint-config-prettier@10.1.8",
     "eslint-plugin-import": "npm:eslint-plugin-import@2.32.0",
-    "eslint-plugin-jsdoc": "npm:eslint-plugin-jsdoc@61.5.0",
+    "eslint-plugin-jsdoc": "npm:eslint-plugin-jsdoc@61.7.1",
     "eslint-plugin-promise": "npm:eslint-plugin-promise@7.2.1",
     "eslint-plugin-unicorn": "npm:eslint-plugin-unicorn@62.0.0",
     "eslint": "npm:eslint@9.39.2",
