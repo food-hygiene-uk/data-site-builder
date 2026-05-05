@@ -22,7 +22,7 @@
     "http-server": "npm:http-server@14.1.1",
     "jiti": "npm:jiti@2.6.1",
     "playwright": "npm:playwright@1.57.0",
-    "postcss": "npm:postcss@8.5.6",
+    "postcss": "npm:postcss@8.5.14",
     "prettier": "npm:prettier@3.7.4",
     "scripts/": "./src/scripts/",
     "stylelint-config-standard": "npm:stylelint-config-standard@39.0.1",
