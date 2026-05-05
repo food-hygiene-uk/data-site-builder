@@ -30,7 +30,7 @@
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1",
     "npm:eslint-plugin-jsdoc@61.7.1": "61.7.1_eslint@9.39.2__jiti@2.6.1",
-    "npm:eslint-plugin-promise@7.2.1": "7.2.1_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1",
+    "npm:eslint-plugin-promise@7.3.0": "7.3.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1",
     "npm:eslint-plugin-unicorn@62.0.0": "62.0.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1",
     "npm:eslint@*": "9.39.2_jiti@2.6.1",
     "npm:eslint@9.39.2": "9.39.2_jiti@2.6.1",
@@ -1135,8 +1135,8 @@
         "to-valid-identifier"
       ]
     },
-    "eslint-plugin-promise@7.2.1_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1": {
-      "integrity": "sha512-SWKjd+EuvWkYaS+uN2csvj0KoP43YTu7+phKQ5v+xw6+A0gutVX2yqCeCkC3uLCJFiPfR2dD8Es5L7yUsmvEaA==",
+    "eslint-plugin-promise@7.3.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1": {
+      "integrity": "sha512-6uGiOR0INuujr6PEQmeSSP7GbIMJ/ebEXXiEzb/nOj68LknH5Pxzb/AbZivmr6VE6TkTE8rTjRK9zhKpK6HsRA==",
       "dependencies": [
         "@eslint-community/eslint-utils",
         "eslint"
@@ -3080,7 +3080,7 @@
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
       "npm:eslint-plugin-jsdoc@61.7.1",
-      "npm:eslint-plugin-promise@7.2.1",
+      "npm:eslint-plugin-promise@7.3.0",
       "npm:eslint-plugin-unicorn@62.0.0",
       "npm:eslint@9.39.2",
       "npm:fast-check@4.7.0",
