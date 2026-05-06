@@ -25,7 +25,7 @@
     "postcss": "npm:postcss@8.5.14",
     "prettier": "npm:prettier@3.7.4",
     "scripts/": "./src/scripts/",
-    "stylelint-config-standard": "npm:stylelint-config-standard@39.0.1",
+    "stylelint-config-standard": "npm:stylelint-config-standard@40.0.0",
     "stylelint": "npm:stylelint@16.26.1",
     "uglify-js": "npm:uglify-js@3.19.3",
     "zod": "npm:zod@4.4.3"
