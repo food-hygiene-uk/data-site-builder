@@ -31,7 +31,7 @@
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1",
     "npm:eslint-plugin-jsdoc@62.9.0": "62.9.0_eslint@9.39.2__jiti@2.6.1",
     "npm:eslint-plugin-promise@7.3.0": "7.3.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1",
-    "npm:eslint-plugin-unicorn@62.0.0": "62.0.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1",
+    "npm:eslint-plugin-unicorn@64.0.0": "64.0.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1",
     "npm:eslint@*": "9.39.2_jiti@2.6.1",
     "npm:eslint@9.39.2": "9.39.2_jiti@2.6.1",
     "npm:estree-walker@3.0.3": "3.0.3",
@@ -628,8 +628,8 @@
       ],
       "bin": true
     },
-    "builtin-modules@5.0.0": {
-      "integrity": "sha512-bkXY9WsVpY7CvMhKSR6pZilZu9Ln5WDrKVBUXf2S443etkmEO4V58heTecXcUIsNsi4Rx8JUO4NfX1IcQl4deg=="
+    "builtin-modules@5.1.0": {
+      "integrity": "sha512-c5JxaDrzwRjq3WyJkI1AGR5xy6Gr6udlt7sQPbl09+3ckB+Zo2qqQ2KhCTBr7Q8dHB43bENGYEk4xddrFH/b7A=="
     },
     "cacheable@2.3.1": {
       "integrity": "sha512-yr+FSHWn1ZUou5LkULX/S+jhfgfnLbuKQjE40tyEd4fxGZVMbBL5ifno0J0OauykS8UiCSgHi+DV/YD+rjFxFg==",
@@ -689,8 +689,8 @@
     "change-case@5.4.4": {
       "integrity": "sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w=="
     },
-    "ci-info@4.3.1": {
-      "integrity": "sha512-Wdy2Igu8OcBpI2pZePZ5oWjPC38tmDVx5WKUXKwlLYkA0ozo85sLsLvkBbBn/sZaSCMFOGZJ14fvW9t5/d7kdA=="
+    "ci-info@4.4.0": {
+      "integrity": "sha512-77PSwercCZU2Fc4sX94eF8k8Pxte6JAwL4/ICZLFjJLqegs7kCuAsqqj/70NQF6TvDpgFjkubQB2FW2ZZddvQg=="
     },
     "clean-regexp@1.0.0": {
       "integrity": "sha512-GfisEZEJvzKrmGWkvfhgzcz/BllN1USeqD2V6tg14OAOgaCD2Z/PUEuxnAZ/nPvmaHRG7a8y77p1T/IRQ4D1Hw==",
@@ -719,8 +719,8 @@
     "concat-map@0.0.1": {
       "integrity": "sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg=="
     },
-    "core-js-compat@3.47.0": {
-      "integrity": "sha512-IGfuznZ/n7Kp9+nypamBhvwdwLsW6KC8IOaURw2doAK5e98AG3acVLdh0woOnEqCfUtS+Vu882JE4k/DAm3ItQ==",
+    "core-js-compat@3.49.0": {
+      "integrity": "sha512-VQXt1jr9cBz03b331DFDCCP90b3fanciLkgiOoy8SBHy06gNf+vQ1A3WFLqG7I8TipYIKeYK9wxd0tUrvHcOZA==",
       "dependencies": [
         "browserslist"
       ]
@@ -1152,20 +1152,18 @@
         "eslint"
       ]
     },
-    "eslint-plugin-unicorn@62.0.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1": {
-      "integrity": "sha512-HIlIkGLkvf29YEiS/ImuDZQbP12gWyx5i3C6XrRxMvVdqMroCI9qoVYCoIl17ChN+U89pn9sVwLxhIWj5nEc7g==",
+    "eslint-plugin-unicorn@64.0.0_eslint@9.39.2__jiti@2.6.1_jiti@2.6.1": {
+      "integrity": "sha512-rNZwalHh8i0UfPlhNwg5BTUO1CMdKNmjqe+TgzOTZnpKoi8VBgsW7u9qCHIdpxEzZ1uwrJrPF0uRb7l//K38gA==",
       "dependencies": [
         "@babel/helper-validator-identifier",
         "@eslint-community/eslint-utils",
-        "@eslint/plugin-kit",
         "change-case",
         "ci-info",
         "clean-regexp",
         "core-js-compat",
         "eslint",
-        "esquery",
         "find-up-simple",
-        "globals@16.5.0",
+        "globals@17.6.0",
         "indent-string",
         "is-builtin-module",
         "jsesc",
@@ -1480,8 +1478,8 @@
     "globals@14.0.0": {
       "integrity": "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ=="
     },
-    "globals@16.5.0": {
-      "integrity": "sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ=="
+    "globals@17.6.0": {
+      "integrity": "sha512-sepffkT8stwnIYbsMBpoCHJuJM5l98FUF2AnE07hfvE0m/qp3R586hw4jF4uadbhvg1ooIdzuu7CsfD2jzCaNA=="
     },
     "globalthis@1.0.4": {
       "integrity": "sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==",
@@ -2432,8 +2430,8 @@
         "set-function-name"
       ]
     },
-    "regjsparser@0.13.0": {
-      "integrity": "sha512-NZQZdC5wOE/H3UT28fVGL+ikOZcEzfMGk/c3iN9UGxzWHMa1op7274oyiUVrAG4B2EuFhus8SvkaYnhvW92p9Q==",
+    "regjsparser@0.13.1": {
+      "integrity": "sha512-dLsljMd9sqwRkby8zhO1gSg3PnJIBFid8f4CQj/sXx+7cKx+E7u0PKhZ+U4wmhx7EfmtvnA318oVaIkAB1lRJw==",
       "dependencies": [
         "jsesc"
       ],
@@ -3106,7 +3104,7 @@
       "npm:eslint-plugin-import@2.32.0",
       "npm:eslint-plugin-jsdoc@62.9.0",
       "npm:eslint-plugin-promise@7.3.0",
-      "npm:eslint-plugin-unicorn@62.0.0",
+      "npm:eslint-plugin-unicorn@64.0.0",
       "npm:eslint@9.39.2",
       "npm:fast-check@4.7.0",
       "npm:fast-xml-parser@5.7.3",
