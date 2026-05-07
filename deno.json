@@ -20,7 +20,7 @@
     "fast-check": "npm:fast-check@4.7.0",
     "fast_xml_parser": "npm:fast-xml-parser@5.7.3",
     "http-server": "npm:http-server@14.1.1",
-    "jiti": "npm:jiti@2.6.1",
+    "jiti": "npm:jiti@2.7.0",
     "playwright": "npm:playwright@1.59.1",
     "postcss": "npm:postcss@8.5.14",
     "prettier": "npm:prettier@3.7.4",
