@@ -26,7 +26,7 @@
     "prettier": "npm:prettier@3.7.4",
     "scripts/": "./src/scripts/",
     "stylelint-config-standard": "npm:stylelint-config-standard@40.0.0",
-    "stylelint": "npm:stylelint@16.26.1",
+    "stylelint": "npm:stylelint@17.11.0",
     "uglify-js": "npm:uglify-js@3.19.3",
     "zod": "npm:zod@4.4.3"
   },
