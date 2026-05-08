@@ -26,7 +26,7 @@
     "npm:@typescript-eslint/eslint-plugin@8.59.2": "8.59.2_@typescript-eslint+parser@8.59.2__eslint@9.39.2___jiti@2.7.0__typescript@6.0.3__jiti@2.7.0_eslint@9.39.2__jiti@2.7.0_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.59.2": "8.59.2_eslint@9.39.2__jiti@2.7.0_typescript@6.0.3_jiti@2.7.0",
     "npm:cssnano-preset-advanced@7.0.16": "7.0.16_postcss@8.5.14",
-    "npm:cssnano@7.1.9": "7.1.9_postcss@8.5.14",
+    "npm:cssnano@8.0.0": "8.0.0_postcss@8.5.14",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@9.39.2__jiti@2.7.0_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.2__jiti@2.7.0_jiti@2.7.0",
     "npm:eslint-plugin-jsdoc@62.9.0": "62.9.0_eslint@9.39.2__jiti@2.7.0_jiti@2.7.0",
@@ -806,7 +806,7 @@
       "dependencies": [
         "autoprefixer",
         "browserslist",
-        "cssnano-preset-default",
+        "cssnano-preset-default@7.0.17_postcss@8.5.14",
         "postcss",
         "postcss-discard-unused",
         "postcss-merge-idents",
@@ -819,35 +819,70 @@
       "dependencies": [
         "browserslist",
         "css-declaration-sorter",
-        "cssnano-utils",
+        "cssnano-utils@5.0.3_postcss@8.5.14",
         "postcss",
         "postcss-calc",
-        "postcss-colormin",
-        "postcss-convert-values",
-        "postcss-discard-comments",
-        "postcss-discard-duplicates",
-        "postcss-discard-empty",
-        "postcss-discard-overridden",
-        "postcss-merge-longhand",
-        "postcss-merge-rules",
-        "postcss-minify-font-values",
-        "postcss-minify-gradients",
-        "postcss-minify-params",
-        "postcss-minify-selectors",
-        "postcss-normalize-charset",
-        "postcss-normalize-display-values",
-        "postcss-normalize-positions",
-        "postcss-normalize-repeat-style",
-        "postcss-normalize-string",
-        "postcss-normalize-timing-functions",
-        "postcss-normalize-unicode",
-        "postcss-normalize-url",
-        "postcss-normalize-whitespace",
-        "postcss-ordered-values",
-        "postcss-reduce-initial",
-        "postcss-reduce-transforms",
-        "postcss-svgo",
-        "postcss-unique-selectors"
+        "postcss-colormin@7.0.10_postcss@8.5.14",
+        "postcss-convert-values@7.0.12_postcss@8.5.14",
+        "postcss-discard-comments@7.0.8_postcss@8.5.14",
+        "postcss-discard-duplicates@7.0.4_postcss@8.5.14",
+        "postcss-discard-empty@7.0.3_postcss@8.5.14",
+        "postcss-discard-overridden@7.0.3_postcss@8.5.14",
+        "postcss-merge-longhand@7.0.7_postcss@8.5.14",
+        "postcss-merge-rules@7.0.11_postcss@8.5.14",
+        "postcss-minify-font-values@7.0.3_postcss@8.5.14",
+        "postcss-minify-gradients@7.0.5_postcss@8.5.14",
+        "postcss-minify-params@7.0.9_postcss@8.5.14",
+        "postcss-minify-selectors@7.1.2_postcss@8.5.14",
+        "postcss-normalize-charset@7.0.3_postcss@8.5.14",
+        "postcss-normalize-display-values@7.0.3_postcss@8.5.14",
+        "postcss-normalize-positions@7.0.4_postcss@8.5.14",
+        "postcss-normalize-repeat-style@7.0.4_postcss@8.5.14",
+        "postcss-normalize-string@7.0.3_postcss@8.5.14",
+        "postcss-normalize-timing-functions@7.0.3_postcss@8.5.14",
+        "postcss-normalize-unicode@7.0.9_postcss@8.5.14",
+        "postcss-normalize-url@7.0.3_postcss@8.5.14",
+        "postcss-normalize-whitespace@7.0.3_postcss@8.5.14",
+        "postcss-ordered-values@7.0.4_postcss@8.5.14",
+        "postcss-reduce-initial@7.0.9_postcss@8.5.14",
+        "postcss-reduce-transforms@7.0.3_postcss@8.5.14",
+        "postcss-svgo@7.1.3_postcss@8.5.14",
+        "postcss-unique-selectors@7.0.7_postcss@8.5.14"
+      ]
+    },
+    "cssnano-preset-default@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-uIJx5WOQ2vlH0HwKZz3AbhYffVvYTUcS2S76gr3oLnU2i9qn7yy3LLs0rk3YAtBB9gayYr0aTvk0pZ6MlenUlw==",
+      "dependencies": [
+        "browserslist",
+        "cssnano-utils@6.0.0_postcss@8.5.14",
+        "postcss",
+        "postcss-calc",
+        "postcss-colormin@8.0.0_postcss@8.5.14",
+        "postcss-convert-values@8.0.0_postcss@8.5.14",
+        "postcss-discard-comments@8.0.0_postcss@8.5.14",
+        "postcss-discard-duplicates@8.0.0_postcss@8.5.14",
+        "postcss-discard-empty@8.0.0_postcss@8.5.14",
+        "postcss-discard-overridden@8.0.0_postcss@8.5.14",
+        "postcss-merge-longhand@8.0.0_postcss@8.5.14",
+        "postcss-merge-rules@8.0.0_postcss@8.5.14",
+        "postcss-minify-font-values@8.0.0_postcss@8.5.14",
+        "postcss-minify-gradients@8.0.0_postcss@8.5.14",
+        "postcss-minify-params@8.0.0_postcss@8.5.14",
+        "postcss-minify-selectors@8.0.0_postcss@8.5.14",
+        "postcss-normalize-charset@8.0.0_postcss@8.5.14",
+        "postcss-normalize-display-values@8.0.0_postcss@8.5.14",
+        "postcss-normalize-positions@8.0.0_postcss@8.5.14",
+        "postcss-normalize-repeat-style@8.0.0_postcss@8.5.14",
+        "postcss-normalize-string@8.0.0_postcss@8.5.14",
+        "postcss-normalize-timing-functions@8.0.0_postcss@8.5.14",
+        "postcss-normalize-unicode@8.0.0_postcss@8.5.14",
+        "postcss-normalize-url@8.0.0_postcss@8.5.14",
+        "postcss-normalize-whitespace@8.0.0_postcss@8.5.14",
+        "postcss-ordered-values@8.0.0_postcss@8.5.14",
+        "postcss-reduce-initial@8.0.0_postcss@8.5.14",
+        "postcss-reduce-transforms@8.0.0_postcss@8.5.14",
+        "postcss-svgo@8.0.0_postcss@8.5.14",
+        "postcss-unique-selectors@8.0.0_postcss@8.5.14"
       ]
     },
     "cssnano-utils@5.0.3_postcss@8.5.14": {
@@ -856,10 +891,16 @@
         "postcss"
       ]
     },
-    "cssnano@7.1.9_postcss@8.5.14": {
-      "integrity": "sha512-uPR75+5Dk/WJ/YSPR1/YDHdwMM9c5FsaARljfKWgeCKLKOtJ0we21xy/RcCjn53fZnD/f6yYEIZ8pu18+GnbNQ==",
+    "cssnano-utils@6.0.0_postcss@8.5.14": {
+      "integrity": "sha512-ztS9W/+uaDn+bkYmDhs+GdMveHJ3CL8IPNHpRqDUQXv5GJOTQAJjV1XUOInr9esLXSabQV1pLRZlJpyUwEqDyQ==",
       "dependencies": [
-        "cssnano-preset-default",
+        "postcss"
+      ]
+    },
+    "cssnano@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-FBjMD2UTnAshdTNoFnF6vLICR3/gCypkWdveXbxpO+cPlJZ3RYdYOv84ibCxEHzo5Wuoy7yAmBkmUGuLLzoUwA==",
+      "dependencies": [
+        "cssnano-preset-default@8.0.0_postcss@8.5.14",
         "lilconfig",
         "postcss"
       ]
@@ -2147,8 +2188,26 @@
         "postcss-value-parser"
       ]
     },
+    "postcss-colormin@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-KKwMmsSgsmdYXqrjQeqL3tnuIFtctiR1GEMHdjNpDpz/TCRkkkok2mMcreK2zVV3l7POWOmAkR2xYHUpRUK1DA==",
+      "dependencies": [
+        "@colordx/core",
+        "browserslist",
+        "caniuse-api",
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
     "postcss-convert-values@7.0.12_postcss@8.5.14": {
       "integrity": "sha512-xurKu5qqk4viR3Cp3p4xBR4KfnZm4w4ys6+UBwBmeuBSNkH7+DtLnYOYnOffgtE4yx8sH9S1VZ6RAAvROXzP2Q==",
+      "dependencies": [
+        "browserslist",
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
+    "postcss-convert-values@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-Ohtj3rNZWawTRePv5NCHTy8VJSdJ/G/uKuxcxJreOMichuqcT6uEl2TAnopVeJCJ/c13jaSqg7m63yFLM5zBsA==",
       "dependencies": [
         "browserslist",
         "postcss",
@@ -2162,8 +2221,21 @@
         "postcss-selector-parser"
       ]
     },
+    "postcss-discard-comments@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-zGpvVLj2sbagEp+BTVETvAfkZdGVA6rALNujDK/WTIjdf1/rQOxOG8BBzkI8UQgnw8SkL6xffAfbtGMHFypadw==",
+      "dependencies": [
+        "postcss",
+        "postcss-selector-parser"
+      ]
+    },
     "postcss-discard-duplicates@7.0.4_postcss@8.5.14": {
       "integrity": "sha512-VBNn1+EuMZkeGVVtz0gRfbNGtx9IFgAsAV+E2pHtXPrp4qfGBkhTIiAuE/wrb+Y6Pakg9NewAlfTpYIFAWODtw==",
+      "dependencies": [
+        "postcss"
+      ]
+    },
+    "postcss-discard-duplicates@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-zjRyYmNGI3PTipKBBtCgExlmZXQn49KvKoaiNnR2g+iXxeNk7GY5Js2ULtZXPrCYeqjPagrzKIBNcBocvXCR7g==",
       "dependencies": [
         "postcss"
       ]
@@ -2174,8 +2246,20 @@
         "postcss"
       ]
     },
+    "postcss-discard-empty@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-kxPJg6EqahbBvm+l7hpYYCtpsv8dlz7Tv6wJXUXZaeuY0WGS61DxfGdZR4uVB/Cx+yi3iOHQVSqpSHKMFaBg6Q==",
+      "dependencies": [
+        "postcss"
+      ]
+    },
     "postcss-discard-overridden@7.0.3_postcss@8.5.14": {
       "integrity": "sha512-aNovXo9UsZuRNLzHJtp13lHIvinDPfiXBPePpXkSjCbgp++iU2FqE+YxvjIsg6EdyPZsASFbfu+JcBFVsErXIQ==",
+      "dependencies": [
+        "postcss"
+      ]
+    },
+    "postcss-discard-overridden@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-sW2OWH3l9p0FmBSVr228uztFseqroZxwgD7SGF0Ks0dRPDttSo3P8FK5ZBLtWBH2A5+chpB0J2fB/T8heKHLBw==",
       "dependencies": [
         "postcss"
       ]
@@ -2190,7 +2274,7 @@
     "postcss-merge-idents@7.0.3_postcss@8.5.14": {
       "integrity": "sha512-jZrzf/jDgMRgxJF4NE7j3mHvZ4SNtqKkQR2q13vuXMYXaD+rr4u/qjk7jUw7GC555FHL7NWa8S1JQZcXEtXaTg==",
       "dependencies": [
-        "cssnano-utils",
+        "cssnano-utils@5.0.3_postcss@8.5.14",
         "postcss",
         "postcss-value-parser"
       ]
@@ -2200,7 +2284,15 @@
       "dependencies": [
         "postcss",
         "postcss-value-parser",
-        "stylehacks"
+        "stylehacks@7.0.11_postcss@8.5.14"
+      ]
+    },
+    "postcss-merge-longhand@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-YDmAmQ8H+ljfomVpSXvr9NA0GP01fraQJqjWBYoMVGg6rOT+PJLwPyeVo2ekn4WB4ZVSH5ddtK3DTRxbz6CFzg==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser",
+        "stylehacks@8.0.0_postcss@8.5.14"
       ]
     },
     "postcss-merge-rules@7.0.11_postcss@8.5.14": {
@@ -2208,7 +2300,17 @@
       "dependencies": [
         "browserslist",
         "caniuse-api",
-        "cssnano-utils",
+        "cssnano-utils@5.0.3_postcss@8.5.14",
+        "postcss",
+        "postcss-selector-parser"
+      ]
+    },
+    "postcss-merge-rules@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-bgstL5mpi41dDpnYGDUcI3M814NWkCMcIWpwDqEHXkHg3BT7b4XRAfNEuwJncZOVn/67kVKvWzhfv/7xyrp2uQ==",
+      "dependencies": [
+        "browserslist",
+        "caniuse-api",
+        "cssnano-utils@6.0.0_postcss@8.5.14",
         "postcss",
         "postcss-selector-parser"
       ]
@@ -2220,11 +2322,27 @@
         "postcss-value-parser"
       ]
     },
+    "postcss-minify-font-values@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-EnOHQEnSt6oH5NrL1DMFAQuwB2IOimFXTCzc9bKfUeH1jREbqIF5MAK4gQJQOC4mPUwJt4sWifAmNZ1qLu6j3Q==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
     "postcss-minify-gradients@7.0.5_postcss@8.5.14": {
       "integrity": "sha512-YraROyQRg3BI1+Hg8E05B/JPdnTm8EDSVu4P2BxdM+CRiOyfmou809+chGIqo6fQqwjPGQ947nbGncSjmTU1WQ==",
       "dependencies": [
         "@colordx/core",
-        "cssnano-utils",
+        "cssnano-utils@5.0.3_postcss@8.5.14",
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
+    "postcss-minify-gradients@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-43iAnYIGk0ZjNx5X/rkIcHi6dhmu/vEjY0kqfUfxPuJRO+V7jx8uKIdcnL0dpfNoC5J9TSh3EtzLWbq0gpqnWA==",
+      "dependencies": [
+        "@colordx/core",
+        "cssnano-utils@6.0.0_postcss@8.5.14",
         "postcss",
         "postcss-value-parser"
       ]
@@ -2233,7 +2351,16 @@
       "integrity": "sha512-R8itbB8BhlpoYyBm1ou0dD+vJnQ3F6adQipR4UnkCHUwlo+S9WXJaDRg1RHjC8YVAtIdrQzSWvJl40HnGDTKjA==",
       "dependencies": [
         "browserslist",
-        "cssnano-utils",
+        "cssnano-utils@5.0.3_postcss@8.5.14",
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
+    "postcss-minify-params@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-z7w4QO7G55l4vMUK1Lmx03GW7iyRLgf2V5Dz/7ioSPLnXRjeD+b7m0XfAXUGrbBYYrJ6bXPk+3LoX5u4JfAcSg==",
+      "dependencies": [
+        "browserslist",
+        "cssnano-utils@6.0.0_postcss@8.5.14",
         "postcss",
         "postcss-value-parser"
       ]
@@ -2248,14 +2375,37 @@
         "postcss-selector-parser"
       ]
     },
+    "postcss-minify-selectors@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-pQKzVGjUfOVP8QH95lXN/cpMcwHvdsqF3tQTEWPsRPnHw2SZ7G9c69oWDfjWkpCd81APF8E34QKUEUo+qUp5qw==",
+      "dependencies": [
+        "browserslist",
+        "caniuse-api",
+        "cssesc",
+        "postcss",
+        "postcss-selector-parser"
+      ]
+    },
     "postcss-normalize-charset@7.0.3_postcss@8.5.14": {
       "integrity": "sha512-NoBfZu8PR4c2NlmjvrqQTzCzLY79hwcSRgNQ3ZiNK0ABzf9kYKloE/jNj+/8GQY1wsm8pRRgANk6ydLH8cwo0Q==",
       "dependencies": [
         "postcss"
       ]
     },
+    "postcss-normalize-charset@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-s88FUNDSUD8m0wBYvTQQcubVts6zhXwBU8zCD4vkRKiecd0v8cOjHVIF9r/i+5xzS/WG3f98qq4XsOM0JqvfLA==",
+      "dependencies": [
+        "postcss"
+      ]
+    },
     "postcss-normalize-display-values@7.0.3_postcss@8.5.14": {
       "integrity": "sha512-ldsCX0QIt05pKIOobZtVQ48wXJecr+czw4+e1/YjVhLMqslShgpVxgPtI2CefURR8oyVoYaU/l829MMwExDMLw==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
+    "postcss-normalize-display-values@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-gG2nBxD27fiw6Luinb1QYKdM/Co5GornRJgSD+JTwNH4PGKxImP0qyruDDav49aHUPLY3qrL3qN3LvybO7IzxQ==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
@@ -2268,8 +2418,22 @@
         "postcss-value-parser"
       ]
     },
+    "postcss-normalize-positions@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-t/wGqpehS20Ke7kc4QAsWpH+AJjUdMK/V5qV2RhrXkj8hO/fT1t1MJ8NL7sedWYk7ZqC7eISEJQonW5j0tU1MQ==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
     "postcss-normalize-repeat-style@7.0.4_postcss@8.5.14": {
       "integrity": "sha512-6mPKlY/8cSaDHxX502wERADarJsccwlky6yIrOapHH2ZgfoKAV94SbiTKfKEs4EEpdazuc3J72WsqeYk7hp9+Q==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
+    "postcss-normalize-repeat-style@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-3ebOmGdCYKrBYyGKc1xhj0unEnW7beZpVU7JohVeGl7mTxR+7T6egpaawTWAVsB0pEIhcsbJVOjPKCJSoRO6Zg==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
@@ -2282,8 +2446,22 @@
         "postcss-value-parser"
       ]
     },
+    "postcss-normalize-string@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-TvWCGZ/e04Tv31uJvOUtbexkfgUnqmQ3M2P5DkAaVzvOj+BvTkG2QjpA5Y71SL1SPxJcj4M23fNh+RDVCmG8kA==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
     "postcss-normalize-timing-functions@7.0.3_postcss@8.5.14": {
       "integrity": "sha512-zmEzHdvpZBZu0OKlbJSfgASQvaayyAoVuWtvyr34IJ/LyS+DaOKvvR3EvFJ9RWWtNIx+CMvO125OVophaxNYew==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
+    "postcss-normalize-timing-functions@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-uEfaXst5Xgqxv7geYUuz6vs9mn88K2NPY2RoIzM3BMmSjsdTSeppV9x2qIgrxsisdbSqF6IVhzI2occcte3hTA==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
@@ -2297,8 +2475,23 @@
         "postcss-value-parser"
       ]
     },
+    "postcss-normalize-unicode@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-+WYngZaChEeTHZmWhmKtnJ4gTzWdINEaFcgWBnu6WdVu8Ftim8OBTcw768DuCC/3Aax9bZ9WkwrLGHym2Lzf+A==",
+      "dependencies": [
+        "browserslist",
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
     "postcss-normalize-url@7.0.3_postcss@8.5.14": {
       "integrity": "sha512-CL93wmloq5qsffmFv+bw24MIRbmhHrp53qoh1LDAb/5TtjWEXI/np4xcP/Gw9oWCb2XyWnqHYLDUwiKRoJBA1Q==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
+    "postcss-normalize-url@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-4Mz9hZHn/QIB+YtFqTXrDmE2193GYxGb3F8uMfLvMicaEXCCUlDIJ658gFFJbqEGl9FYzwPtRiuNgbwlO9kkBg==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
@@ -2311,10 +2504,25 @@
         "postcss-value-parser"
       ]
     },
+    "postcss-normalize-whitespace@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-V1f8tYnwIP5tscOXQFTKK8Y5EJ+R2GMpFJ6FjzwoKoQnhbqQy3IeSrDjJJb8JjVos8ut6Osi80Zybpayv/XjIQ==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
     "postcss-ordered-values@7.0.4_postcss@8.5.14": {
       "integrity": "sha512-nubSi49hDHQk4E8KIj+IbLY8Bg+8OcSUEhgyolgM+atnOvXjV7EjaR6bac4YGZoFyPa9mWoAF3EaYbWdFkKqVg==",
       "dependencies": [
-        "cssnano-utils",
+        "cssnano-utils@5.0.3_postcss@8.5.14",
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
+    "postcss-ordered-values@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-Dg9+itb6lmD0bxqhQyHCtXAwYRh0wUrx6Mp4/BNXgkLoJmdYMmWi+V+Pypw79Q6iQhxA8KFMHqLBITQJV2gKMA==",
+      "dependencies": [
+        "cssnano-utils@6.0.0_postcss@8.5.14",
         "postcss",
         "postcss-value-parser"
       ]
@@ -2334,8 +2542,23 @@
         "postcss"
       ]
     },
+    "postcss-reduce-initial@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-DChcE9d528AKrlpCTHjhsAiOsWCk4H9ApHPS1QqRT3praObWTiWyn6W1UddGpc46K9LQnHwUu4YwaPUukGtXVA==",
+      "dependencies": [
+        "browserslist",
+        "caniuse-api",
+        "postcss"
+      ]
+    },
     "postcss-reduce-transforms@7.0.3_postcss@8.5.14": {
       "integrity": "sha512-FXsnN9ZwcZTT8Yf8cAHA8qIGUXcX6WfLd9JoYhrdDfmvsVhhfqkkv7m4AC3rwFOfz+GzkUa87OCKF9dUcicd+g==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser"
+      ]
+    },
+    "postcss-reduce-transforms@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-cLZT0som7vvumQT9XQCnSKOSnRinNQZd1Hm+J723Ney13E8CIydDhw6JwzsjPtgnYThTqn9Q45906gz6wxaAsw==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
@@ -2362,8 +2585,23 @@
         "svgo"
       ]
     },
+    "postcss-svgo@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-Q2fMSYEiNE1ioDc/3sxvI24NdgA/MJno2XLNpOxgv8aCcJbym8mZY10/lDY5+AWCIc3Aiqzy2Wcp9/zaIXBZgQ==",
+      "dependencies": [
+        "postcss",
+        "postcss-value-parser",
+        "svgo"
+      ]
+    },
     "postcss-unique-selectors@7.0.7_postcss@8.5.14": {
       "integrity": "sha512-d+sCkaRnSefghOUdH8CMJZV9yUQhj2ojpe8Nw/lA+LV1UOfeleGkLTl6XdCFFSai9UJ+DJPb69FFuqthXYsY8w==",
+      "dependencies": [
+        "postcss",
+        "postcss-selector-parser"
+      ]
+    },
+    "postcss-unique-selectors@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-iObuolUX+ITJfMU2QQFQdh31JgSjNLPNjVs6YGAqBHvOvAWXMMNget6donQl83aQaeS32i5XeKZURUW/WBxIUw==",
       "dependencies": [
         "postcss",
         "postcss-selector-parser"
@@ -2704,6 +2942,14 @@
     },
     "stylehacks@7.0.11_postcss@8.5.14": {
       "integrity": "sha512-iODNfhXVLqc5LADs+Y6Oh5wJuK5ZcHbVng8aiK3y9pjMQdc5hLrBW0eFU6FtnpNrE6PoEg/MmFTU4waotj5WNg==",
+      "dependencies": [
+        "browserslist",
+        "postcss",
+        "postcss-selector-parser"
+      ]
+    },
+    "stylehacks@8.0.0_postcss@8.5.14": {
+      "integrity": "sha512-sWyjaJvBqHoVKYPbQ8JRvrGSPaYWtWrJsU+fGVtwKB1GE1rRPu3rC7T6UCuXLoL00Dwb+tsHe2T904r8Vnsx8w==",
       "dependencies": [
         "browserslist",
         "postcss",
@@ -3123,7 +3369,7 @@
       "npm:@typescript-eslint/eslint-plugin@8.59.2",
       "npm:@typescript-eslint/parser@8.59.2",
       "npm:cssnano-preset-advanced@7.0.16",
-      "npm:cssnano@7.1.9",
+      "npm:cssnano@8.0.0",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
       "npm:eslint-plugin-jsdoc@62.9.0",

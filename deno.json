@@ -10,7 +10,7 @@
     "@vento/vento": "jsr:@vento/vento@1.14.0",
     "components/": "./src/components/",
     "cssnano-preset-advanced": "npm:cssnano-preset-advanced@7.0.16",
-    "cssnano": "npm:cssnano@7.1.9",
+    "cssnano": "npm:cssnano@8.0.0",
     "eslint-config-prettier": "npm:eslint-config-prettier@10.1.8",
     "eslint-plugin-import": "npm:eslint-plugin-import@2.32.0",
     "eslint-plugin-jsdoc": "npm:eslint-plugin-jsdoc@62.9.0",
