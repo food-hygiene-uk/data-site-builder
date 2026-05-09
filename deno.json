@@ -9,7 +9,7 @@
     "@typescript-eslint/parser": "npm:@typescript-eslint/parser@8.59.2",
     "@vento/vento": "jsr:@vento/vento@1.14.0",
     "components/": "./src/components/",
-    "cssnano-preset-advanced": "npm:cssnano-preset-advanced@8.0.0",
+    "cssnano-preset-advanced": "npm:cssnano-preset-advanced@8.0.1",
     "cssnano": "npm:cssnano@8.0.1",
     "eslint-config-prettier": "npm:eslint-config-prettier@10.1.8",
     "eslint-plugin-import": "npm:eslint-plugin-import@2.32.0",
