@@ -17,7 +17,7 @@
     "eslint-plugin-promise": "npm:eslint-plugin-promise@7.3.0",
     "eslint-plugin-unicorn": "npm:eslint-plugin-unicorn@64.0.0",
     "eslint": "npm:eslint@9.39.2",
-    "fast-check": "npm:fast-check@4.7.0",
+    "fast-check": "npm:fast-check@4.8.0",
     "fast_xml_parser": "npm:fast-xml-parser@5.7.3",
     "http-server": "npm:http-server@14.1.1",
     "jiti": "npm:jiti@2.7.0",
