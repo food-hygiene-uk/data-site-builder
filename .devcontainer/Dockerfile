@@ -1,6 +1,6 @@
 ARG DENO_VERSION
 FROM denoland/deno:bin-${DENO_VERSION} AS deno
-FROM mcr.microsoft.com/devcontainers/typescript-node:24-bookworm@sha256:559126d7fc0af1e018994f832968f59bc678ba9af8ce00241801a7c79d2e7358
+FROM mcr.microsoft.com/devcontainers/typescript-node:24-bookworm@sha256:14484cf5f183867fbdddd69db1991ee9a82fc50ff378f40344dcc31824eb834e
 
 # Install Git and related tools
 RUN apt-get update && apt-get install -y \
