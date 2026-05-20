@@ -3,36 +3,33 @@
   "extends": ["config:recommended"],
   "packageRules": [
     {
-      "matchManagers": ["devcontainer"],
+      "description": "Prevent updates that can be unpublished.",
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "description": "Disable updates for new managers.",
+      "matchManagers": ["/.*/"],
       "enabled": false
     },
     {
-      "matchManagers": ["github-actions"],
+      "description": "Explictly disable updates we know we don't want.",
+      "matchManagers": ["devcontainer", "github-actions", "npm"],
       "enabled": false
     },
     {
-      "matchManagers": ["npm"],
-      "enabled": false
+      "matchManagers": ["/.*/"],
+      "description": "Wait for 7 days to approve updates. Matches Dependabot config.",
+      "internalChecksFilter": "strict",
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "description": "Explictly enable updates for desired managers.",
+      "matchManagers": ["deno"],
+      "enabled": true
     }
   ],
   "customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": ["//^deno.json$//", "//^deno.jsonc$//"],
-      "matchStrings": [
-        "^\"\\w\": \"npm:(?<depName>\\w)@(?<currentValue>\\d+\\.\\d+\\.\\d+)$"
-      ],
-      "datasourceTemplate": "npm"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": ["//^deno.json$//", "//^deno.jsonc$//"],
-      "matchStrings": [
-        "^\"\\w\": \"jsr:(?<depName>@(?<namespace>.+?)/(?<package>.+?))@(?<currentValue>\\d+\\.\\d+\\.\\d+)$"
-      ],
-      "datasourceTemplate": "deno",
-      "registryUrlTemplate": "https://jsr.io/{{depName}}@{{currentValue}}"
-    },
     {
       "customType": "regex",
       "managerFilePatterns": ["/^.deno-version$/"],
