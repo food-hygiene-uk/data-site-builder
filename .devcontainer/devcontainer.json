@@ -5,6 +5,9 @@
     "options": ["--build-arg=DENO_VERSION=2.7.13"]
   },
   "postCreateCommand": "deno cache src/generate-site.mts",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
   "customizations": {
     "vscode": {
       "settings": {
@@ -23,8 +26,18 @@
         "ms-vscode.live-server",
         "oscarotero.vento-syntax",
         "stylelint.vscode-stylelint",
+        "webben.browserslist",
+        "webhint.vscode-webhint",
         "yuyinws.vscode-array-index"
-      ]
+      ],
+      "mcp": {
+        "servers": {
+          "playwright": {
+            "command": "npx",
+            "args": ["@playwright/mcp@latest"]
+          }
+        }
+      }
     }
   }
 }
