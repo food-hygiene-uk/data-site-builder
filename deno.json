@@ -8,6 +8,7 @@
     "@typescript-eslint/eslint-plugin": "npm:@typescript-eslint/eslint-plugin@8.59.4",
     "@typescript-eslint/parser": "npm:@typescript-eslint/parser@8.59.4",
     "@vento/vento": "jsr:@vento/vento@1.14.0",
+    "baseline-browser-mapping": "npm:baseline-browser-mapping@2.10.29",
     "components/": "./src/components/",
     "cssnano-preset-advanced": "npm:cssnano-preset-advanced@8.0.1",
     "cssnano": "npm:cssnano@8.0.1",
@@ -31,9 +32,13 @@
     "zod": "npm:zod@4.4.3"
   },
   "tasks": {
+    "browserlist:lint": {
+      "description": "Lint Browserlist config for syntax and brower support metrics",
+      "command": "dx browserslist-lint"
+    },
     "build": {
       "description": "Builds the site",
-      "command": "deno install && BROWSERSLIST_ROOT_PATH=. deno run --allow-env=CI,BROWSERSLIST,BROWSERSLIST_CONFIG,BROWSERSLIST_DISABLE_CACHE,BROWSERSLIST_IGNORE_OLD_DATA,BROWSERSLIST_ROOT_PATH,BROWSERSLIST_STATS,NODE_ENV,TERM,UGLIFY_BUG_REPORT --deny-env=NO_COLOR,FORCE_COLOR,BROWSERSLIST_ENV --allow-net=api.ratings.food.gov.uk:443,ratings.food.gov.uk:443 --allow-read=./,./assets,./build,./dist,./src --allow-write=./build,./dist --allow-sys=homedir,uid src/generate-site.mts"
+      "command": "BROWSERSLIST_ROOT_PATH=. deno run --allow-env=CI,BROWSERSLIST,BROWSERSLIST_CONFIG,BROWSERSLIST_DISABLE_CACHE,BROWSERSLIST_ENV,BROWSERSLIST_IGNORE_OLD_DATA,BASELINE_BROWSER_MAPPING_IGNORE_OLD_DATA,BROWSERSLIST_ROOT_PATH,BROWSERSLIST_STATS,NODE_ENV,TERM,UGLIFY_BUG_REPORT --deny-env=NO_COLOR,FORCE_COLOR --allow-net=api.ratings.food.gov.uk:443,ratings.food.gov.uk:443 --allow-read=./,./assets,./build,./dist,./src --allow-write=./build,./dist --allow-sys=homedir,uid src/generate-site.mts"
     },
     "deno:lock-update": {
       "description": "Updates the lock file",
@@ -61,7 +66,8 @@
     },
     "playwright:test": {
       "description": "Runs Playwright tests",
-      "command": "deno task playwright:install && deno run --allow-env --allow-net=\"localhost,[::1]:8080,127.0.0.1:8080,127.0.0.1:9323\" --allow-read=./,/node_modules/,../node_modules,/proc/version,/etc/os-release,/tmp/,../tsconfig.json,../../tsconfig.json,../../../tsconfig.json,../../../../tsconfig.json,../../../../../tsconfig.json,../../../../../../tsconfig.json,../../../../../../../tsconfig.json,../jsconfig.json,../../jsconfig.json,../../../jsconfig.json,../../../../jsconfig.json,../../../../../jsconfig.json,../../../../../../jsconfig.json,../../../../../../../jsconfig.json,$(which deno) --allow-write=./test-results/,./playwright-report,/tmp/ --allow-sys=cpus,homedir,osRelease,uid --allow-run npm:playwright test"
+      "dependencies": ["playwright:install"],
+      "command": "deno run --allow-env --allow-net=\"localhost,[::1]:8080,127.0.0.1:8080,127.0.0.1:9323\" --allow-read=./,/node_modules/,../node_modules,/proc/version,/etc/os-release,/tmp/,../tsconfig.json,../../tsconfig.json,../../../tsconfig.json,../../../../tsconfig.json,../../../../../tsconfig.json,../../../../../../tsconfig.json,../../../../../../../tsconfig.json,../jsconfig.json,../../jsconfig.json,../../../jsconfig.json,../../../../jsconfig.json,../../../../../jsconfig.json,../../../../../../jsconfig.json,../../../../../../../jsconfig.json,$(which deno) --allow-write=./test-results/,./playwright-report,/tmp/ --allow-sys=cpus,homedir,osRelease,uid --allow-run npm:playwright test"
     },
     "prettier:debug-check": {
       "description": "Runs prettier on the code through Deno - --debug-check",
@@ -89,11 +95,7 @@
     },
     "test:e2e": {
       "description": "Runs end-to-end tests",
-      "command": "deno task playwright:test"
-    },
-    "update-deno": {
-      "description": "Fetches the latest Deno version and updates .deno-version and devcontainer.json",
-      "command": "deno run --allow-net=api.github.com --allow-read=.deno-version,./.devcontainer/devcontainer.json --allow-write=.deno-version,./.devcontainer/devcontainer.json scripts/update-deno.mts"
+      "dependencies": ["playwright:test"]
     }
   },
   "fmt": {
@@ -106,7 +108,7 @@
   },
   "lint": {
     "rules": {
-      "tags": ["recommended"],
+      "tags": ["recommended", "workspace"],
       "exclude": ["require-await"]
     }
   },

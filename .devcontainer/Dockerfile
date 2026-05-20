@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
 # Copy Deno binary
 COPY --from=deno /deno /usr/local/bin/deno
 
+RUN deno x --install-alias
+
 # Configure Git
 RUN git config --system core.autocrlf input \
   && git config --system core.eol lf \
