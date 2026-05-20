@@ -46,6 +46,7 @@
     "npm:prettier@*": "3.8.3",
     "npm:prettier@3.8.3": "3.8.3",
     "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.12.0",
+    "npm:stylelint@*": "17.12.0",
     "npm:stylelint@17.12.0": "17.12.0",
     "npm:uglify-js@3.19.3": "3.19.3",
     "npm:zod@4.4.3": "4.4.3"
