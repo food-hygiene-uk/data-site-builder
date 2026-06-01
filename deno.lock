@@ -26,8 +26,8 @@
     "npm:@typescript-eslint/eslint-plugin@8.59.4": "8.59.4_@typescript-eslint+parser@8.59.4__eslint@9.39.4___jiti@2.7.0__typescript@6.0.3__jiti@2.7.0_eslint@9.39.4__jiti@2.7.0_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.59.4": "8.59.4_eslint@9.39.4__jiti@2.7.0_typescript@6.0.3_jiti@2.7.0",
     "npm:baseline-browser-mapping@2.10.32": "2.10.32",
-    "npm:cssnano-preset-advanced@8.0.1": "8.0.1_postcss@8.5.14",
-    "npm:cssnano@8.0.1": "8.0.1_postcss@8.5.14",
+    "npm:cssnano-preset-advanced@8.0.1": "8.0.1_postcss@8.5.15",
+    "npm:cssnano@8.0.1": "8.0.1_postcss@8.5.15",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@9.39.4__jiti@2.7.0_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.4__jiti@2.7.0_jiti@2.7.0",
     "npm:eslint-plugin-jsdoc@63.0.0": "63.0.0_eslint@9.39.4__jiti@2.7.0",
@@ -42,7 +42,7 @@
     "npm:jiti@2.7.0": "2.7.0",
     "npm:meriyah@6.0.5": "6.0.5",
     "npm:playwright@1.60.0": "1.60.0",
-    "npm:postcss@8.5.14": "8.5.14",
+    "npm:postcss@8.5.15": "8.5.15",
     "npm:prettier@*": "3.8.3",
     "npm:prettier@3.8.3": "3.8.3",
     "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.12.0",
@@ -578,7 +578,7 @@
     "async@3.2.6": {
       "integrity": "sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA=="
     },
-    "autoprefixer@10.5.0_postcss@8.5.14": {
+    "autoprefixer@10.5.0_postcss@8.5.15": {
       "integrity": "sha512-FMhOoZV4+qR6aTUALKX2rEqGG+oyATvwBt9IIzVR5rMa2HRWPkxf+P+PAJLD1I/H5/II+HuZcBJYEFBpq39ong==",
       "dependencies": [
         "browserslist",
@@ -766,7 +766,7 @@
         "which@2.0.2"
       ]
     },
-    "css-declaration-sorter@7.4.0_postcss@8.5.14": {
+    "css-declaration-sorter@7.4.0_postcss@8.5.15": {
       "integrity": "sha512-LTuzjPoyA2vMGKKcaOqKSp7Ub2eGrNfKiZH4LpezxpNrsICGCSFvsQOI29psISxNZtaXibkC2CXzrQ5enMeGGw==",
       "dependencies": [
         "postcss"
@@ -806,7 +806,7 @@
       "integrity": "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==",
       "bin": true
     },
-    "cssnano-preset-advanced@8.0.1_postcss@8.5.14": {
+    "cssnano-preset-advanced@8.0.1_postcss@8.5.15": {
       "integrity": "sha512-UPImCQdaIp74v/xO/GnKX+O9CryMFNIvjot3ipKP7m7ff+Td7/48UBK4we1v8zUPUQmZ1HbtHmgqHnrGjoIyHw==",
       "dependencies": [
         "autoprefixer",
@@ -820,7 +820,7 @@
         "postcss-zindex"
       ]
     },
-    "cssnano-preset-default@8.0.1_postcss@8.5.14": {
+    "cssnano-preset-default@8.0.1_postcss@8.5.15": {
       "integrity": "sha512-OTdKeYMlvQ8KBgyej5ysktnWJoeyo7rGrVnm+bdpIHGvxhbTGPsOkB+7T1EdTuX00dGlQQb2UEbSPB1OpMXULw==",
       "dependencies": [
         "browserslist",
@@ -855,13 +855,13 @@
         "postcss-unique-selectors"
       ]
     },
-    "cssnano-utils@6.0.0_postcss@8.5.14": {
+    "cssnano-utils@6.0.0_postcss@8.5.15": {
       "integrity": "sha512-ztS9W/+uaDn+bkYmDhs+GdMveHJ3CL8IPNHpRqDUQXv5GJOTQAJjV1XUOInr9esLXSabQV1pLRZlJpyUwEqDyQ==",
       "dependencies": [
         "postcss"
       ]
     },
-    "cssnano@8.0.1_postcss@8.5.14": {
+    "cssnano@8.0.1_postcss@8.5.15": {
       "integrity": "sha512-oSiOnPQNNYjusTUlYJiE6xvFQG4don3N0QavaoV1BxIsC1zjvxOwikXlR7lG1EVmZNDDaJkHbQx1VRB8kaoMHA==",
       "dependencies": [
         "cssnano-preset-default",
@@ -1961,8 +1961,8 @@
     "ms@2.1.3": {
       "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="
     },
-    "nanoid@3.3.11": {
-      "integrity": "sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==",
+    "nanoid@3.3.12": {
+      "integrity": "sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==",
       "bin": true
     },
     "natural-compare@1.4.0": {
@@ -2133,7 +2133,7 @@
     "possible-typed-array-names@1.1.0": {
       "integrity": "sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg=="
     },
-    "postcss-calc@10.1.1_postcss@8.5.14": {
+    "postcss-calc@10.1.1_postcss@8.5.15": {
       "integrity": "sha512-NYEsLHh8DgG/PRH2+G9BTuUdtf9ViS+vdoQ0YA5OQdGsfN4ztiwtDWNtBl9EKeqNMFnIu8IKZ0cLxEQ5r5KVMw==",
       "dependencies": [
         "postcss",
@@ -2141,7 +2141,7 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-colormin@8.0.0_postcss@8.5.14": {
+    "postcss-colormin@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-KKwMmsSgsmdYXqrjQeqL3tnuIFtctiR1GEMHdjNpDpz/TCRkkkok2mMcreK2zVV3l7POWOmAkR2xYHUpRUK1DA==",
       "dependencies": [
         "@colordx/core",
@@ -2151,7 +2151,7 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-convert-values@8.0.0_postcss@8.5.14": {
+    "postcss-convert-values@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-Ohtj3rNZWawTRePv5NCHTy8VJSdJ/G/uKuxcxJreOMichuqcT6uEl2TAnopVeJCJ/c13jaSqg7m63yFLM5zBsA==",
       "dependencies": [
         "browserslist",
@@ -2159,39 +2159,39 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-discard-comments@8.0.0_postcss@8.5.14": {
+    "postcss-discard-comments@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-zGpvVLj2sbagEp+BTVETvAfkZdGVA6rALNujDK/WTIjdf1/rQOxOG8BBzkI8UQgnw8SkL6xffAfbtGMHFypadw==",
       "dependencies": [
         "postcss",
         "postcss-selector-parser"
       ]
     },
-    "postcss-discard-duplicates@8.0.0_postcss@8.5.14": {
+    "postcss-discard-duplicates@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-zjRyYmNGI3PTipKBBtCgExlmZXQn49KvKoaiNnR2g+iXxeNk7GY5Js2ULtZXPrCYeqjPagrzKIBNcBocvXCR7g==",
       "dependencies": [
         "postcss"
       ]
     },
-    "postcss-discard-empty@8.0.0_postcss@8.5.14": {
+    "postcss-discard-empty@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-kxPJg6EqahbBvm+l7hpYYCtpsv8dlz7Tv6wJXUXZaeuY0WGS61DxfGdZR4uVB/Cx+yi3iOHQVSqpSHKMFaBg6Q==",
       "dependencies": [
         "postcss"
       ]
     },
-    "postcss-discard-overridden@8.0.0_postcss@8.5.14": {
+    "postcss-discard-overridden@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-sW2OWH3l9p0FmBSVr228uztFseqroZxwgD7SGF0Ks0dRPDttSo3P8FK5ZBLtWBH2A5+chpB0J2fB/T8heKHLBw==",
       "dependencies": [
         "postcss"
       ]
     },
-    "postcss-discard-unused@8.0.0_postcss@8.5.14": {
+    "postcss-discard-unused@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-VG4N1RO/aH14XXwaIbuYd3lg+/bAKRjqlL0Ct/sySQEF6vRhEfiv87gi4UC70+YQ0E8Gu6YOKS1PibdbQb2wcQ==",
       "dependencies": [
         "postcss",
         "postcss-selector-parser"
       ]
     },
-    "postcss-merge-idents@8.0.0_postcss@8.5.14": {
+    "postcss-merge-idents@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-C54tIS9sO2T47QJ7BMcrMwJlL+AsgsFfbxJcDtK38KQcvMXwmpA+msBm00p250CBY1Vkr/dhuwAvb1R9v/X9JA==",
       "dependencies": [
         "cssnano-utils",
@@ -2199,7 +2199,7 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-merge-longhand@8.0.0_postcss@8.5.14": {
+    "postcss-merge-longhand@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-YDmAmQ8H+ljfomVpSXvr9NA0GP01fraQJqjWBYoMVGg6rOT+PJLwPyeVo2ekn4WB4ZVSH5ddtK3DTRxbz6CFzg==",
       "dependencies": [
         "postcss",
@@ -2207,7 +2207,7 @@
         "stylehacks"
       ]
     },
-    "postcss-merge-rules@8.0.0_postcss@8.5.14": {
+    "postcss-merge-rules@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-bgstL5mpi41dDpnYGDUcI3M814NWkCMcIWpwDqEHXkHg3BT7b4XRAfNEuwJncZOVn/67kVKvWzhfv/7xyrp2uQ==",
       "dependencies": [
         "browserslist",
@@ -2217,14 +2217,14 @@
         "postcss-selector-parser"
       ]
     },
-    "postcss-minify-font-values@8.0.0_postcss@8.5.14": {
+    "postcss-minify-font-values@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-EnOHQEnSt6oH5NrL1DMFAQuwB2IOimFXTCzc9bKfUeH1jREbqIF5MAK4gQJQOC4mPUwJt4sWifAmNZ1qLu6j3Q==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-minify-gradients@8.0.0_postcss@8.5.14": {
+    "postcss-minify-gradients@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-43iAnYIGk0ZjNx5X/rkIcHi6dhmu/vEjY0kqfUfxPuJRO+V7jx8uKIdcnL0dpfNoC5J9TSh3EtzLWbq0gpqnWA==",
       "dependencies": [
         "@colordx/core",
@@ -2233,7 +2233,7 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-minify-params@8.0.0_postcss@8.5.14": {
+    "postcss-minify-params@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-z7w4QO7G55l4vMUK1Lmx03GW7iyRLgf2V5Dz/7ioSPLnXRjeD+b7m0XfAXUGrbBYYrJ6bXPk+3LoX5u4JfAcSg==",
       "dependencies": [
         "browserslist",
@@ -2242,7 +2242,7 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-minify-selectors@8.0.1_postcss@8.5.14": {
+    "postcss-minify-selectors@8.0.1_postcss@8.5.15": {
       "integrity": "sha512-c31D46811kTkQDxV1KTTow79axX6gj/01AY5G7cGZg3s31KvAwP13jEFXGAzQbJ7NvOFV1pRqEia6nrAdHU7qg==",
       "dependencies": [
         "browserslist",
@@ -2252,48 +2252,48 @@
         "postcss-selector-parser"
       ]
     },
-    "postcss-normalize-charset@8.0.0_postcss@8.5.14": {
+    "postcss-normalize-charset@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-s88FUNDSUD8m0wBYvTQQcubVts6zhXwBU8zCD4vkRKiecd0v8cOjHVIF9r/i+5xzS/WG3f98qq4XsOM0JqvfLA==",
       "dependencies": [
         "postcss"
       ]
     },
-    "postcss-normalize-display-values@8.0.0_postcss@8.5.14": {
+    "postcss-normalize-display-values@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-gG2nBxD27fiw6Luinb1QYKdM/Co5GornRJgSD+JTwNH4PGKxImP0qyruDDav49aHUPLY3qrL3qN3LvybO7IzxQ==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-normalize-positions@8.0.0_postcss@8.5.14": {
+    "postcss-normalize-positions@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-t/wGqpehS20Ke7kc4QAsWpH+AJjUdMK/V5qV2RhrXkj8hO/fT1t1MJ8NL7sedWYk7ZqC7eISEJQonW5j0tU1MQ==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-normalize-repeat-style@8.0.0_postcss@8.5.14": {
+    "postcss-normalize-repeat-style@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-3ebOmGdCYKrBYyGKc1xhj0unEnW7beZpVU7JohVeGl7mTxR+7T6egpaawTWAVsB0pEIhcsbJVOjPKCJSoRO6Zg==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-normalize-string@8.0.0_postcss@8.5.14": {
+    "postcss-normalize-string@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-TvWCGZ/e04Tv31uJvOUtbexkfgUnqmQ3M2P5DkAaVzvOj+BvTkG2QjpA5Y71SL1SPxJcj4M23fNh+RDVCmG8kA==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-normalize-timing-functions@8.0.0_postcss@8.5.14": {
+    "postcss-normalize-timing-functions@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-uEfaXst5Xgqxv7geYUuz6vs9mn88K2NPY2RoIzM3BMmSjsdTSeppV9x2qIgrxsisdbSqF6IVhzI2occcte3hTA==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-normalize-unicode@8.0.0_postcss@8.5.14": {
+    "postcss-normalize-unicode@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-+WYngZaChEeTHZmWhmKtnJ4gTzWdINEaFcgWBnu6WdVu8Ftim8OBTcw768DuCC/3Aax9bZ9WkwrLGHym2Lzf+A==",
       "dependencies": [
         "browserslist",
@@ -2301,21 +2301,21 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-normalize-url@8.0.0_postcss@8.5.14": {
+    "postcss-normalize-url@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-4Mz9hZHn/QIB+YtFqTXrDmE2193GYxGb3F8uMfLvMicaEXCCUlDIJ658gFFJbqEGl9FYzwPtRiuNgbwlO9kkBg==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-normalize-whitespace@8.0.0_postcss@8.5.14": {
+    "postcss-normalize-whitespace@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-V1f8tYnwIP5tscOXQFTKK8Y5EJ+R2GMpFJ6FjzwoKoQnhbqQy3IeSrDjJJb8JjVos8ut6Osi80Zybpayv/XjIQ==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-ordered-values@8.0.0_postcss@8.5.14": {
+    "postcss-ordered-values@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-Dg9+itb6lmD0bxqhQyHCtXAwYRh0wUrx6Mp4/BNXgkLoJmdYMmWi+V+Pypw79Q6iQhxA8KFMHqLBITQJV2gKMA==",
       "dependencies": [
         "cssnano-utils",
@@ -2323,14 +2323,14 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-reduce-idents@8.0.0_postcss@8.5.14": {
+    "postcss-reduce-idents@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-R4S1T1IABVShqFCgLEdSIYuoTtQaMwGivKdW7TAMiHztN3rBQMtw6mayqw1bNMrraI0pEUW5jNuYeLFpV0zLBA==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-reduce-initial@8.0.0_postcss@8.5.14": {
+    "postcss-reduce-initial@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-DChcE9d528AKrlpCTHjhsAiOsWCk4H9ApHPS1QqRT3praObWTiWyn6W1UddGpc46K9LQnHwUu4YwaPUukGtXVA==",
       "dependencies": [
         "browserslist",
@@ -2338,14 +2338,14 @@
         "postcss"
       ]
     },
-    "postcss-reduce-transforms@8.0.0_postcss@8.5.14": {
+    "postcss-reduce-transforms@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-cLZT0som7vvumQT9XQCnSKOSnRinNQZd1Hm+J723Ney13E8CIydDhw6JwzsjPtgnYThTqn9Q45906gz6wxaAsw==",
       "dependencies": [
         "postcss",
         "postcss-value-parser"
       ]
     },
-    "postcss-safe-parser@7.0.1_postcss@8.5.14": {
+    "postcss-safe-parser@7.0.1_postcss@8.5.15": {
       "integrity": "sha512-0AioNCJZ2DPYz5ABT6bddIqlhgwhpHZ/l65YAYo0BCIn0xiDpsnTHz0gnoTGk0OXZW0JRs+cDwL8u/teRdz+8A==",
       "dependencies": [
         "postcss"
@@ -2358,7 +2358,7 @@
         "util-deprecate"
       ]
     },
-    "postcss-svgo@8.0.0_postcss@8.5.14": {
+    "postcss-svgo@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-Q2fMSYEiNE1ioDc/3sxvI24NdgA/MJno2XLNpOxgv8aCcJbym8mZY10/lDY5+AWCIc3Aiqzy2Wcp9/zaIXBZgQ==",
       "dependencies": [
         "postcss",
@@ -2366,7 +2366,7 @@
         "svgo"
       ]
     },
-    "postcss-unique-selectors@8.0.0_postcss@8.5.14": {
+    "postcss-unique-selectors@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-iObuolUX+ITJfMU2QQFQdh31JgSjNLPNjVs6YGAqBHvOvAWXMMNget6donQl83aQaeS32i5XeKZURUW/WBxIUw==",
       "dependencies": [
         "postcss",
@@ -2376,14 +2376,14 @@
     "postcss-value-parser@4.2.0": {
       "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ=="
     },
-    "postcss-zindex@8.0.0_postcss@8.5.14": {
+    "postcss-zindex@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-BNRpT4pqAcC2mHswG22QImCfm6jijGR5I+AlAz7biPiShbj4fPONXAZgtIDnb/yXjyilL1zywQ2hXwpZ8rAzNw==",
       "dependencies": [
         "postcss"
       ]
     },
-    "postcss@8.5.14": {
-      "integrity": "sha512-SoSL4+OSEtR99LHFZQiJLkT59C5B1amGO1NzTwj7TT1qCUgUO6hxOvzkOYxD+vMrXBM3XJIKzokoERdqQq/Zmg==",
+    "postcss@8.5.15": {
+      "integrity": "sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==",
       "dependencies": [
         "nanoid",
         "picocolors",
@@ -2706,7 +2706,7 @@
     "strnum@2.3.0": {
       "integrity": "sha512-ums3KNd42PGyx5xaoVTO1mjU1bH3NpY4vsrVlnv9PNGqQj8wd7rJ6nEypLrJ7z5vxK5RP0yMLo6J/Gsm62DI5Q=="
     },
-    "stylehacks@8.0.0_postcss@8.5.14": {
+    "stylehacks@8.0.0_postcss@8.5.15": {
       "integrity": "sha512-sWyjaJvBqHoVKYPbQ8JRvrGSPaYWtWrJsU+fGVtwKB1GE1rRPu3rC7T6UCuXLoL00Dwb+tsHe2T904r8Vnsx8w==",
       "dependencies": [
         "browserslist",
@@ -3142,7 +3142,7 @@
       "npm:http-server@14.1.1",
       "npm:jiti@2.7.0",
       "npm:playwright@1.60.0",
-      "npm:postcss@8.5.14",
+      "npm:postcss@8.5.15",
       "npm:prettier@3.8.3",
       "npm:stylelint-config-standard@40.0.0",
       "npm:stylelint@17.12.0",
