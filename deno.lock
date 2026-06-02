@@ -16,7 +16,7 @@
     "jsr:@std/internal@^1.0.13": "1.0.14",
     "jsr:@std/internal@^1.0.14": "1.0.14",
     "jsr:@std/path@1.0.8": "1.0.8",
-    "jsr:@std/path@1.1.4": "1.1.4",
+    "jsr:@std/path@1.1.5": "1.1.5",
     "jsr:@std/path@^1.1.4": "1.1.5",
     "jsr:@std/path@^1.1.5": "1.1.5",
     "jsr:@std/testing@0.224": "0.224.0",
@@ -25,7 +25,7 @@
     "npm:@playwright/test@1.60.0": "1.60.0",
     "npm:@types/estree@1.0.6": "1.0.6",
     "npm:@types/node@*": "22.15.15",
-    "npm:@typescript-eslint/eslint-plugin@8.60.0": "8.60.0_@typescript-eslint+parser@8.60.0__eslint@9.39.4___jiti@2.7.0__typescript@6.0.3_eslint@9.39.4__jiti@2.7.0_typescript@6.0.3",
+    "npm:@typescript-eslint/eslint-plugin@8.60.0": "8.60.0_@typescript-eslint+parser@8.60.0__eslint@9.39.4___jiti@2.7.0__typescript@6.0.3_eslint@9.39.4__jiti@2.7.0_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.60.0": "8.60.0_eslint@9.39.4__jiti@2.7.0_typescript@6.0.3",
     "npm:baseline-browser-mapping@2.10.32": "2.10.32",
     "npm:cssnano-preset-advanced@8.0.1": "8.0.1_postcss@8.5.15",
@@ -100,12 +100,6 @@
     },
     "@std/path@1.0.8": {
       "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
-    },
-    "@std/path@1.1.4": {
-      "integrity": "1d2d43f39efb1b42f0b1882a25486647cb851481862dc7313390b2bb044314b5",
-      "dependencies": [
-        "jsr:@std/internal@^1.0.12"
-      ]
     },
     "@std/path@1.1.5": {
       "integrity": "ccea00982ea28c36becaf6e62f855406c76a8c32d462f66f415bbb7d83a271bc",
@@ -368,7 +362,7 @@
         "undici-types"
       ]
     },
-    "@typescript-eslint/eslint-plugin@8.60.0_@typescript-eslint+parser@8.60.0__eslint@9.39.4___jiti@2.7.0__typescript@6.0.3_eslint@9.39.4__jiti@2.7.0_typescript@6.0.3": {
+    "@typescript-eslint/eslint-plugin@8.60.0_@typescript-eslint+parser@8.60.0__eslint@9.39.4___jiti@2.7.0__typescript@6.0.3_eslint@9.39.4__jiti@2.7.0_jiti@2.7.0": {
       "integrity": "sha512-QYb/sa74/s7OKMbACMjrYnGspj9Hs5YI5aaffSL65UfeBUzVzBJfVo3oWSpbzPurvm7yaCCo2Lk7lVj610HqKw==",
       "dependencies": [
         "@eslint-community/regexpp",
@@ -418,7 +412,7 @@
         "typescript"
       ]
     },
-    "@typescript-eslint/type-utils@8.60.0_eslint@9.39.4__jiti@2.7.0_typescript@6.0.3": {
+    "@typescript-eslint/type-utils@8.60.0_eslint@9.39.4__jiti@2.7.0_typescript@6.0.3_jiti@2.7.0": {
       "integrity": "sha512-SX46wEUtitCpq7AN38HkUU/+zvUpdKf7ephtWAFgckH8O7PQIyL5gvrhQgBLuEYgLfuKWOVvWVskMbuFHAz5xg==",
       "dependencies": [
         "@typescript-eslint/types",
@@ -448,7 +442,7 @@
         "typescript"
       ]
     },
-    "@typescript-eslint/utils@8.60.0_eslint@9.39.4__jiti@2.7.0_typescript@6.0.3": {
+    "@typescript-eslint/utils@8.60.0_eslint@9.39.4__jiti@2.7.0_typescript@6.0.3_jiti@2.7.0": {
       "integrity": "sha512-HtXuPfrHTyBDkameWpl+vJb1Uevu2tznAyahM1Oc4AENidCLTPiZDWIo4GfcxNdC/RcfGcadzzkqbRG87dUrQA==",
       "dependencies": [
         "@eslint-community/eslint-utils",
@@ -3130,7 +3124,7 @@
     "dependencies": [
       "jsr:@std/assert@1.0.19",
       "jsr:@std/fs@1.0.24",
-      "jsr:@std/path@1.1.4",
+      "jsr:@std/path@1.1.5",
       "jsr:@std/testing@1.0.18",
       "jsr:@vento/vento@1.14.0",
       "npm:@playwright/test@1.60.0",
