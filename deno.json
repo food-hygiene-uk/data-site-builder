@@ -4,7 +4,7 @@
     "@std/assert": "jsr:@std/assert@1.0.19",
     "@std/fs": "jsr:@std/fs@1.0.24",
     "@std/path": "jsr:@std/path@1.1.5",
-    "@std/testing": "jsr:@std/testing@1.0.18",
+    "@std/testing": "jsr:@std/testing@1.0.19",
     "@typescript-eslint/eslint-plugin": "npm:@typescript-eslint/eslint-plugin@8.60.0",
     "@typescript-eslint/parser": "npm:@typescript-eslint/parser@8.60.0",
     "@vento/vento": "jsr:@vento/vento@1.14.0",
