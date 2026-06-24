@@ -37,7 +37,7 @@
     "npm:eslint@9.39.4": "9.39.4_jiti@2.7.0",
     "npm:estree-walker@3.0.3": "3.0.3",
     "npm:fast-check@4.8.0": "4.8.0",
-    "npm:fast-xml-parser@5.9.0": "5.9.0",
+    "npm:fast-xml-parser@5.9.2": "5.9.2",
     "npm:http-server@14.1.1": "14.1.1",
     "npm:jiti@2.7.0": "2.7.0",
     "npm:meriyah@6.0.5": "6.0.5",
@@ -1317,8 +1317,8 @@
         "xml-naming"
       ]
     },
-    "fast-xml-parser@5.9.0": {
-      "integrity": "sha512-duBuXbyIhEeNO4GjFuVqr0nF047oNwr18aum+zJyqo0MUG/n7Afgs3Qv3D6VN3ONedUKxiuFlPiMGIa0Z11chA==",
+    "fast-xml-parser@5.9.2": {
+      "integrity": "sha512-DYPkXnVSJHAGAkSBeVYhEo/seIpz2SLr9OQcX7m6lXaX3gvoB+DCKzFdZIEhZGI3I1DUhObBAUOT/v2xfoXz/w==",
       "dependencies": [
         "@nodable/entities",
         "fast-xml-builder",
@@ -2080,8 +2080,8 @@
     "path-exists@4.0.0": {
       "integrity": "sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w=="
     },
-    "path-expression-matcher@1.6.0": {
-      "integrity": "sha512-e5y7RCLHKjemsgQ4eqGJtPyr10ILz25HO7flzxhTV8bgvd5yHx98DGtCAtbVW9f2TqnYI/gEVZd+vz7snrdPTw=="
+    "path-expression-matcher@1.6.1": {
+      "integrity": "sha512-h7bxdzhHk8Knyc4Tj+jMaa7fEEoUJy7p1qtbVgkYg1Uhpe5Np5VuGXCRZnkZvU+Q42M1vStt0ifa3ueykRJPmQ=="
     },
     "path-key@3.1.1": {
       "integrity": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="
@@ -3129,7 +3129,7 @@
       "npm:eslint-plugin-unicorn@65.0.1",
       "npm:eslint@9.39.4",
       "npm:fast-check@4.8.0",
-      "npm:fast-xml-parser@5.9.0",
+      "npm:fast-xml-parser@5.9.2",
       "npm:http-server@14.1.1",
       "npm:jiti@2.7.0",
       "npm:playwright@1.60.0",
