@@ -24,7 +24,7 @@
     "jiti": "npm:jiti@2.7.0",
     "playwright": "npm:playwright@1.61.0",
     "postcss": "npm:postcss@8.5.15",
-    "prettier": "npm:prettier@3.8.3",
+    "prettier": "npm:prettier@3.8.4",
     "scripts/": "./src/scripts/",
     "stylelint-config-standard": "npm:stylelint-config-standard@40.0.0",
     "stylelint": "npm:stylelint@17.12.0",
