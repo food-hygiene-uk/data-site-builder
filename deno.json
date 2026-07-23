@@ -19,7 +19,7 @@
     "eslint-plugin-unicorn": "npm:eslint-plugin-unicorn@65.0.1",
     "eslint": "npm:eslint@9.39.4",
     "fast-check": "npm:fast-check@4.8.0",
-    "fast_xml_parser": "npm:fast-xml-parser@5.9.3",
+    "fast_xml_parser": "npm:fast-xml-parser@5.10.1",
     "http-server": "npm:http-server@14.1.1",
     "jiti": "npm:jiti@2.7.0",
     "playwright": "npm:playwright@1.61.1",
