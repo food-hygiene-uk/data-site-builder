@@ -5,8 +5,8 @@
     "jsr:@std/assert@0.224": "0.224.0",
     "jsr:@std/assert@1.0.19": "1.0.19",
     "jsr:@std/assert@^1.0.19": "1.0.19",
-    "jsr:@std/async@^1.4.0": "1.5.0",
-    "jsr:@std/data-structures@^1.1.0": "1.1.1",
+    "jsr:@std/async@^1.5.0": "1.5.0",
+    "jsr:@std/data-structures@^1.1.2": "1.1.2",
     "jsr:@std/fmt@0.224": "0.224.0",
     "jsr:@std/fs@1.0.24": "1.0.24",
     "jsr:@std/fs@^1.0.24": "1.0.24",
@@ -17,8 +17,9 @@
     "jsr:@std/path@1.0.8": "1.0.8",
     "jsr:@std/path@1.1.6": "1.1.6",
     "jsr:@std/path@^1.1.5": "1.1.6",
+    "jsr:@std/path@^1.1.6": "1.1.6",
     "jsr:@std/testing@0.224": "0.224.0",
-    "jsr:@std/testing@1.0.19": "1.0.19",
+    "jsr:@std/testing@1.0.20": "1.0.20",
     "jsr:@vento/vento@1.14.0": "1.14.0",
     "npm:@playwright/test@1.61.1": "1.61.1",
     "npm:@types/estree@1.0.6": "1.0.6",
@@ -71,8 +72,8 @@
     "@std/async@1.5.0": {
       "integrity": "4c1f22d287a17ad7d8643b1952bc5a4d21e5d8b68dc8c20d8268eecc69096e82"
     },
-    "@std/data-structures@1.1.1": {
-      "integrity": "7e1fcf19771fb9c6dbcd7f65039d6d42ef8dc023cfbc0c4cdc74b24e09229380"
+    "@std/data-structures@1.1.2": {
+      "integrity": "2471377c9e0051f9ec34e57d0ebd0ad133a5a889677446ec6ba9938e4e102918"
     },
     "@std/fmt@0.224.0": {
       "integrity": "e20e9a2312a8b5393272c26191c0a68eda8d2c4b08b046bad1673148f1d69851"
@@ -108,15 +109,15 @@
     "@std/testing@0.224.0": {
       "integrity": "371b8a929aa7132240d5dd766a439be8f780ef5c176ab194e0bcab72370c761e"
     },
-    "@std/testing@1.0.19": {
-      "integrity": "f4236172365b216728dc3cc8b5e80a9f4c33083d1e4ede7613d5b25b4014898e",
+    "@std/testing@1.0.20": {
+      "integrity": "21380ed438672762e4ec549cbf4fe41c5b68f5598773a30b64abe7375513e721",
       "dependencies": [
         "jsr:@std/assert@^1.0.19",
         "jsr:@std/async",
         "jsr:@std/data-structures",
         "jsr:@std/fs@^1.0.24",
         "jsr:@std/internal@^1.0.14",
-        "jsr:@std/path@^1.1.5"
+        "jsr:@std/path@^1.1.6"
       ]
     },
     "@vento/vento@1.14.0": {
@@ -3114,7 +3115,7 @@
       "jsr:@std/assert@1.0.19",
       "jsr:@std/fs@1.0.24",
       "jsr:@std/path@1.1.6",
-      "jsr:@std/testing@1.0.19",
+      "jsr:@std/testing@1.0.20",
       "jsr:@vento/vento@1.14.0",
       "npm:@playwright/test@1.61.1",
       "npm:@typescript-eslint/eslint-plugin@8.63.0",
