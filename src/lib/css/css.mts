@@ -18,7 +18,7 @@ export const processCssFile = async ({
   const content = await globalThis.Deno.readTextFile(cssPath);
   const cssContent = content;
 
-  const processedCss = await postcss([cssnano]).process(cssContent, {
+  const processedCss = await postcss([cssnano()]).process(cssContent, {
     from: undefined,
   });
 
