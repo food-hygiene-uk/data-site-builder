@@ -27,7 +27,7 @@
     "npm:@typescript-eslint/eslint-plugin@8.66.0": "8.66.0_@typescript-eslint+parser@8.66.0__eslint@9.39.4___jiti@2.7.0__typescript@6.0.3_eslint@9.39.4__jiti@2.7.0_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.66.0": "8.66.0_eslint@9.39.4__jiti@2.7.0_typescript@6.0.3",
     "npm:baseline-browser-mapping@2.11.15": "2.11.15",
-    "npm:cssnano-preset-advanced@8.0.2": "8.0.2_postcss@8.5.25",
+    "npm:cssnano-preset-advanced@8.0.6": "8.0.6_postcss@8.5.25",
     "npm:cssnano@8.0.6": "8.0.6_postcss@8.5.25",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@9.39.4__jiti@2.7.0_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.4__jiti@2.7.0_jiti@2.7.0",
@@ -585,8 +585,8 @@
     "async@3.2.6": {
       "integrity": "sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA=="
     },
-    "autoprefixer@10.5.0_postcss@8.5.25": {
-      "integrity": "sha512-FMhOoZV4+qR6aTUALKX2rEqGG+oyATvwBt9IIzVR5rMa2HRWPkxf+P+PAJLD1I/H5/II+HuZcBJYEFBpq39ong==",
+    "autoprefixer@10.5.4_postcss@8.5.25": {
+      "integrity": "sha512-MaU0U/za7N3r6brxD4YB/l4NSrFzLPlANv6wEuQVaIPlD3L4W9rFcQPbL/EilY9BHhHvhfcz3gInDLrEtWT4EA==",
       "dependencies": [
         "browserslist",
         "caniuse-lite",
@@ -805,11 +805,10 @@
       "integrity": "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==",
       "bin": true
     },
-    "cssnano-preset-advanced@8.0.2_postcss@8.5.25": {
-      "integrity": "sha512-xMfFCqapFNPx7JLaTwaAJ6IpbiNKo5PSc3A5WqhnyYeVM5f18Z4j2TUnzVlJ8AC+6O3SjC+sVGa6NXbay7Ycfg==",
+    "cssnano-preset-advanced@8.0.6_postcss@8.5.25": {
+      "integrity": "sha512-NEabnpq26x07DbjH4oXKo0Hrv0Ic2nZ/AfripvuIHd5/CiOru9oLM5sJlBJjtASkpyJLLluWRfTu1ZHrWC1ZEQ==",
       "dependencies": [
         "autoprefixer",
-        "browserslist",
         "css-declaration-sorter",
         "cssnano-preset-default",
         "postcss@8.5.25",
@@ -2187,15 +2186,15 @@
         "postcss@8.5.25"
       ]
     },
-    "postcss-discard-unused@8.0.1_postcss@8.5.25": {
-      "integrity": "sha512-mawV2Bt6WJlxGNqG40ge1peOpp5ibsAA6v8FqGGnleVG793a/hMO/nqc/nJZEBU6X5DkJSpyMekR/sKnaZ6loA==",
+    "postcss-discard-unused@8.0.4_postcss@8.5.25": {
+      "integrity": "sha512-HFdRq26iR6f5sgF+lb85A0FqRVgrWXTFE7fsH8SOzphDM7G0hm+yl614+afRU3TKrpK2BJkQ/lFoOKUskG82Bw==",
       "dependencies": [
         "postcss@8.5.25",
         "postcss-selector-parser"
       ]
     },
-    "postcss-merge-idents@8.0.1_postcss@8.5.25": {
-      "integrity": "sha512-5/Sqqh+NreY5OagJoe1UJ4tuT7cIpEVgvyOhI2XgHRHIR5uaKB20bn9Jk5dTxuWkhlbj6GdUyPXbXp4rn/+XcA==",
+    "postcss-merge-idents@8.0.4_postcss@8.5.25": {
+      "integrity": "sha512-rlrzUtudROz9BpDKGPw0IvQpg0I0W9E3NWcdIbkb1umHvVWcMMhT/US9d8AOwtHeEmCtuLXdVnW5CcIiSSi/zg==",
       "dependencies": [
         "cssnano-utils",
         "postcss@8.5.25",
@@ -2326,8 +2325,8 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-reduce-idents@8.0.1_postcss@8.5.25": {
-      "integrity": "sha512-sOpKLDSFVW9mbIjurRPU8ddK6qIsA2d64F65Ol6icKQO2s2hMFXVnOC2mJvM5XhQUGdHMXv050ajdSDhM8hvPg==",
+    "postcss-reduce-idents@8.0.4_postcss@8.5.25": {
+      "integrity": "sha512-gI+Pz7RqzRav8UJnUT9w4a67157lwN1dfYXK/Bgo/+NLC/n+GdxbBISxqy6/HctYa+PBveYsEfocJQkJ9YtWcA==",
       "dependencies": [
         "postcss@8.5.25",
         "postcss-value-parser"
@@ -2379,8 +2378,8 @@
     "postcss-value-parser@4.2.0": {
       "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ=="
     },
-    "postcss-zindex@8.0.1_postcss@8.5.25": {
-      "integrity": "sha512-gPYTe+LDnP5HPwxFJPRmTDeaz6p6aHFqRcBSkursX0I9XAz1aUcRjdnQXXb2laiBshy/PuhmHMJ0QKnSf7ffUw==",
+    "postcss-zindex@8.0.4_postcss@8.5.25": {
+      "integrity": "sha512-cx0cOdkJQBLikx57fGX+pN+fFLPswwVSLDv8Nz6/N+ls2OKFKprQyXJsm0W7b+fNm4BkFFfWijRXlgeXFeOdTQ==",
       "dependencies": [
         "postcss@8.5.25"
       ]
@@ -3139,7 +3138,7 @@
       "npm:@typescript-eslint/eslint-plugin@8.66.0",
       "npm:@typescript-eslint/parser@8.66.0",
       "npm:baseline-browser-mapping@2.11.15",
-      "npm:cssnano-preset-advanced@8.0.2",
+      "npm:cssnano-preset-advanced@8.0.6",
       "npm:cssnano@8.0.6",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
