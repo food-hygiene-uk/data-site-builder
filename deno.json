@@ -50,7 +50,11 @@
     },
     "eslint:check": {
       "description": "Runs ESLint on the codebase",
-      "command": "deno run --allow-env --allow-read --allow-write=./.eslintcache --allow-sys=cpus,homedir npm:eslint --concurrency=auto ."
+      "command": "deno run --allow-env --allow-read --allow-write=./.eslintcache --allow-sys=cpus,homedir npm:eslint --concurrency=1 ."
+    },
+    "eslint:fix": {
+      "description": "Fixes ESLint issues in the codebase",
+      "command": "deno run --allow-env --allow-read --allow-write=./ --allow-sys=cpus,homedir npm:eslint --concurrency=1 --fix ."
     },
     "git:pre-commit": {
       "description": "Updates and validadates the code as done in CI",
@@ -58,16 +62,16 @@
     },
     "playwright:install": {
       "description": "Installs Playwright dependencies",
-      "command": "deno run --allow-env --allow-read=/proc/version,../node_modules,/node_modules,/etc/os-release,/home/node/.cache/ms-playwright,/home/runner/.cache/ms-playwright,$(which deno),/tmp/,/ms-playwright/.docker-info --allow-write=/home/node/.cache/ms-playwright,/home/runner/.cache/ms-playwright,/tmp/ --allow-run=$(which deno),/sbin/ldconfig,which,sudo --allow-sys=osRelease,homedir,uid npm:playwright install --with-deps"
+      "command": "deno run --allow-all npm:playwright install --with-deps"
     },
     "playwright:show-report": {
       "description": "Shows the Playwright report",
-      "command": "deno run --allow-env --allow-read=/proc/version,/etc/os-release,../node_modules,/node_modules,./,$(which deno) --allow-net=127.0.0.1:9323 --allow-run=./node_modules/.deno/playwright-core@1.52.0/node_modules/playwright-core/lib/utilsBundleImpl/xdg-open --allow-sys=osRelease,homedir,uid npm:playwright show-report"
+      "command": "deno run --allow-all npm:playwright show-report"
     },
     "playwright:test": {
       "description": "Runs Playwright tests",
       "dependencies": ["playwright:install"],
-      "command": "deno run --allow-env --allow-net=\"localhost,[::1]:8080,127.0.0.1:8080,127.0.0.1:9323\" --allow-read=./,/node_modules/,../node_modules,/proc/version,/etc/os-release,/tmp/,../tsconfig.json,../../tsconfig.json,../../../tsconfig.json,../../../../tsconfig.json,../../../../../tsconfig.json,../../../../../../tsconfig.json,../../../../../../../tsconfig.json,../jsconfig.json,../../jsconfig.json,../../../jsconfig.json,../../../../jsconfig.json,../../../../../jsconfig.json,../../../../../../jsconfig.json,../../../../../../../jsconfig.json,$(which deno) --allow-write=./test-results/,./playwright-report,/tmp/ --allow-sys=cpus,homedir,osRelease,uid --allow-run npm:playwright test"
+      "command": "deno run --allow-all npm:playwright test"
     },
     "prettier:debug-check": {
       "description": "Runs prettier on the code through Deno - --debug-check",
