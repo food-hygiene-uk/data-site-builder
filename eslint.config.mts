@@ -138,19 +138,21 @@ export default defineConfig([
     },
   },
   {
+    files: ["**/schema.mts", "**/types.mts", "**/*.test.mts"],
+    rules: {
+      "unicorn/max-nested-calls": ["error", { max: 6 }],
+    },
+  },
+  {
     // Ignore patterns
     ignores: [
-      "build/",
-      "coverage/",
       "dist/",
-      "node-modules/",
-      "playwright-report/",
-      "test-results/",
-      "tmp/",
+      "build/",
       "deno.lock",
       "package.json",
       "deno.json",
       "assets/google*.html",
+      "node_modules/",
       ".vscode/",
     ],
   },

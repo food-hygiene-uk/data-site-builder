@@ -1,4 +1,5 @@
 import { copy, emptyDir, ensureDir } from "@std/fs";
+import { escape } from "@std/html/entities";
 import { config } from "./lib/config/config.mts";
 import * as api from "./ratings-api/rest.mts";
 import { authoritiesResponseSchema } from "./ratings-api/schema.mts";
@@ -29,14 +30,17 @@ const robotsTxtPath = "dist/robots.txt";
 let robotsTxtContent = await Deno.readTextFile(robotsTxtPath);
 robotsTxtContent = robotsTxtContent.replace(
   /Sitemap: \//,
-  `Sitemap: ${baseURL}/`,
+  () => `Sitemap: ${escape(baseURL)}/`,
 );
 await Deno.writeTextFile(robotsTxtPath, robotsTxtContent);
 
 // Update sitemap.xml to include BASE_URL
 const sitemapXmlPath = "dist/sitemap.xml";
 let sitemapXmlContent = await Deno.readTextFile(sitemapXmlPath);
-sitemapXmlContent = sitemapXmlContent.replaceAll("<loc>/", `<loc>${baseURL}/`);
+sitemapXmlContent = sitemapXmlContent.replaceAll(
+  "<loc>/",
+  () => `<loc>${escape(baseURL)}/`,
+);
 await Deno.writeTextFile(sitemapXmlPath, sitemapXmlContent);
 
 const authoritiesResponse = authoritiesResponseSchema.parse(
@@ -46,9 +50,9 @@ const authoritiesResponse = authoritiesResponseSchema.parse(
 const apiAuthorities = Deno.env.get("CI") ? authoritiesResponse.authorities : [
   authoritiesResponse.authorities.find(
     (authority) =>
-      ["Scotland", "Wales", "Northern Ireland"].includes(
+      !["Scotland", "Wales", "Northern Ireland"].includes(
         authority.RegionName,
-      ) === false,
+      ),
   )!,
   authoritiesResponse.authorities.find(
     (authority) => authority.RegionName === "Northern Ireland",

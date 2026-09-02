@@ -1,6 +1,6 @@
 import type { Authorities } from "../../ratings-api/types.mts";
 import { XMLBuilder, XMLParser } from "fast_xml_parser";
-import { z } from "zod";
+import { ZodError } from "../../lib/zod/zod.mts";
 import { dataSchema } from "../../ratings-api/schema.mts";
 import { join } from "@std/path";
 import { walk } from "@std/fs";
@@ -85,10 +85,7 @@ export const sortEstablishmentsInXml = (sourceXml: string): string => {
     ?.EstablishmentCollection
     ?.EstablishmentDetail;
 
-  if (
-    Array.isArray(establishmentDetail) === true &&
-    establishmentDetail.length > 0
-  ) {
+  if (Array.isArray(establishmentDetail) && establishmentDetail.length > 0) {
     sortEstablishments(establishmentDetail);
   } else {
     // Not an error if not found, file might be structured differently or empty of these elements.
@@ -165,20 +162,22 @@ const processSingleOpenDataXmlFile = async (filePath: string) => {
 const processOpenDataXmlFiles = async () => {
   const openDataFilesDirectory = join("build", "files", "open-data-files");
   console.log(`Processing XML files in: ${openDataFilesDirectory}.`);
-  let foundXmlFiles = false;
-  for await (
-    const entry of walk(openDataFilesDirectory, {
-      exts: [".xml"],
-      includeDirs: false,
-      maxDepth: 1,
-    })
-  ) {
-    if (entry.isFile) {
-      foundXmlFiles = true;
-      await processSingleOpenDataXmlFile(entry.path);
+  let wereXmlFilesFound = false;
+  const xmlFiles = walk(openDataFilesDirectory, {
+    exts: [".xml"],
+    includeDirs: false,
+    maxDepth: 1,
+  });
+
+  for await (const entry of xmlFiles) {
+    if (!entry.isFile) {
+      continue;
     }
+
+    wereXmlFilesFound = true;
+    await processSingleOpenDataXmlFile(entry.path);
   }
-  if (!foundXmlFiles) {
+  if (!wereXmlFilesFound) {
     console.warn(
       `No .xml files found in ${openDataFilesDirectory} to process.`,
     );
@@ -215,7 +214,7 @@ const processSingleOpenDataJsonFile = async (filePath: string) => {
     console.log(`Reformatted: ${filePath}`);
   } catch (error) {
     // If it's a ZodError, it means parsing failed according to dataSchema
-    if (error instanceof z.ZodError) {
+    if (error instanceof ZodError) {
       console.error(
         `Error parsing file ${filePath} with dataSchema:`,
         error.issues,
@@ -232,13 +231,12 @@ const processSingleOpenDataJsonFile = async (filePath: string) => {
 const processOpenDataJsonFiles = async () => {
   const openDataFilesDirectory = join("build", "files", "open-data-files");
   console.log(`Processing JSON files in: ${openDataFilesDirectory}`);
-  for await (
-    const entry of walk(openDataFilesDirectory, {
-      exts: [".json"],
-      includeDirs: false,
-      maxDepth: 1,
-    })
-  ) {
+  const entries = walk(openDataFilesDirectory, {
+    exts: [".json"],
+    includeDirs: false,
+    maxDepth: 1,
+  });
+  for await (const entry of entries) {
     if (entry.isFile) {
       await processSingleOpenDataJsonFile(entry.path);
     }

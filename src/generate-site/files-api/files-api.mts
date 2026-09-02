@@ -13,22 +13,24 @@ const formatApiFiles = async (): Promise<void> => {
   const directoryPath = APIBuildPath;
   console.log(`Starting formatting for files in ${directoryPath}...`);
   try {
-    const directoryExists = await Deno.stat(directoryPath)
-      .then(() => true)
-      .catch(() => false);
-    if (!directoryExists) {
+    let isExistingDirectory = true;
+    try {
+      await Deno.stat(directoryPath);
+    } catch {
+      isExistingDirectory = false;
+    }
+    if (!isExistingDirectory) {
       console.warn(`Directory does not exist: ${directoryPath}`);
       return;
     }
-    let foundAny = false;
-    for await (
-      const directoryEntry of walk(directoryPath, {
-        exts: [".json", ".xml"],
-        includeDirs: false,
-        maxDepth: 1,
-      })
-    ) {
-      foundAny = true;
+    let wereAnyFound = false;
+    const directoryEntries = walk(directoryPath, {
+      exts: [".json", ".xml"],
+      includeDirs: false,
+      maxDepth: 1,
+    });
+    for await (const directoryEntry of directoryEntries) {
+      wereAnyFound = true;
       console.log(`Processing: ${directoryEntry.name} in ${directoryPath}`);
       if (directoryEntry.isFile) {
         const filePath = join(directoryPath, directoryEntry.name);
@@ -63,7 +65,7 @@ const formatApiFiles = async (): Promise<void> => {
         }
       }
     }
-    if (!foundAny) {
+    if (!wereAnyFound) {
       console.warn(`No .json or .xml files found in ${APIBuildPath}`);
     }
     console.log(`Formatting completed for files in ${APIBuildPath}.`);

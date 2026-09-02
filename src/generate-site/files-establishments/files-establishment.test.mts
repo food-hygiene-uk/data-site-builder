@@ -3,19 +3,58 @@ import { describe, it } from "@std/testing/bdd";
 import { join } from "@std/path";
 import { ensureDir } from "@std/fs";
 import { generateEstablishments } from "./files-establishment.mts";
+import { Establishment } from "../../ratings-api/types.mts";
 
 // Mock data for testing
+const baseMockEstablishment = {
+  FHRSID: 0,
+  BusinessName: "ERROR: base mock used, should be overridden",
+  BusinessType: "Restaurant",
+  LocalAuthorityBusinessID: "TEST-12345",
+  BusinessTypeID: 1,
+  LocalAuthorityCode: "TEST",
+  LocalAuthorityName: "Test Council",
+  LocalAuthorityWebSite: "https://example.com",
+  NewRatingPending: false,
+  LocalAuthorityEmailAddress: "test@example.com",
+  RightToReply: "",
+  Geocode: {
+    Latitude: "51.5074",
+    Longitude: "-0.1278",
+  },
+  AddressLine1: "1 Test Street",
+  AddressLine2: "",
+  AddressLine3: "",
+  AddressLine4: "Testville",
+  PostCode: "TE1 1ST",
+  SchemeType: "FHRS",
+  RatingValue: "5",
+  RatingKey: "fhrs_5_en-GB",
+  RatingDate: null,
+  Scores: {
+    Hygiene: 5,
+    Structural: 5,
+    ConfidenceInManagement: 5,
+  },
+} satisfies Establishment;
+
 const mockEstablishment1 = {
+  ...baseMockEstablishment,
   FHRSID: 12_345,
   BusinessName: "Test Business 1",
+  SchemeType: "FHRS",
   RatingValue: "5",
-};
+  RatingKey: "fhrs_5_en-GB",
+} satisfies Establishment;
 
 const mockEstablishment2 = {
+  ...baseMockEstablishment,
   FHRSID: 67_890,
   BusinessName: "Test Business 2",
+  SchemeType: "FHRS",
   RatingValue: "4",
-};
+  RatingKey: "fhrs_4_en-GB",
+} satisfies Establishment;
 
 const mockDataWithEstablishments = {
   FHRSEstablishment: {
@@ -34,6 +73,7 @@ const mockDataEmptyCollection = {
 const mockDataNoCollection = {
   FHRSEstablishment: {
     Header: { ExtractDate: "2023-01-01", ItemCount: 0, ReturnCode: "Success" },
+    EstablishmentCollection: null,
   },
 };
 
@@ -41,9 +81,11 @@ describe("generateEstablishments", () => {
   describe("Example-based tests", () => {
     it("should create individual JSON files for each establishment", async () => {
       const temporaryDirectory = join("tmp", `test-${crypto.randomUUID()}`);
-      await Deno.remove(temporaryDirectory, { recursive: true }).catch(
-        () => {},
-      );
+      try {
+        await Deno.remove(temporaryDirectory, { recursive: true });
+      } catch {
+        // The temporary directory does not exist.
+      }
       const openDataDirectory = join(temporaryDirectory, "open-data-files");
       const establishmentsDirectory = join(
         temporaryDirectory,
@@ -99,9 +141,11 @@ describe("generateEstablishments", () => {
 
     it("should handle empty EstablishmentCollection", async () => {
       const temporaryDirectory = join("tmp", `test-${crypto.randomUUID()}`);
-      await Deno.remove(temporaryDirectory, { recursive: true }).catch(
-        () => {},
-      );
+      try {
+        await Deno.remove(temporaryDirectory, { recursive: true });
+      } catch {
+        // Ignore cleanup errors if the directory does not exist.
+      }
       const openDataDirectory = join(temporaryDirectory, "open-data-files");
       const establishmentsDirectory = join(
         temporaryDirectory,
@@ -130,9 +174,11 @@ describe("generateEstablishments", () => {
 
     it("should handle missing EstablishmentCollection", async () => {
       const temporaryDirectory = join("tmp", `test-${crypto.randomUUID()}`);
-      await Deno.remove(temporaryDirectory, { recursive: true }).catch(
-        () => {},
-      );
+      try {
+        await Deno.remove(temporaryDirectory, { recursive: true });
+      } catch {
+        // Ignore cleanup errors if the directory does not exist.
+      }
       const openDataDirectory = join(temporaryDirectory, "open-data-files");
       const establishmentsDirectory = join(
         temporaryDirectory,
@@ -170,6 +216,7 @@ describe("generateEstablishments", () => {
         ...mockEstablishment1,
         BusinessName: "Updated Business",
         RatingValue: "3",
+        RatingKey: "fhrs_3_en-GB",
       };
 
       const mockDataDuplicate = {
@@ -220,10 +267,14 @@ describe("generateEstablishments", () => {
       // Generate random establishments
       const randomEstablishments = [];
       for (let index = 0; index < 10; index++) {
+        const ratingValue = Math.floor(Math.random() * 5) + 1;
+
         randomEstablishments.push({
+          ...baseMockEstablishment,
           FHRSID: Math.floor(Math.random() * 100_000),
           BusinessName: `Random Business ${index}`,
-          RatingValue: Math.floor(Math.random() * 5) + 1,
+          RatingValue: ratingValue.toString(),
+          RatingKey: `fhrs_${ratingValue}_en-GB`,
         });
       }
 

@@ -303,9 +303,7 @@ const ratingValueFHRSObjects = [
   ...Object.keys(ratingValue.FHRS)
     .filter(
       (key) =>
-        schemeNoRatingScoreFHRS.includes(
-          key as keyof typeof ratingValue.FHRS,
-        ) === false,
+        !schemeNoRatingScoreFHRS.includes(key as keyof typeof ratingValue.FHRS),
     )
     .map((key) =>
       z.strictObject({
@@ -428,8 +426,8 @@ export const dataSchema = z.strictObject({
             "EstablishmentCollection cannot be null when Header.ItemCount is greater than 0.",
         });
       }
-      // If EstablishmentCollection is null, Header.ItemCount must be 0
-      if (object.EstablishmentCollection === null && ItemCount !== 0) {
+      // If Header.ItemCount is not 0 then EstablishmentCollection can't be null
+      if (ItemCount !== 0 && object.EstablishmentCollection === null) {
         context.addIssue({
           code: "custom",
           path: ["EstablishmentCollection"],

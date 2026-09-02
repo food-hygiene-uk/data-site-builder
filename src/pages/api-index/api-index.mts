@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/no-top-level-side-effects */
 import { join } from "@std/path/join";
 import { fromFileUrl } from "@std/path/from-file-url";
 import vento from "@vento/vento";
@@ -64,19 +65,23 @@ const generateApiIndexData = async (targetDirectory: string) => {
       }
     }
 
-    // eslint-disable-next-line unicorn/no-array-sort
-    const sortedApiTypes = [...apiFiles.keys()].sort((a, b) =>
-      a.localeCompare(b)
-    );
+    const sortedApiTypes = apiFiles
+      .keys()
+      .toArray()
+      // eslint-disable-next-line unicorn/no-array-sort
+      .sort((a, b) => a.localeCompare(b));
 
     const tablesData = sortedApiTypes.map((type) => {
       const typeDisplayName = type.charAt(0).toUpperCase() +
         type.slice(1).replaceAll("-", " ");
       const languagesMap = apiFiles.get(type)!;
-      // eslint-disable-next-line unicorn/no-array-sort
-      const sortedLanguages = [...languagesMap.keys()].sort((a, b) =>
-        a.localeCompare(b)
-      );
+
+      const sortedLanguages = languagesMap
+        .keys()
+        .toArray()
+        // eslint-disable-next-line unicorn/no-array-sort
+        .sort((a, b) => a.localeCompare(b));
+
       const languages = sortedLanguages.map((language) => ({
         name: language,
         files: languagesMap.get(language)!,
