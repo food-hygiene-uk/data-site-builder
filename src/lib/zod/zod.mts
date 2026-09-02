@@ -6,6 +6,8 @@ import { z } from "zod";
  */
 type LiteralPrimitive = string | number | boolean | bigint | null | undefined;
 
+export const ZodError = z.ZodError;
+
 /**
  * Checks if the given array of Zod literals meets the criteria for a valid union type.
  *

@@ -15,7 +15,7 @@ export const processCssFile = async ({
   path: string;
 }): Promise<string> => {
   const cssPath = fromFileUrl(path);
-  const content = await globalThis.Deno.readTextFile(cssPath);
+  const content = await Deno.readTextFile(cssPath);
   const cssContent = content;
 
   const processedCss = await postcss([cssnano()]).process(cssContent, {
@@ -33,5 +33,5 @@ export const processCssFile = async ({
  * @returns The modified CSS with suffixed class names.
  */
 export const cssAddSuffix = (css: string, classSuffix: string): string => {
-  return css.replaceAll("__CLASS_SUFFIX__", classSuffix);
+  return css.replaceAll("__CLASS_SUFFIX__", () => classSuffix);
 };
