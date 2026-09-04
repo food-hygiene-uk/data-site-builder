@@ -34,7 +34,7 @@
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_jiti@2.7.0",
     "npm:eslint-plugin-jsdoc@64.2.1": "64.2.1_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint-plugin-promise@7.3.0": "7.3.0_eslint@10.9.1_jiti@2.7.0",
-    "npm:eslint-plugin-unicorn@73.0.0": "73.0.0_eslint@10.9.1_jiti@2.7.0",
+    "npm:eslint-plugin-unicorn@74.0.0": "74.0.0_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint@*": "10.9.1_jiti@2.7.0",
     "npm:eslint@10.9.1": "10.9.1_jiti@2.7.0",
     "npm:estree-walker@3.0.3": "3.0.3",
@@ -224,8 +224,8 @@
     "@es-joy/resolve.exports@1.2.0": {
       "integrity": "sha512-Q9hjxWI5xBM+qW2enxfe8wDKdFWMfd0Z29k5ZJnuBqD/CasY5Zryj09aCA6owbGATWz+39p5uIdaHXpopOcG8g=="
     },
-    "@eslint-community/eslint-utils@4.9.1_eslint@10.9.1_jiti@2.7.0": {
-      "integrity": "sha512-phrYmNiYppR7znFEdqgfWHXR6NCkZEK7hwWDHZUjit/2/U0r6XvkDl0SYnoM51Hq7FhCGdLDT6zxCCOY1hexsQ==",
+    "@eslint-community/eslint-utils@4.10.1_eslint@10.9.1_jiti@2.7.0": {
+      "integrity": "sha512-cuadcxVFE8sDK6iWJbs8Sn0av2Nrh2QSGQhVlBW9AaAHqHwjWsZHT8LJ4hFGPh7ASBV2deFdM7H/DPjulmh8rg==",
       "dependencies": [
         "eslint@10.9.1_jiti@2.7.0",
         "eslint-visitor-keys@3.4.3"
@@ -981,7 +981,7 @@
       "dependencies": [
         "domelementtype",
         "domhandler",
-        "entities"
+        "entities@4.5.0"
       ]
     },
     "domelementtype@2.3.0": {
@@ -1017,6 +1017,9 @@
     },
     "entities@4.5.0": {
       "integrity": "sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw=="
+    },
+    "entities@8.0.0": {
+      "integrity": "sha512-zwfzJecQ/Uej6tusMqwAqU/6KL2XaB2VZ2Jg54Je6ahNBGNH6Ek6g3jjNCF0fG9EWQKGZNddNjU5F1ZQn/sBnA=="
     },
     "env-paths@2.2.1": {
       "integrity": "sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A=="
@@ -1203,8 +1206,8 @@
         "eslint@10.9.1_jiti@2.7.0"
       ]
     },
-    "eslint-plugin-unicorn@73.0.0_eslint@10.9.1_jiti@2.7.0": {
-      "integrity": "sha512-V0YatLe9nkGhXEXKe2Qljb1EY0sJHwDV0HUF1NKFwtsHh/fU7qGHDgv+6fchzZcgU2/7noHo2gdjnmo0P2uDPw==",
+    "eslint-plugin-unicorn@74.0.0_eslint@10.9.1_jiti@2.7.0": {
+      "integrity": "sha512-AGnsGi2SxHg1HEAXxn9nSnZfyjvTWkxm8E8hpd/9tD6dLjBUdcD7+D6ZN64HmmCXTSXlrwVyUqe20Uyb2CaurA==",
       "dependencies": [
         "@eslint-community/eslint-utils",
         "@eslint/css-tree",
@@ -1213,7 +1216,7 @@
         "ci-info",
         "core-js-compat",
         "detect-indent",
-        "entities",
+        "entities@8.0.0",
         "eslint@10.9.1_jiti@2.7.0",
         "find-up-simple",
         "globals@17.12.0",
@@ -1297,7 +1300,6 @@
     "eslint@9.39.5_jiti@2.7.0": {
       "integrity": "sha512-DgZS62aPLXKlnxILS/AYCoRvHaZeXceIzlXPkkGGzJWSow1aEk0lbTlxUSlyjC8jcaKxAdOnTDz+o1JFSBsyjw==",
       "dependencies": [
-        "@eslint-community/eslint-utils",
         "@eslint-community/regexpp",
         "@eslint/config-array@0.21.2",
         "@eslint/config-helpers@0.4.2",
@@ -3290,7 +3292,7 @@
       "npm:eslint-plugin-import@2.32.0",
       "npm:eslint-plugin-jsdoc@64.2.1",
       "npm:eslint-plugin-promise@7.3.0",
-      "npm:eslint-plugin-unicorn@73.0.0",
+      "npm:eslint-plugin-unicorn@74.0.0",
       "npm:eslint@10.9.1",
       "npm:fast-check@4.9.0",
       "npm:fast-xml-parser@5.11.1",
