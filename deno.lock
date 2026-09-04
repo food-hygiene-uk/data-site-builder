@@ -27,7 +27,7 @@
     "npm:@types/node@*": "22.15.15",
     "npm:@typescript-eslint/eslint-plugin@8.68.0": "8.68.0_@typescript-eslint+parser@8.68.0_eslint@10.9.1_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.68.0": "8.68.0_eslint@10.9.1_typescript@6.0.3_jiti@2.7.0",
-    "npm:baseline-browser-mapping@2.11.19": "2.11.19",
+    "npm:baseline-browser-mapping@2.11.20": "2.11.20",
     "npm:cssnano-preset-advanced@8.0.10": "8.0.10_postcss@8.5.26",
     "npm:cssnano@8.0.10": "8.0.10_postcss@8.5.26",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.9.1_jiti@2.7.0",
@@ -650,8 +650,8 @@
     "balanced-match@4.0.4": {
       "integrity": "sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA=="
     },
-    "baseline-browser-mapping@2.11.19": {
-      "integrity": "sha512-Grytf1xOxOEMTGRwx6rLGKkTabd4vMg3VrKdj/7joCmV0qgh4QwMMO6xh34YEXQqirAuUdgQGa5orJQQ+69RBw==",
+    "baseline-browser-mapping@2.11.20": {
+      "integrity": "sha512-H0ulySigv6icDJ1F7SjtdCD6PrhTpdYCmP0CactWy1+ekh0AFd0o1Wn5T8b+hnTmdBx19u9yhL6wvCylXMY7zw==",
       "bin": true
     },
     "basic-auth@2.0.1": {
@@ -3288,7 +3288,7 @@
       "npm:@playwright/test@1.62.1",
       "npm:@typescript-eslint/eslint-plugin@8.68.0",
       "npm:@typescript-eslint/parser@8.68.0",
-      "npm:baseline-browser-mapping@2.11.19",
+      "npm:baseline-browser-mapping@2.11.20",
       "npm:cssnano-preset-advanced@8.0.10",
       "npm:cssnano@8.0.10",
       "npm:eslint-config-prettier@10.1.8",
