@@ -11,7 +11,7 @@
     "@vento/vento": "jsr:@vento/vento@1.14.0",
     "baseline-browser-mapping": "npm:baseline-browser-mapping@2.11.20",
     "components/": "./src/components/",
-    "cssnano-preset-advanced": "npm:cssnano-preset-advanced@9.0.0",
+    "cssnano-preset-advanced": "npm:cssnano-preset-advanced@9.0.1",
     "cssnano": "npm:cssnano@9.0.1",
     "eslint-config-prettier": "npm:eslint-config-prettier@10.1.8",
     "eslint-plugin-import": "npm:eslint-plugin-import@2.32.0",
