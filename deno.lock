@@ -24,7 +24,7 @@
     "jsr:@vento/vento@1.14.0": "1.14.0",
     "npm:@playwright/test@1.62.1": "1.62.1",
     "npm:@types/estree@1.0.6": "1.0.6",
-    "npm:@types/node@*": "22.15.15",
+    "npm:@types/node@*": "26.5.1",
     "npm:@typescript-eslint/eslint-plugin@8.69.0": "8.69.0_@typescript-eslint+parser@8.69.0_eslint@10.9.1_typescript@6.0.3_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.69.0": "8.69.0_eslint@10.9.1_typescript@6.0.3",
     "npm:baseline-browser-mapping@2.11.21": "2.11.21",
@@ -32,7 +32,7 @@
     "npm:cssnano@9.0.2": "9.0.2_postcss@8.5.27",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_jiti@2.7.0",
-    "npm:eslint-plugin-jsdoc@64.3.4": "64.3.4_eslint@10.9.1_jiti@2.7.0",
+    "npm:eslint-plugin-jsdoc@64.3.5": "64.3.5_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint-plugin-promise@7.3.0": "7.3.0_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint-plugin-unicorn@74.0.0": "74.0.0_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint@*": "10.9.1_jiti@2.7.0",
@@ -205,8 +205,8 @@
     "@csstools/selector-specificity@6.0.0_postcss-selector-parser@7.1.5": {
       "integrity": "sha512-4sSgl78OtOXEX/2d++8A83zHNTgwCJMaR24FvsYL7Uf/VS8HZk9PTwR51elTbGqMuwH3szLvvOXEaVnqn0Z3zA=="
     },
-    "@es-joy/jsdoccomment@0.95.1": {
-      "integrity": "sha512-LO/RI08Fo9bhXwB7Od9G+1j3eSNq63+ZS5CQO8YLXHbDg6kx6S/DhTeY0+Fc9uZrjK1zZSyTx8Sg5gv5DIoCnA==",
+    "@es-joy/jsdoccomment@0.96.0": {
+      "integrity": "sha512-nvtxrDqAJOKMPSsMHqshCnHvnCqFnJTsKpTaTSaZoUi9VxGVe2JvgQeAY/Qvh2wyqXByIAqNTgI7h9elXzn0yQ==",
       "dependencies": [
         "@types/estree@1.0.9",
         "@typescript-eslint/types",
@@ -393,8 +393,8 @@
     "@types/json5@0.0.29": {
       "integrity": "sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ=="
     },
-    "@types/node@22.15.15": {
-      "integrity": "sha512-R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==",
+    "@types/node@26.5.1": {
+      "integrity": "sha512-CzNm2FezW4VR/LjG6yUdiEgLE/rAQ9Slj5gCu/C2VrdcW7I0ahNZ8DRbHT7zOZ6r3ONgd/bsQIeSaoDGrd1C6g==",
       "dependencies": [
         "undici-types"
       ]
@@ -1177,8 +1177,8 @@
         "tsconfig-paths"
       ]
     },
-    "eslint-plugin-jsdoc@64.3.4_eslint@10.9.1_jiti@2.7.0": {
-      "integrity": "sha512-aZZp44/yc6UTuH6U+cp1IVTTImfP2gd4JTuc+zMoB76ZI746avwbAqbdTejlKDFIYl6gBBhx3FG+jTRPZjnSXw==",
+    "eslint-plugin-jsdoc@64.3.5_eslint@10.9.1_jiti@2.7.0": {
+      "integrity": "sha512-BqRUwfREoBH+7pzDD+uIQ3aema5P7BnPYcHj3mU0DLm+p/5TEHdimkXgnQfYl0AGgB9PZxZW/Lk7D69FTJSLXw==",
       "dependencies": [
         "@es-joy/jsdoccomment",
         "@es-joy/resolve.exports",
@@ -1952,10 +1952,11 @@
       ],
       "bin": true
     },
-    "jsdoc-type-pratt-parser@9.1.2": {
-      "integrity": "sha512-9EXymowgk1mb9RY1VxuwKc+AhaxfBk2CV0dWxgGM+l5RURTtiUoAx7MlKwcsiVcEXK5HEPa7FeH/tsRpqjEPRg==",
+    "jsdoc-type-pratt-parser@9.2.1": {
+      "integrity": "sha512-V4Ww4EHnTcTLSOMoB0FsF72JhQvcAsriCm/LWnxJeGWoxIjEL2l9na11abQok5SYShq8m0Gl02el/xAbTCulvQ==",
       "dependencies": [
-        "@types/estree@1.0.9"
+        "@types/estree@1.0.9",
+        "@types/node"
       ]
     },
     "jsesc@3.1.0": {
@@ -3064,8 +3065,8 @@
         "which-boxed-primitive"
       ]
     },
-    "undici-types@6.21.0": {
-      "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
+    "undici-types@8.9.0": {
+      "integrity": "sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg=="
     },
     "unicorn-magic@0.4.0": {
       "integrity": "sha512-wH590V9VNgYH9g3lH9wWjTrUoKsjLF6sGLjhR4sH1LWpLmCOH0Zf7PukhDA8BiS7KHe4oPNkcTHqYkj7SOGUOw=="
@@ -3293,7 +3294,7 @@
       "npm:cssnano@9.0.2",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
-      "npm:eslint-plugin-jsdoc@64.3.4",
+      "npm:eslint-plugin-jsdoc@64.3.5",
       "npm:eslint-plugin-promise@7.3.0",
       "npm:eslint-plugin-unicorn@74.0.0",
       "npm:eslint@10.9.1",
