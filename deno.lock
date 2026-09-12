@@ -47,9 +47,8 @@
     "npm:postcss@8.5.28": "8.5.28",
     "npm:prettier@*": "3.9.6",
     "npm:prettier@3.9.6": "3.9.6",
-    "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.14.1_typescript@6.0.3",
-    "npm:stylelint@*": "17.14.1_typescript@6.0.3",
-    "npm:stylelint@17.14.1": "17.14.1_typescript@6.0.3",
+    "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.15.0",
+    "npm:stylelint@17.15.0": "17.15.0",
     "npm:uglify-js@3.19.3": "3.19.3",
     "npm:zod@4.5.4": "4.5.4"
   },
@@ -199,11 +198,17 @@
         "@csstools/css-tokenizer"
       ]
     },
-    "@csstools/selector-resolve-nested@4.0.0_postcss-selector-parser@7.1.5": {
-      "integrity": "sha512-9vAPxmp+Dx3wQBIUwc1v7Mdisw1kbbaGqXUM8QLTgWg7SoPGYtXBsMXvsFs/0Bn5yoFhcktzxNZGNaUt0VjgjA=="
+    "@csstools/selector-resolve-nested@4.0.1_postcss-selector-parser@7.1.6": {
+      "integrity": "sha512-j3vdQu0XwLME5qOTWxm8cnmvsf423R2YL6DbKklCHZwkDm7UdKNu6RPlw4REIJhSlKBICY3B70/7QZdicLqZgg==",
+      "dependencies": [
+        "postcss-selector-parser"
+      ]
     },
-    "@csstools/selector-specificity@6.0.0_postcss-selector-parser@7.1.5": {
-      "integrity": "sha512-4sSgl78OtOXEX/2d++8A83zHNTgwCJMaR24FvsYL7Uf/VS8HZk9PTwR51elTbGqMuwH3szLvvOXEaVnqn0Z3zA=="
+    "@csstools/selector-specificity@6.0.0_postcss-selector-parser@7.1.6": {
+      "integrity": "sha512-4sSgl78OtOXEX/2d++8A83zHNTgwCJMaR24FvsYL7Uf/VS8HZk9PTwR51elTbGqMuwH3szLvvOXEaVnqn0Z3zA==",
+      "dependencies": [
+        "postcss-selector-parser"
+      ]
     },
     "@es-joy/jsdoccomment@0.96.0": {
       "integrity": "sha512-nvtxrDqAJOKMPSsMHqshCnHvnCqFnJTsKpTaTSaZoUi9VxGVe2JvgQeAY/Qvh2wyqXByIAqNTgI7h9elXzn0yQ==",
@@ -409,7 +414,7 @@
         "@typescript-eslint/utils",
         "@typescript-eslint/visitor-keys",
         "eslint@10.9.1_jiti@2.7.0",
-        "ignore@7.0.5",
+        "ignore@7.0.9",
         "natural-compare",
         "ts-api-utils",
         "typescript"
@@ -758,8 +763,8 @@
     "color-name@1.1.4": {
       "integrity": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA=="
     },
-    "colord@2.9.3": {
-      "integrity": "sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw=="
+    "colord@2.10.0": {
+      "integrity": "sha512-AidJptpBJmjTclAp9BkLwJi0T93fo5epJnbaZslpg6QVzpHjAiveF55mE9AcUJiGMqRHgMDY8soMsQtuNYMHfw=="
     },
     "commander@11.1.0": {
       "integrity": "sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ=="
@@ -1603,7 +1608,7 @@
       "dependencies": [
         "@sindresorhus/merge-streams",
         "fast-glob",
-        "ignore@7.0.5",
+        "ignore@7.0.9",
         "is-path-inside",
         "micromatch",
         "slash",
@@ -1722,8 +1727,8 @@
     "ignore@5.3.2": {
       "integrity": "sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g=="
     },
-    "ignore@7.0.5": {
-      "integrity": "sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg=="
+    "ignore@7.0.9": {
+      "integrity": "sha512-brTTsvFRt5C1gGHtPst/281UjPD5t9fBqbgoMPlVWy11ZLTPfu7HxK4ZYqO9H7o/yC9rSTCI85EaQ4OoY12qYw=="
     },
     "import-fresh@3.3.1": {
       "integrity": "sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==",
@@ -2467,8 +2472,11 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-safe-parser@7.0.1_postcss@8.5.26": {
-      "integrity": "sha512-0AioNCJZ2DPYz5ABT6bddIqlhgwhpHZ/l65YAYo0BCIn0xiDpsnTHz0gnoTGk0OXZW0JRs+cDwL8u/teRdz+8A=="
+    "postcss-safe-parser@7.0.1_postcss@8.5.28": {
+      "integrity": "sha512-0AioNCJZ2DPYz5ABT6bddIqlhgwhpHZ/l65YAYo0BCIn0xiDpsnTHz0gnoTGk0OXZW0JRs+cDwL8u/teRdz+8A==",
+      "dependencies": [
+        "postcss"
+      ]
     },
     "postcss-selector-parser@7.1.6": {
       "integrity": "sha512-7qASPzhKF2l2KLboRZux8CCTRMdGiV08vWmyKzPz22qZ7ZjQBOeY7rNzNoCLSUiftJ7HUq0GERHmxw/t0dCdMw==",
@@ -2764,8 +2772,8 @@
         "strip-ansi@6.0.1"
       ]
     },
-    "string-width@8.2.1": {
-      "integrity": "sha512-IIaP0g3iy9Cyy18w3M9YcaDudujEAVHKt3a3QJg1+sr/oX96TbaGUubG0hJyCjCBThFH+tFpcIyoUHUn1ogaLA==",
+    "string-width@8.2.2": {
+      "integrity": "sha512-GaPUh5gfdrYzqeVNZvUfT23vYYxXzKYidUcnMtJg/3rxRV63EFZy3k6xfKlmfeJD0176lnUV/Usr3XcwSvFzpg==",
       "dependencies": [
         "get-east-asian-width",
         "strip-ansi@7.2.0"
@@ -2835,21 +2843,21 @@
         "postcss-selector-parser"
       ]
     },
-    "stylelint-config-recommended@18.0.0_stylelint@17.14.1_typescript@6.0.3": {
+    "stylelint-config-recommended@18.0.0_stylelint@17.15.0": {
       "integrity": "sha512-mxgT2XY6YZ3HWWe3Di8umG6aBmWmHTblTgu/f10rqFXnyWxjKWwNdjSWkgkwCtxIKnqjSJzvFmPT5yabVIRxZg==",
       "dependencies": [
         "stylelint"
       ]
     },
-    "stylelint-config-standard@40.0.0_stylelint@17.14.1_typescript@6.0.3": {
+    "stylelint-config-standard@40.0.0_stylelint@17.15.0": {
       "integrity": "sha512-EznGJxOUhtWck2r6dJpbgAdPATIzvpLdK9+i5qPd4Lx70es66TkBPljSg4wN3Qnc6c4h2n+WbUrUynQ3fanjHw==",
       "dependencies": [
         "stylelint",
         "stylelint-config-recommended"
       ]
     },
-    "stylelint@17.14.1_typescript@6.0.3": {
-      "integrity": "sha512-xVQwyiuxALUBNB2fBe0tmNemg9KqLtdj3T64mioFDar79B2cU8LIyz+3KL6LdiHs9NkeNfwxpKSaIVOY8f112g==",
+    "stylelint@17.15.0": {
+      "integrity": "sha512-mWIkesYQvQjf4Kvdeu9ns0IL8/K/wtjaGxPqsPd6DlLZvaQxGysJsocxUDrBcyHQ5VleAk4uSMat4yMrVED7PA==",
       "dependencies": [
         "@csstools/css-calc",
         "@csstools/css-parser-algorithms",
@@ -2870,7 +2878,7 @@
         "globby",
         "globjoin",
         "html-tags",
-        "ignore@7.0.5",
+        "ignore@7.0.9",
         "import-meta-resolve",
         "mathml-tag-names",
         "meow",
@@ -2881,7 +2889,7 @@
         "postcss-safe-parser",
         "postcss-selector-parser",
         "postcss-value-parser",
-        "string-width@8.2.1",
+        "string-width@8.2.2",
         "supports-hyperlinks",
         "svg-tags",
         "table",
@@ -3291,7 +3299,7 @@
       "npm:postcss@8.5.28",
       "npm:prettier@3.9.6",
       "npm:stylelint-config-standard@40.0.0",
-      "npm:stylelint@17.14.1",
+      "npm:stylelint@17.15.0",
       "npm:uglify-js@3.19.3",
       "npm:zod@4.5.4"
     ]
