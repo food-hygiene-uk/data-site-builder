@@ -1,4 +1,5 @@
 import { defineConfig } from "eslint/config";
+import css from "@eslint/css";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import prettierConfig from "eslint-config-prettier";
@@ -23,7 +24,6 @@ export default defineConfig([
   },
 
   // Plugin configurations
-  unicornPlugin.configs.recommended,
   promisePlugin.configs["flat/recommended"],
 
   {
@@ -57,9 +57,6 @@ export default defineConfig([
     rules: {
       // General rules
       "no-unused-vars": "off", // Use @typescript-eslint/no-unused-vars instead
-      "unicorn/no-typeof-undefined": ["error", { checkGlobalVariables: true }],
-      "unicorn/filename-case": ["error", { case: "kebabCase" }],
-      "unicorn/no-null": "off", // Allow null
       "import/extensions": [
         "error",
         "ignorePackages",
@@ -70,6 +67,20 @@ export default defineConfig([
           ts: "always",
         },
       ],
+    },
+  },
+  {
+    files: ["**/*.js", "**/*.mjs", "**/*.mts"],
+    extends: ["jsdoc/flat/recommended-mixed", "unicorn/recommended"],
+    plugins: {
+      jsdoc: jsdocPlugin,
+      unicorn: unicornPlugin,
+    },
+    rules: {
+      "jsdoc/tag-lines": ["error", "never", { startLines: 1 }], // Ensure space after description
+      "unicorn/no-typeof-undefined": ["error", { checkGlobalVariables: true }],
+      "unicorn/filename-case": ["error", { case: "kebabCase" }],
+      "unicorn/no-null": "off", // Allow null
     },
   },
   {
@@ -85,9 +96,7 @@ export default defineConfig([
     },
     plugins: {
       "@typescript-eslint": tsPlugin,
-      jsdoc: jsdocPlugin,
     },
-    extends: ["jsdoc/flat/recommended-typescript"],
     rules: {
       // ...tsPlugin.configs["eslint-recommended"].rules, // This might need adjustment
       ...tsPlugin.configs.recommended.rules, // Already included above
@@ -98,7 +107,6 @@ export default defineConfig([
       "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-inferrable-types": "warn",
       "@typescript-eslint/no-non-null-assertion": "off", // Allow non-null assertions
-      "jsdoc/tag-lines": ["error", "never", { startLines: 1 }], // Ensure space after description
     },
   },
   {
@@ -109,13 +117,6 @@ export default defineConfig([
         ecmaVersion: "latest",
         sourceType: "module",
       },
-    },
-    plugins: {
-      jsdoc: jsdocPlugin,
-    },
-    extends: ["jsdoc/flat/recommended-typescript-flavor"],
-    rules: {
-      "jsdoc/tag-lines": ["error", "never", { startLines: 1 }], // Ensure space after description
     },
   },
   {
@@ -128,12 +129,7 @@ export default defineConfig([
         sourceType: "module",
       },
     },
-    plugins: {
-      jsdoc: jsdocPlugin,
-    },
-    extends: ["jsdoc/flat/recommended-typescript-flavor"],
     rules: {
-      "jsdoc/tag-lines": ["error", "never", { startLines: 1 }], // Ensure space after description
       "unicorn/prefer-module": "off", // Allow "use strict" in .js files
     },
   },
@@ -141,6 +137,35 @@ export default defineConfig([
     files: ["**/schema.mts", "**/types.mts", "**/*.test.mts"],
     rules: {
       "unicorn/max-nested-calls": ["error", { max: 6 }],
+    },
+  },
+  {
+    files: ["**/*.css"],
+    plugins: {
+      css,
+      unicorn: unicornPlugin,
+    },
+    extends: ["css/recommended"],
+    language: "css/css",
+    rules: {
+      "css/use-baseline": ["error", { allowFunctions: ["light-dark"] }], // light-dark is transpiled by postcss
+      "unicorn/expiring-todo-comments": "error",
+      // "unicorn/no-deprecated-css-features": "error",
+      // "unicorn/no-duplicate-css-selectors": "error",
+      // "unicorn/no-duplicate-font-family-names": "error",
+      "unicorn/no-empty-file": "error",
+      // "unicorn/no-invalid-media-features": "error",
+      "unicorn/no-missing-local-resource": "error",
+      // "unicorn/no-nesting-with-mixed-specificity": "error",
+      // "unicorn/no-redundant-nested-style-rules": "error",
+      "unicorn/no-shorthand-property-overrides": "error",
+      "unicorn/no-transition-all": "error",
+      // "unicorn/no-unknown-css-annotations": "error",
+      // "unicorn/no-unknown-pseudo-selectors": "error",
+      // "unicorn/no-unscoped-css-nesting-selector": "error",
+      "unicorn/prefer-explicit-viewport-units": "error",
+      // "unicorn/prefer-media-feature-range-syntax": "error",
+      "unicorn/text-encoding-identifier-case": "error",
     },
   },
   {
