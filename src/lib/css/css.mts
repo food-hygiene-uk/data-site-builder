@@ -1,6 +1,7 @@
 import { fromFileUrl } from "@std/path";
 import postcss from "postcss";
 import cssnano from "cssnano";
+import postcssPresetEnv from "postcss-preset-env";
 
 /**
  * Processes a CSS file by applying transformations and injecting additional CSS.
@@ -18,9 +19,12 @@ export const processCssFile = async ({
   const content = await Deno.readTextFile(cssPath);
   const cssContent = content;
 
-  const processedCss = await postcss([cssnano()]).process(cssContent, {
-    from: undefined,
-  });
+  const processedCss = await postcss([postcssPresetEnv(), cssnano()]).process(
+    cssContent,
+    {
+      from: undefined,
+    },
+  );
 
   return processedCss.css;
 };
