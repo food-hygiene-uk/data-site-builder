@@ -28,7 +28,7 @@
     "npm:@typescript-eslint/eslint-plugin@8.70.0": "8.70.0_@typescript-eslint+parser@8.70.0_eslint@10.9.1_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.70.0": "8.70.0_eslint@10.9.1_typescript@6.0.3",
     "npm:baseline-browser-mapping@2.11.21": "2.11.21",
-    "npm:cssnano-preset-advanced@9.0.3": "9.0.3_postcss@8.5.28",
+    "npm:cssnano-preset-advanced@9.0.4": "9.0.4_postcss@8.5.28",
     "npm:cssnano@9.0.4": "9.0.4_postcss@8.5.28",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_jiti@2.7.0",
@@ -620,8 +620,8 @@
     "async@3.2.6": {
       "integrity": "sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA=="
     },
-    "autoprefixer@10.5.6_postcss@8.5.28": {
-      "integrity": "sha512-HiH4oYNc5+DQEx/b8FPfMj+WHH/WWUBmbN5r1Uf/ixtfyFkk+wGIlfJT/RD5eAyzlwkeYRtZUCI8qrEi26pl2g==",
+    "autoprefixer@10.6.0_postcss@8.5.28": {
+      "integrity": "sha512-A26d6qs9kqGgkmImIXMYvXTzqb4Qv7AVgpY1NXzr9Y659J8qHHnLOO/zE8ewIGFMprOolAoRAQYDgNryXIJKBw==",
       "dependencies": [
         "browserslist",
         "caniuse-lite",
@@ -843,8 +843,8 @@
       "integrity": "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==",
       "bin": true
     },
-    "cssnano-preset-advanced@9.0.3_postcss@8.5.28": {
-      "integrity": "sha512-XsdvuAslWQT7lKr56qDRkDZuE4zSELGlgwwjpsCeBFaZyS/VFgcEm9KKZdQ7sZY1t1hF5lO+ToNlI0QMphgbqw==",
+    "cssnano-preset-advanced@9.0.4_postcss@8.5.28": {
+      "integrity": "sha512-VOmFg00Kypgj9oY0kUYe7mLHC6dv/7SwNsrZ+z6WU/wJYBkftndRM1sezf9RJMrO658n2bDu7qLKMhfWkSivvg==",
       "dependencies": [
         "autoprefixer",
         "css-declaration-sorter",
@@ -3275,7 +3275,7 @@
       "npm:@typescript-eslint/eslint-plugin@8.70.0",
       "npm:@typescript-eslint/parser@8.70.0",
       "npm:baseline-browser-mapping@2.11.21",
-      "npm:cssnano-preset-advanced@9.0.3",
+      "npm:cssnano-preset-advanced@9.0.4",
       "npm:cssnano@9.0.4",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
