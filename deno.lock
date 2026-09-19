@@ -32,7 +32,7 @@
     "npm:cssnano@9.0.4": "9.0.4_postcss@8.5.28",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_jiti@2.7.0",
-    "npm:eslint-plugin-jsdoc@64.3.9": "64.3.9_eslint@10.9.1_jiti@2.7.0",
+    "npm:eslint-plugin-jsdoc@64.3.10": "64.3.10_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint-plugin-promise@7.3.0": "7.3.0_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint-plugin-unicorn@74.0.0": "74.0.0_eslint@10.9.1_jiti@2.7.0",
     "npm:eslint@*": "10.9.1_jiti@2.7.0",
@@ -1177,8 +1177,8 @@
         "tsconfig-paths"
       ]
     },
-    "eslint-plugin-jsdoc@64.3.9_eslint@10.9.1_jiti@2.7.0": {
-      "integrity": "sha512-iwA1uN5/3X3GH9zdiJq8XvUNuMeLPWriGCLNBt2d/oACwYq41LrAJE2cLvMLc2gcYFutd/XvINp99JGTlxEirA==",
+    "eslint-plugin-jsdoc@64.3.10_eslint@10.9.1_jiti@2.7.0": {
+      "integrity": "sha512-oevWxylnQJm/f4S5WfvqG/pdmX9Ndsjpfm51QpTFfG8MF92999sp4hm4/GxyboaAQRFngLRDL4iKHZz5hPs4Xw==",
       "dependencies": [
         "@es-joy/jsdoccomment",
         "@es-joy/resolve.exports",
@@ -1947,8 +1947,8 @@
       ],
       "bin": true
     },
-    "jsdoc-type-pratt-parser@9.2.1": {
-      "integrity": "sha512-V4Ww4EHnTcTLSOMoB0FsF72JhQvcAsriCm/LWnxJeGWoxIjEL2l9na11abQok5SYShq8m0Gl02el/xAbTCulvQ==",
+    "jsdoc-type-pratt-parser@9.2.2": {
+      "integrity": "sha512-eFY7Rlscvv/BpY6UsVsjKwMhu1tJO/F4U/vC9g3yeRy/JqszuO1UP6Vdq+85G+3FP6fEw/sWR8a5ftPFY86csw==",
       "dependencies": [
         "@types/estree@1.0.9",
         "@types/node"
@@ -2746,8 +2746,8 @@
         "spdx-license-ids"
       ]
     },
-    "spdx-license-ids@3.0.23": {
-      "integrity": "sha512-CWLcCCH7VLu13TgOH+r8p1O/Znwhqv/dbb6lqWy67G+pT1kHmeD/+V36AVb/vq8QMIQwVShJ6Ssl5FPh0fuSdw=="
+    "spdx-license-ids@3.0.24": {
+      "integrity": "sha512-cLS9TtWkIQFyLkJ3/5aFQAOHOSKTlOs/7WDut/XPSdjom1fJhUdkepeJAKXa9Y05+FabHd0sti+Et559vDtkpQ=="
     },
     "stop-iteration-iterator@1.1.0": {
       "integrity": "sha512-eLoXW/DHyl62zxY4SCaIgnRhuMr6ri4juEYARS8E6sCEqzKpOiE521Ucofdx+KnDZl5xmvGYaaKCk5FEOxJCoQ==",
@@ -3279,7 +3279,7 @@
       "npm:cssnano@9.0.4",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
-      "npm:eslint-plugin-jsdoc@64.3.9",
+      "npm:eslint-plugin-jsdoc@64.3.10",
       "npm:eslint-plugin-promise@7.3.0",
       "npm:eslint-plugin-unicorn@74.0.0",
       "npm:eslint@10.9.1",
