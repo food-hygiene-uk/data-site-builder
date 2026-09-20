@@ -51,7 +51,7 @@
     "npm:stylelint@*": "17.14.1_typescript@6.0.3",
     "npm:stylelint@17.14.1": "17.14.1_typescript@6.0.3",
     "npm:uglify-js@3.19.3": "3.19.3",
-    "npm:zod@4.6.2": "4.6.2"
+    "npm:zod@4.6.4": "4.6.4"
   },
   "jsr": {
     "@davidbonnet/astring@1.8.6": {
@@ -3175,8 +3175,8 @@
     "yocto-queue@0.1.0": {
       "integrity": "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
     },
-    "zod@4.6.2": {
-      "integrity": "sha512-lh5RCAGFa1Cm2hjtNwLQhSs/AsqdWnTQaBER9fEwN/88pSh7KOtJavtBx/0VlkN/uFd61SwYmljLMDAsHlvzBQ=="
+    "zod@4.6.4": {
+      "integrity": "sha512-AXSD6hvGdvRjajG/l1cC+d6IrhH+sjmPKtYeQdJIK8MFJl3LyClzS+o/YsVC+zQZPupAaeH5skwwm8YqYH7BqA=="
     }
   },
   "remote": {
@@ -3293,7 +3293,7 @@
       "npm:stylelint-config-standard@40.0.0",
       "npm:stylelint@17.14.1",
       "npm:uglify-js@3.19.3",
-      "npm:zod@4.6.2"
+      "npm:zod@4.6.4"
     ]
   }
 }
