@@ -32,36 +32,36 @@ const formatApiFiles = async (): Promise<void> => {
     for await (const directoryEntry of directoryEntries) {
       wereAnyFound = true;
       console.log(`Processing: ${directoryEntry.name} in ${directoryPath}`);
-      if (directoryEntry.isFile) {
-        const filePath = join(directoryPath, directoryEntry.name);
+      if (!directoryEntry.isFile) continue;
 
-        if (directoryEntry.name.endsWith(".json")) {
-          try {
-            const content = await Deno.readTextFile(filePath);
-            const jsonObject = JSON.parse(content);
-            const formattedContent = `${JSON.stringify(jsonObject, null, 2)}\n`;
-            await Deno.writeTextFile(filePath, formattedContent);
-            console.log(`Formatted JSON file: ${filePath}`);
-          } catch (error) {
-            console.error(
-              `Error formatting JSON file ${filePath}: ${
-                error instanceof Error ? error.message : String(error)
-              }`,
-            );
-          }
-        } else if (directoryEntry.name.endsWith(".xml")) {
-          try {
-            const content = await Deno.readTextFile(filePath);
-            const formattedContent = prettyPrintXml(content);
-            await Deno.writeTextFile(filePath, formattedContent);
-            console.log(`Formatted XML file: ${filePath}`);
-          } catch (error) {
-            console.error(
-              `Error formatting XML file ${filePath}: ${
-                error instanceof Error ? error.message : String(error)
-              }`,
-            );
-          }
+      const filePath = join(directoryPath, directoryEntry.name);
+
+      if (directoryEntry.name.endsWith(".json")) {
+        try {
+          const content = await Deno.readTextFile(filePath);
+          const jsonObject = JSON.parse(content);
+          const formattedContent = `${JSON.stringify(jsonObject, null, 2)}\n`;
+          await Deno.writeTextFile(filePath, formattedContent);
+          console.log(`Formatted JSON file: ${filePath}`);
+        } catch (error) {
+          console.error(
+            `Error formatting JSON file ${filePath}: ${
+              error instanceof Error ? error.message : String(error)
+            }`,
+          );
+        }
+      } else if (directoryEntry.name.endsWith(".xml")) {
+        try {
+          const content = await Deno.readTextFile(filePath);
+          const formattedContent = prettyPrintXml(content);
+          await Deno.writeTextFile(filePath, formattedContent);
+          console.log(`Formatted XML file: ${filePath}`);
+        } catch (error) {
+          console.error(
+            `Error formatting XML file ${filePath}: ${
+              error instanceof Error ? error.message : String(error)
+            }`,
+          );
         }
       }
     }

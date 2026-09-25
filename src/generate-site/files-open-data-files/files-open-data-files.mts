@@ -29,9 +29,7 @@ const sortEstablishments = (
     // Handle cases where FHRSID might not be a valid number
     if (Number.isNaN(idA) && Number.isNaN(idB)) return 0;
     if (Number.isNaN(idA)) return 1; // Push NaNs (or unparseable) to the end
-    if (Number.isNaN(idB)) return -1; // Keep non-NaNs first
-
-    return idA - idB;
+    return Number.isNaN(idB) ? -1 : idA - idB; // Keep non-NaNs first
   });
 };
 

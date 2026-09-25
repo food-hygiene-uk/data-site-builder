@@ -46,22 +46,24 @@ const generateApiIndexData = async (targetDirectory: string) => {
       }
 
       const match = directoryEntry.name.match(fileNameRegex);
-      if (match) {
-        const [, type, language, extension] = match;
+      if (!match) {
+        continue;
+      }
 
-        if (!apiFiles.has(type)) {
-          apiFiles.set(type, new Map());
-        }
-        const languages = apiFiles.get(type)!;
-        if (!languages.has(language)) {
-          languages.set(language, {});
-        }
-        const extensions = languages.get(language)!;
-        if (extension === "json") {
-          extensions.json = directoryEntry.name;
-        } else if (extension === "xml") {
-          extensions.xml = directoryEntry.name;
-        }
+      const [, type, language, extension] = match;
+
+      if (!apiFiles.has(type)) {
+        apiFiles.set(type, new Map());
+      }
+      const languages = apiFiles.get(type)!;
+      if (!languages.has(language)) {
+        languages.set(language, {});
+      }
+      const extensions = languages.get(language)!;
+      if (extension === "json") {
+        extensions.json = directoryEntry.name;
+      } else if (extension === "xml") {
+        extensions.xml = directoryEntry.name;
       }
     }
 
