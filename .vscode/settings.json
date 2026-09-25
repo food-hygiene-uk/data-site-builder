@@ -1,7 +1,19 @@
 {
   "deno.enable": true,
   "eslint.format.enable": true,
-  "eslint.validate": ["css"],
+  "eslint.probe": [
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "scss",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
   "json.schemaDownload.trustedDomains": {
     "https://docs.renovatebot.com/renovate-schema.json": true,
     "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/lint-rules.v1.json": true,
