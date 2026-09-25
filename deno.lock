@@ -48,6 +48,7 @@
     "npm:playwright@1.63.0": "1.63.0",
     "npm:postcss-preset-env@11.5.1": "11.5.1_postcss@8.5.28",
     "npm:postcss@8.5.28": "8.5.28",
+    "npm:prettier@*": "3.9.8",
     "npm:prettier@3.9.8": "3.9.8",
     "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.14.1_typescript@6.0.3",
     "npm:stylelint@*": "17.14.1_typescript@6.0.3",
