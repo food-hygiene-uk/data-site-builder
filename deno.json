@@ -27,7 +27,7 @@
     "jiti": "npm:jiti@2.7.0",
     "playwright": "npm:playwright@1.63.0",
     "postcss": "npm:postcss@8.5.28",
-    "postcss-preset-env": "npm:postcss-preset-env@11.5.1",
+    "postcss-preset-env": "npm:postcss-preset-env@11.5.3",
     "prettier": "npm:prettier@3.9.8",
     "scripts/": "./src/scripts/",
     "stylelint-config-standard": "npm:stylelint-config-standard@40.0.0",
