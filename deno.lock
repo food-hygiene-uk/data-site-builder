@@ -22,7 +22,7 @@
     "jsr:@std/testing@0.224": "0.224.0",
     "jsr:@std/testing@1.0.20": "1.0.20",
     "jsr:@vento/vento@1.14.0": "1.14.0",
-    "npm:@eslint/css@1.4.0": "1.4.0",
+    "npm:@eslint/css@2.0.0": "2.0.0",
     "npm:@playwright/test@1.63.0": "1.63.0",
     "npm:@types/estree@1.0.6": "1.0.6",
     "npm:@types/node@*": "26.5.1",
@@ -702,8 +702,8 @@
         "source-map-js"
       ]
     },
-    "@eslint/css@1.4.0": {
-      "integrity": "sha512-OnRNKgnbX+tufPuZc2kOJS+v1iIARvfJHRNEAVwN77DBpojl+rGjEP8NKTL6pEZ7BR+HtwIuSSdrymEFlANGxg==",
+    "@eslint/css@2.0.0": {
+      "integrity": "sha512-lODVRbtxOXgcSOWNvv3gE4A8oRTSUHefA0tX9zrWUD57F+5RTLGDX9I8bnHQROO8nWb0hrmke0uO23pTlNfZ0A==",
       "dependencies": [
         "@eslint/core@1.2.1",
         "@eslint/css-tree",
@@ -3974,7 +3974,7 @@
       "jsr:@std/path@1.1.6",
       "jsr:@std/testing@1.0.20",
       "jsr:@vento/vento@1.14.0",
-      "npm:@eslint/css@1.4.0",
+      "npm:@eslint/css@2.0.0",
       "npm:@playwright/test@1.63.0",
       "npm:@typescript-eslint/eslint-plugin@8.70.0",
       "npm:@typescript-eslint/parser@8.70.0",

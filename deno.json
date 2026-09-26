@@ -1,6 +1,6 @@
 {
   "imports": {
-    "@eslint/css": "npm:@eslint/css@1.4.0",
+    "@eslint/css": "npm:@eslint/css@2.0.0",
     "@playwright/test": "npm:@playwright/test@1.63.0",
     "@std/assert": "jsr:@std/assert@1.0.19",
     "@std/fs": "jsr:@std/fs@1.0.24",
