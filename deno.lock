@@ -48,8 +48,7 @@
     "npm:playwright@1.63.0": "1.63.0",
     "npm:postcss-preset-env@11.5.4": "11.5.4_postcss@8.5.28",
     "npm:postcss@8.5.28": "8.5.28",
-    "npm:prettier@*": "3.9.8",
-    "npm:prettier@3.9.8": "3.9.8",
+    "npm:prettier@3.9.9": "3.9.9",
     "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.15.0",
     "npm:stylelint@*": "17.15.0",
     "npm:stylelint@17.15.0": "17.15.0",
@@ -1068,7 +1067,7 @@
       "integrity": "sha512-cL1Qz6ADZhcEbny/8HPfe99J6HhNoYtpX2LFLIbhgGE7Q1hlQVkYFdetDN7Id3KiQxhDrHwzlHr/YQCnZ8+xSA==",
       "dependencies": [
         "browserslist",
-        "caniuse-lite@1.0.30001810",
+        "caniuse-lite",
         "fraction.js",
         "picocolors",
         "postcss",
@@ -1132,7 +1131,7 @@
       "integrity": "sha512-1R4kiYKXGViqEN0CnoDrXc1StD9niAwu+j2dukWzrD4bJgsD4lDmEp0CRbc6E/vYJIfTHwPmwyaKtVSudICdPA==",
       "dependencies": [
         "baseline-browser-mapping",
-        "caniuse-lite@1.0.30001814",
+        "caniuse-lite",
         "electron-to-chromium",
         "node-releases",
         "update-browserslist-db"
@@ -1182,11 +1181,8 @@
       "integrity": "sha512-B0hQ1OLyJuHTQSOWXvwibWqM6DCoqJdvBA6X1S/53bd4XU7LJ1yurIPlrsouol3mw1jh9pGI4ivubSpmJeIqCA==",
       "dependencies": [
         "browserslist",
-        "caniuse-lite@1.0.30001810"
+        "caniuse-lite"
       ]
-    },
-    "caniuse-lite@1.0.30001810": {
-      "integrity": "sha512-TITQPUkaz+aVk5GL6NhOdwk1aEaNTSDPsGFWrTuhKGtjTF70jL/Oht2W4c6rXUe5fu7Ie19VIahAXHIIiWWNeg=="
     },
     "caniuse-lite@1.0.30001814": {
       "integrity": "sha512-/Uaf1lAzr59XcMpW0o96WoEfr+VXK2OX4U9AgFoiSHsVJ4HppnIFUjtYzsyDH2+tgANaQb2/oxYGwCPapN1FpA=="
@@ -3247,8 +3243,8 @@
     "prelude-ls@1.2.1": {
       "integrity": "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="
     },
-    "prettier@3.9.8": {
-      "integrity": "sha512-WRFq3Wn3WId7LLROfMLdH7xaFr2jR62wU8nLO6rQUOLOxNZUviyJQs1M0iIhLexSFy+L+w0ch66wtoO2jRjG0A==",
+    "prettier@3.9.9": {
+      "integrity": "sha512-Z/CJHIkdujO/OtN7nXUii0Rf3VT5SRuhjBA82Xvu2XhBUgX3nhP67T0LHceBdQLex7OOFGTox+Q5Yg8Jk2Qivg==",
       "bin": true
     },
     "punycode@2.3.1": {
@@ -4007,7 +4003,7 @@
       "npm:playwright@1.63.0",
       "npm:postcss-preset-env@11.5.4",
       "npm:postcss@8.5.28",
-      "npm:prettier@3.9.8",
+      "npm:prettier@3.9.9",
       "npm:stylelint-config-standard@40.0.0",
       "npm:stylelint@17.15.0",
       "npm:uglify-js@3.19.3",
