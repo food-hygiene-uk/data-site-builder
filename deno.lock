@@ -26,7 +26,7 @@
     "npm:@playwright/test@1.63.0": "1.63.0",
     "npm:@types/estree@1.0.6": "1.0.6",
     "npm:@types/node@*": "26.5.1",
-    "npm:@typescript-eslint/eslint-plugin@8.71.0": "8.71.0_@typescript-eslint+parser@8.71.0_eslint@10.11.0_jiti@2.7.0",
+    "npm:@typescript-eslint/eslint-plugin@8.71.0": "8.71.0_@typescript-eslint+parser@8.71.0_eslint@10.11.0_typescript@6.0.3_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.71.0": "8.71.0_eslint@10.11.0_typescript@6.0.3",
     "npm:baseline-browser-mapping@2.11.26": "2.11.26",
     "npm:browserslist-lint@0.4.0": "0.4.0",
@@ -34,7 +34,7 @@
     "npm:cssnano@9.0.5": "9.0.5_postcss@8.5.28",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.11.0_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_jiti@2.7.0",
-    "npm:eslint-plugin-jsdoc@64.5.4": "64.5.4_eslint@10.11.0_jiti@2.7.0",
+    "npm:eslint-plugin-jsdoc@65.0.0": "65.0.0_eslint@10.11.0_typescript@6.0.3_jiti@2.7.0",
     "npm:eslint-plugin-promise@7.3.0": "7.3.0_eslint@10.11.0_jiti@2.7.0",
     "npm:eslint-plugin-unicorn@76.0.0": "76.0.0_eslint@10.11.0_jiti@2.7.0",
     "npm:eslint@*": "10.11.0_jiti@2.7.0",
@@ -843,7 +843,7 @@
         "undici-types"
       ]
     },
-    "@typescript-eslint/eslint-plugin@8.71.0_@typescript-eslint+parser@8.71.0_eslint@10.11.0_jiti@2.7.0": {
+    "@typescript-eslint/eslint-plugin@8.71.0_@typescript-eslint+parser@8.71.0_eslint@10.11.0_typescript@6.0.3_jiti@2.7.0": {
       "integrity": "sha512-pqcS9c1HxZTHt7End4nXqd0s5lJrrFzrgCkKFJrsbUnaL6M3+6oBFZaslg6Gjsl3argl2DDRFROnXARaZ2e4Nw==",
       "dependencies": [
         "@eslint-community/regexpp",
@@ -1651,8 +1651,8 @@
         "tsconfig-paths"
       ]
     },
-    "eslint-plugin-jsdoc@64.5.4_eslint@10.11.0_jiti@2.7.0": {
-      "integrity": "sha512-xfRhXPSSWT612muJ6XTvxuVJ8zYHv99qNgBqPVqF28aSqoy4s4XbSkrWXnYA2hl5ejC02yEpk6fqkj3BmJ6Xbg==",
+    "eslint-plugin-jsdoc@65.0.0_eslint@10.11.0_typescript@6.0.3_jiti@2.7.0": {
+      "integrity": "sha512-0jIdMPh9sTbg1/v10Cs0m0bkzAygylCcrHCf3ToClft+qw2yKM3sy51m6mnFYnNp4AE0xK7MIWVk7P2PLj1ZwA==",
       "dependencies": [
         "@es-joy/jsdoccomment",
         "@es-joy/resolve.exports",
@@ -3993,7 +3993,7 @@
       "npm:cssnano@9.0.5",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
-      "npm:eslint-plugin-jsdoc@64.5.4",
+      "npm:eslint-plugin-jsdoc@65.0.0",
       "npm:eslint-plugin-promise@7.3.0",
       "npm:eslint-plugin-unicorn@76.0.0",
       "npm:eslint@10.11.0",
