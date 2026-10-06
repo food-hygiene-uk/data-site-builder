@@ -26,7 +26,7 @@
     "npm:@playwright/test@1.63.0": "1.63.0",
     "npm:@types/estree@1.0.6": "1.0.6",
     "npm:@types/node@*": "26.5.1",
-    "npm:@typescript-eslint/eslint-plugin@8.71.0": "8.71.0_@typescript-eslint+parser@8.71.0_eslint@10.11.0_typescript@6.0.3",
+    "npm:@typescript-eslint/eslint-plugin@8.71.0": "8.71.0_@typescript-eslint+parser@8.71.0_eslint@10.11.0_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.71.0": "8.71.0_eslint@10.11.0_typescript@6.0.3",
     "npm:baseline-browser-mapping@2.11.26": "2.11.26",
     "npm:browserslist-lint@0.4.0": "0.4.0",
@@ -34,14 +34,14 @@
     "npm:cssnano@9.0.5": "9.0.5_postcss@8.5.28",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.11.0_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_jiti@2.7.0",
-    "npm:eslint-plugin-jsdoc@64.5.4": "64.5.4_eslint@10.11.0_typescript@6.0.3",
+    "npm:eslint-plugin-jsdoc@64.5.4": "64.5.4_eslint@10.11.0_jiti@2.7.0",
     "npm:eslint-plugin-promise@7.3.0": "7.3.0_eslint@10.11.0_jiti@2.7.0",
     "npm:eslint-plugin-unicorn@76.0.0": "76.0.0_eslint@10.11.0_jiti@2.7.0",
     "npm:eslint@*": "10.11.0_jiti@2.7.0",
     "npm:eslint@10.11.0": "10.11.0_jiti@2.7.0",
     "npm:estree-walker@3.0.3": "3.0.3",
     "npm:fast-check@4.10.2": "4.10.2",
-    "npm:fast-xml-parser@5.11.1": "5.11.1",
+    "npm:fast-xml-parser@5.11.2": "5.11.2",
     "npm:http-server@14.1.1": "14.1.1",
     "npm:jiti@2.7.0": "2.7.0",
     "npm:meriyah@6.0.5": "6.0.5",
@@ -786,8 +786,8 @@
     "@keyv/serialize@1.1.1": {
       "integrity": "sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA=="
     },
-    "@nodable/entities@3.0.0": {
-      "integrity": "sha512-8L9xFeTYKhm49xfIypoe2W5wV1m/3Z58kT+7kR9A8OyFxcPduI4VmxaUMQyKYrRjUoLLSXv6EKKID5Tvj9cUVw=="
+    "@nodable/entities@3.1.0": {
+      "integrity": "sha512-LsS/DjHr+uDM647Gru/cA8+J3a3HfhttwCKLyuoyN7yXTFCxKBtSgMQBvrW9yNPa2/zDRUNuGPaH5QUFoa4arQ=="
     },
     "@nodelib/fs.scandir@2.1.5": {
       "integrity": "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==",
@@ -843,7 +843,7 @@
         "undici-types"
       ]
     },
-    "@typescript-eslint/eslint-plugin@8.71.0_@typescript-eslint+parser@8.71.0_eslint@10.11.0_typescript@6.0.3": {
+    "@typescript-eslint/eslint-plugin@8.71.0_@typescript-eslint+parser@8.71.0_eslint@10.11.0_jiti@2.7.0": {
       "integrity": "sha512-pqcS9c1HxZTHt7End4nXqd0s5lJrrFzrgCkKFJrsbUnaL6M3+6oBFZaslg6Gjsl3argl2DDRFROnXARaZ2e4Nw==",
       "dependencies": [
         "@eslint-community/regexpp",
@@ -893,7 +893,7 @@
         "typescript"
       ]
     },
-    "@typescript-eslint/type-utils@8.71.0_eslint@10.11.0_typescript@6.0.3": {
+    "@typescript-eslint/type-utils@8.71.0_eslint@10.11.0_typescript@6.0.3_jiti@2.7.0": {
       "integrity": "sha512-i8uO1qbdxeKgRnS5sCRt6On3/nfo2d2DwQe3Yvjx543zLy7r8ySqRuPPiIIXAhS03U0v5NfAFx+rUgxFzKKwNw==",
       "dependencies": [
         "@typescript-eslint/types",
@@ -923,7 +923,7 @@
         "typescript"
       ]
     },
-    "@typescript-eslint/utils@8.71.0_eslint@10.11.0_typescript@6.0.3": {
+    "@typescript-eslint/utils@8.71.0_eslint@10.11.0_typescript@6.0.3_jiti@2.7.0": {
       "integrity": "sha512-pKR/tEMVrXZG23UFKUn5BQf3zfmfk7KQceI2cGzywZ5nxM5Eu3hEJU1utjWzydtzBbcJAQhHN8iPCxobHpPcZQ==",
       "dependencies": [
         "@eslint-community/eslint-utils",
@@ -1651,7 +1651,7 @@
         "tsconfig-paths"
       ]
     },
-    "eslint-plugin-jsdoc@64.5.4_eslint@10.11.0_typescript@6.0.3": {
+    "eslint-plugin-jsdoc@64.5.4_eslint@10.11.0_jiti@2.7.0": {
       "integrity": "sha512-xfRhXPSSWT612muJ6XTvxuVJ8zYHv99qNgBqPVqF28aSqoy4s4XbSkrWXnYA2hl5ejC02yEpk6fqkj3BmJ6Xbg==",
       "dependencies": [
         "@es-joy/jsdoccomment",
@@ -1896,8 +1896,8 @@
         "xml-naming"
       ]
     },
-    "fast-xml-parser@5.11.1": {
-      "integrity": "sha512-TBw6K/fxoQGGjCmZDw9w/ZwP3uDcnTM4YH/g+PFRWr8sbe5idXtxNN6vITh4+1ruCZaho6uBFurElsA7F0zzgw==",
+    "fast-xml-parser@5.11.2": {
+      "integrity": "sha512-R9iDuNrQYeQut46cn2r2wHKn4HYzVDvDm5J1wW+koZewykv0yuO2HChTYeZtrULyHIDM9cj9TUXloCsueCQUog==",
       "dependencies": [
         "@nodable/entities",
         "fast-xml-builder",
@@ -3998,7 +3998,7 @@
       "npm:eslint-plugin-unicorn@76.0.0",
       "npm:eslint@10.11.0",
       "npm:fast-check@4.10.2",
-      "npm:fast-xml-parser@5.11.1",
+      "npm:fast-xml-parser@5.11.2",
       "npm:http-server@14.1.1",
       "npm:jiti@2.7.0",
       "npm:playwright@1.63.0",
