@@ -31,7 +31,7 @@
     "npm:baseline-browser-mapping@2.11.27": "2.11.27",
     "npm:browserslist-lint@0.4.0": "0.4.0",
     "npm:cssnano-preset-advanced@9.1.2": "9.1.2_postcss@8.5.28",
-    "npm:cssnano@9.1.2": "9.1.2_postcss@8.5.28",
+    "npm:cssnano@9.2.0": "9.2.0_postcss@8.5.28",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.11.0_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_acorn@8.19.0",
     "npm:eslint-plugin-jsdoc@65.0.1": "65.0.1_eslint@10.11.0_typescript@6.0.3_jiti@2.7.0",
@@ -1369,8 +1369,8 @@
         "postcss"
       ]
     },
-    "cssnano@9.1.2_postcss@8.5.28": {
-      "integrity": "sha512-UJnrkOxzaK21cYEbxnp21vUohm/wg8B8R0eoLe7A6Jnm9nHeIQ0irn3L9HYzml9BFkrF97JwE7d6HV4UU6+1dQ==",
+    "cssnano@9.2.0_postcss@8.5.28": {
+      "integrity": "sha512-NYVVsZN5PHe3prTVEg9ILN/N4+k9x6EstsSdFM02tO2nX+C0wb4zfoUGyMELwodTHMFus6N7rPb1ZDWiA/PAJw==",
       "dependencies": [
         "cssnano-preset-default",
         "postcss"
@@ -3999,7 +3999,7 @@
       "npm:baseline-browser-mapping@2.11.27",
       "npm:browserslist-lint@0.4.0",
       "npm:cssnano-preset-advanced@9.1.2",
-      "npm:cssnano@9.1.2",
+      "npm:cssnano@9.2.0",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
       "npm:eslint-plugin-jsdoc@65.0.1",
