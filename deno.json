@@ -13,7 +13,7 @@
     "baseline-browser-mapping": "npm:baseline-browser-mapping@2.11.27",
     "browserslist-lint": "npm:browserslist-lint@0.4.0",
     "components/": "./src/components/",
-    "cssnano-preset-advanced": "npm:cssnano-preset-advanced@9.1.2",
+    "cssnano-preset-advanced": "npm:cssnano-preset-advanced@9.1.3",
     "cssnano": "npm:cssnano@9.2.0",
     "eslint-config-prettier": "npm:eslint-config-prettier@10.1.8",
     "eslint-plugin-import": "npm:eslint-plugin-import@2.32.0",
