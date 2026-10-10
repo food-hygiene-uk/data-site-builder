@@ -50,9 +50,8 @@
     "npm:postcss@8.5.28": "8.5.28",
     "npm:prettier@*": "3.9.8",
     "npm:prettier@3.9.8": "3.9.8",
-    "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.15.0",
-    "npm:stylelint@*": "17.15.0",
-    "npm:stylelint@17.15.0": "17.15.0",
+    "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.16.0",
+    "npm:stylelint@17.16.0": "17.16.0",
     "npm:uglify-js@3.19.3": "3.19.3",
     "npm:zod@4.6.5": "4.6.5"
   },
@@ -3594,21 +3593,21 @@
         "postcss"
       ]
     },
-    "stylelint-config-recommended@18.0.0_stylelint@17.15.0": {
+    "stylelint-config-recommended@18.0.0_stylelint@17.16.0": {
       "integrity": "sha512-mxgT2XY6YZ3HWWe3Di8umG6aBmWmHTblTgu/f10rqFXnyWxjKWwNdjSWkgkwCtxIKnqjSJzvFmPT5yabVIRxZg==",
       "dependencies": [
         "stylelint"
       ]
     },
-    "stylelint-config-standard@40.0.0_stylelint@17.15.0": {
+    "stylelint-config-standard@40.0.0_stylelint@17.16.0": {
       "integrity": "sha512-EznGJxOUhtWck2r6dJpbgAdPATIzvpLdK9+i5qPd4Lx70es66TkBPljSg4wN3Qnc6c4h2n+WbUrUynQ3fanjHw==",
       "dependencies": [
         "stylelint",
         "stylelint-config-recommended"
       ]
     },
-    "stylelint@17.15.0": {
-      "integrity": "sha512-mWIkesYQvQjf4Kvdeu9ns0IL8/K/wtjaGxPqsPd6DlLZvaQxGysJsocxUDrBcyHQ5VleAk4uSMat4yMrVED7PA==",
+    "stylelint@17.16.0": {
+      "integrity": "sha512-ejlWnbJ13x1GU32+zZXa6sYQJsKKkwSdv2B4rAdO3OWdEmvhSJKcXi5pOphQYSzyaj1kXpuGJr7pcMBNfDIuPw==",
       "dependencies": [
         "@csstools/css-calc",
         "@csstools/css-parser-algorithms",
@@ -4033,7 +4032,7 @@
       "npm:postcss@8.5.28",
       "npm:prettier@3.9.8",
       "npm:stylelint-config-standard@40.0.0",
-      "npm:stylelint@17.15.0",
+      "npm:stylelint@17.16.0",
       "npm:uglify-js@3.19.3",
       "npm:zod@4.6.5"
     ]
