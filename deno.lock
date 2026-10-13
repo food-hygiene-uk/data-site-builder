@@ -46,7 +46,7 @@
     "npm:jiti@2.7.0": "2.7.0",
     "npm:meriyah@6.0.5": "6.0.5",
     "npm:playwright@1.63.0": "1.63.0",
-    "npm:postcss-preset-env@11.6.0": "11.6.0_postcss@8.5.28",
+    "npm:postcss-preset-env@11.6.1": "11.6.1_postcss@8.5.28",
     "npm:postcss@8.5.28": "8.5.28",
     "npm:prettier@*": "3.9.8",
     "npm:prettier@3.9.8": "3.9.8",
@@ -3103,8 +3103,8 @@
         "postcss-value-parser"
       ]
     },
-    "postcss-preset-env@11.6.0_postcss@8.5.28": {
-      "integrity": "sha512-tHsk5w0TtDvQ69UNJfKiBTtJ2zstjKgqC3lJSb+7Qj7ybbc4aR4SC3fAfxMq3meH1sTgBXrRH9CCsyMEVX980Q==",
+    "postcss-preset-env@11.6.1_postcss@8.5.28": {
+      "integrity": "sha512-pkd4XImJ5CapWQn06ueWhovZ8fZcE7uHyNTT3PDQ2CiZEhlt+ZC4jPmKrN1QmJ2JTFj1qxINISORVwucPFuTew==",
       "dependencies": [
         "@csstools/postcss-alpha-function",
         "@csstools/postcss-cascade-layers",
@@ -4036,7 +4036,7 @@
       "npm:http-server@14.1.1",
       "npm:jiti@2.7.0",
       "npm:playwright@1.63.0",
-      "npm:postcss-preset-env@11.6.0",
+      "npm:postcss-preset-env@11.6.1",
       "npm:postcss@8.5.28",
       "npm:prettier@3.9.8",
       "npm:stylelint-config-standard@40.0.0",
