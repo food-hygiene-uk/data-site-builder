@@ -23,7 +23,7 @@
     "jsr:@std/testing@1.0.21": "1.0.21",
     "jsr:@vento/vento@1.14.0": "1.14.0",
     "npm:@eslint/css@2.0.0": "2.0.0",
-    "npm:@playwright/test@1.63.0": "1.63.0",
+    "npm:@playwright/test@1.64.0": "1.64.0",
     "npm:@types/estree@1.0.6": "1.0.6",
     "npm:@types/node@*": "26.5.1",
     "npm:@typescript-eslint/eslint-plugin@8.71.1": "8.71.1_@typescript-eslint+parser@8.71.1_eslint@10.11.0_typescript@6.0.3_jiti@2.7.0",
@@ -45,7 +45,7 @@
     "npm:http-server@14.1.1": "14.1.1",
     "npm:jiti@2.7.0": "2.7.0",
     "npm:meriyah@6.0.5": "6.0.5",
-    "npm:playwright@1.63.0": "1.63.0",
+    "npm:playwright@1.64.0": "1.64.0",
     "npm:postcss-preset-env@11.6.1": "11.6.1_postcss@8.5.29",
     "npm:postcss@8.5.29": "8.5.29",
     "npm:prettier@*": "3.9.8",
@@ -823,8 +823,8 @@
         "fastq"
       ]
     },
-    "@playwright/test@1.63.0": {
-      "integrity": "sha512-oxMK4vllB9RK5NQ2l1pq1IfOf2AvnEuj/vYGDj0H2nMtmtZpKtCwt/l00GEO6xjGfpBNAvjovvYdCm50dRQkpQ==",
+    "@playwright/test@1.64.0": {
+      "integrity": "sha512-oTN9FNYuN6bqQMwiho6jJKLCG2/QOYCixGXuCjRmzOq23eODeukuY2XiAVoVpAECbuezMt1MHQjAiQxK8F+Y+g==",
       "dependencies": [
         "playwright"
       ],
@@ -2696,12 +2696,12 @@
     "picomatch@4.0.7": {
       "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA=="
     },
-    "playwright-core@1.63.0": {
-      "integrity": "sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg==",
+    "playwright-core@1.64.0": {
+      "integrity": "sha512-T9r+MZkTECl2+oUcZ26YgZzTrYidTsIhYYkJix+6iDOymOb1FB2RLLSOxRGnZGv5DStt+aduIVbt+E8WygXYpg==",
       "bin": true
     },
-    "playwright@1.63.0": {
-      "integrity": "sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg==",
+    "playwright@1.64.0": {
+      "integrity": "sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg==",
       "dependencies": [
         "playwright-core"
       ],
@@ -4011,7 +4011,7 @@
       "jsr:@std/testing@1.0.21",
       "jsr:@vento/vento@1.14.0",
       "npm:@eslint/css@2.0.0",
-      "npm:@playwright/test@1.63.0",
+      "npm:@playwright/test@1.64.0",
       "npm:@typescript-eslint/eslint-plugin@8.71.1",
       "npm:@typescript-eslint/parser@8.71.1",
       "npm:baseline-browser-mapping@2.11.27",
@@ -4028,7 +4028,7 @@
       "npm:fast-xml-parser@5.11.2",
       "npm:http-server@14.1.1",
       "npm:jiti@2.7.0",
-      "npm:playwright@1.63.0",
+      "npm:playwright@1.64.0",
       "npm:postcss-preset-env@11.6.1",
       "npm:postcss@8.5.29",
       "npm:prettier@3.9.8",
