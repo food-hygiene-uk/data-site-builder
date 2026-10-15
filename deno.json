@@ -10,7 +10,7 @@
     "@typescript-eslint/eslint-plugin": "npm:@typescript-eslint/eslint-plugin@8.71.1",
     "@typescript-eslint/parser": "npm:@typescript-eslint/parser@8.71.1",
     "@vento/vento": "jsr:@vento/vento@1.14.0",
-    "baseline-browser-mapping": "npm:baseline-browser-mapping@2.11.27",
+    "baseline-browser-mapping": "npm:baseline-browser-mapping@2.11.28",
     "browserslist-lint": "npm:browserslist-lint@0.4.0",
     "components/": "./src/components/",
     "cssnano-preset-advanced": "npm:cssnano-preset-advanced@9.2.2",
