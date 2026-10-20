@@ -46,7 +46,7 @@
     },
     "deno:lock-update": {
       "description": "Updates the lock file",
-      "command": "deno cache --frozen=false src/generate-site.mts && deno install"
+      "command": "deno install --frozen=false --entrypoint src/generate-site.mts"
     },
     "deno:update-dependencies": {
       "description": "Updates Deno dependencies",
@@ -54,11 +54,11 @@
     },
     "eslint:check": {
       "description": "Runs ESLint on the codebase",
-      "command": "deno run --allow-env --allow-read --allow-write=./.eslintcache --allow-sys=cpus,homedir npm:eslint --concurrency=1 ."
+      "command": "deno run --allow-env --allow-read --allow-write=./.eslintcache --allow-sys=cpus,homedir eslint --concurrency=1 ."
     },
     "eslint:fix": {
       "description": "Fixes ESLint issues in the codebase",
-      "command": "deno run --allow-env --allow-read --allow-write=./ --allow-sys=cpus,homedir npm:eslint --concurrency=1 --fix ."
+      "command": "deno run --allow-env --allow-read --allow-write=./ --allow-sys=cpus,homedir eslint --concurrency=1 --fix ."
     },
     "git:pre-commit": {
       "description": "Updates and validadates the code as done in CI",
@@ -66,24 +66,24 @@
     },
     "playwright:install": {
       "description": "Installs Playwright dependencies",
-      "command": "deno run --allow-all npm:playwright install --with-deps"
+      "command": "deno run --allow-all playwright install --with-deps"
     },
     "playwright:show-report": {
       "description": "Shows the Playwright report",
-      "command": "deno run --allow-all npm:playwright show-report"
+      "command": "deno run --allow-all playwright show-report"
     },
     "playwright:test": {
       "description": "Runs Playwright tests",
       "dependencies": ["playwright:install"],
-      "command": "deno run --allow-all npm:playwright test"
+      "command": "deno run --allow-all playwright test"
     },
     "prettier:debug-check": {
       "description": "Runs prettier on the code through Deno - --debug-check",
-      "command": "deno run --allow-env --allow-read=./,./.gitignore,./.prettierignore,./package.json,./node_modules --allow-write=./node_modules/.cache/prettier --allow-sys=cpus,uid npm:prettier . --debug-check"
+      "command": "deno run --allow-env --allow-read=./,./.gitignore,./.prettierignore,./package.json,./node_modules --allow-write=./node_modules/.cache/prettier --allow-sys=cpus,uid prettier . --debug-check"
     },
     "prettier:write": {
       "description": "Runs prettier on the code through Deno - --write",
-      "command": "deno run --allow-env --allow-read=./,./.gitignore,./.prettierignore,./package.json,./node_modules --allow-write=./ --allow-sys=cpus,uid npm:prettier . --write"
+      "command": "deno run --allow-env --allow-read=./,./.gitignore,./.prettierignore,./package.json,./node_modules --allow-write=./ --allow-sys=cpus,uid prettier . --write"
     },
     "renovate:config-check": {
       "description": "Runs Renovate config validator",
@@ -91,15 +91,15 @@
     },
     "serve:dist": {
       "description": "Serves the generated site",
-      "command": "deno run --allow-env --allow-read=./dist --allow-sys=networkInterfaces --allow-net=0.0.0.0:8080 npm:http-server dist --port 8080 --silent"
+      "command": "deno run --allow-env --allow-read=./dist --allow-sys=networkInterfaces --allow-net=0.0.0.0:8080 http-server dist --port 8080 --silent"
     },
     "stylelint:check": {
       "description": "Runs stylelint on the codebase",
-      "command": "deno run --allow-env --allow-read --allow-write=.stylelintcache --allow-sys=cpus,gid,homedir,uid npm:stylelint --config ./stylelint.config.mjs \"**/*.css\""
+      "command": "deno run --allow-env --allow-read --allow-write=.stylelintcache --allow-sys=cpus,gid,homedir,uid stylelint --config ./stylelint.config.mjs \"**/*.css\""
     },
     "stylelint:fix": {
       "description": "Runs stylelint on the codebase",
-      "command": "deno run --allow-env --allow-read --allow-write=./ --allow-sys=cpus,gid,homedir,uid npm:stylelint --config ./stylelint.config.mjs --fix \"**/*.css\""
+      "command": "deno run --allow-env --allow-read --allow-write=./ --allow-sys=cpus,gid,homedir,uid stylelint --config ./stylelint.config.mjs --fix \"**/*.css\""
     },
     "test:e2e": {
       "description": "Runs end-to-end tests",
