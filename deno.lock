@@ -46,7 +46,7 @@
     "npm:playwright@1.64.0": "1.64.0",
     "npm:postcss-preset-env@11.6.1": "11.6.1_postcss@8.5.30",
     "npm:postcss@8.5.30": "8.5.30",
-    "npm:prettier@3.9.8": "3.9.8",
+    "npm:prettier@3.9.10": "3.9.10",
     "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.15.0",
     "npm:stylelint@17.15.0": "17.15.0",
     "npm:uglify-js@3.19.3": "3.19.3",
@@ -849,12 +849,6 @@
     },
     "@types/json5@0.0.29": {
       "integrity": "sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ=="
-    },
-    "@types/node@26.5.1": {
-      "integrity": "sha512-CzNm2FezW4VR/LjG6yUdiEgLE/rAQ9Slj5gCu/C2VrdcW7I0ahNZ8DRbHT7zOZ6r3ONgd/bsQIeSaoDGrd1C6g==",
-      "dependencies": [
-        "undici-types"
-      ]
     },
     "@typescript-eslint/eslint-plugin@8.71.1_@typescript-eslint+parser@8.71.1_eslint@10.11.0_typescript@6.0.3_jiti@2.7.0": {
       "integrity": "sha512-nNlBf6HuotqMgZvSkWD5hNdemiBIxQ2NmrlgfcUIeZRs+BbakjscCQRq/Hb74EFVnFiSWWdL12JruqwBy3ERDw==",
@@ -3267,8 +3261,8 @@
     "prelude-ls@1.2.1": {
       "integrity": "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="
     },
-    "prettier@3.9.8": {
-      "integrity": "sha512-WRFq3Wn3WId7LLROfMLdH7xaFr2jR62wU8nLO6rQUOLOxNZUviyJQs1M0iIhLexSFy+L+w0ch66wtoO2jRjG0A==",
+    "prettier@3.9.10": {
+      "integrity": "sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==",
       "bin": true
     },
     "punycode@2.3.1": {
@@ -3788,9 +3782,6 @@
         "which-boxed-primitive"
       ]
     },
-    "undici-types@8.9.0": {
-      "integrity": "sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg=="
-    },
     "unicorn-magic@0.4.0": {
       "integrity": "sha512-wH590V9VNgYH9g3lH9wWjTrUoKsjLF6sGLjhR4sH1LWpLmCOH0Zf7PukhDA8BiS7KHe4oPNkcTHqYkj7SOGUOw=="
     },
@@ -4027,7 +4018,7 @@
       "npm:playwright@1.64.0",
       "npm:postcss-preset-env@11.6.1",
       "npm:postcss@8.5.30",
-      "npm:prettier@3.9.8",
+      "npm:prettier@3.9.10",
       "npm:stylelint-config-standard@40.0.0",
       "npm:stylelint@17.15.0",
       "npm:uglify-js@3.19.3",
