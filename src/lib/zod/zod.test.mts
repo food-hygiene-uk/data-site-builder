@@ -4,6 +4,7 @@ import { z } from "zod";
 import { constructZodLiteralUnionType } from "./zod.mts";
 
 // Helper function to generate random strings
+// eslint-disable-next-line unicorn/no-unnecessary-parameters
 const generateRandomString = (length: number) => {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

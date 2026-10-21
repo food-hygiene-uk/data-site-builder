@@ -1,11 +1,11 @@
 import { join } from "@std/path/join";
 
 /**
- * Generates an `index.html` file for a given directory.
- *
- * @param targetDirectory The directory for which to generate the `index.html`.
- * @param pagePath The path to display in the title and heading of the index page (e.g., "/", "/api/").
- */
+Generates an `index.html` file for a given directory.
+
+@param targetDirectory The directory for which to generate the `index.html`.
+@param pagePath The path to display in the title and heading of the index page (e.g., "/", "/api/").
+*/
 const generateDirectoryIndex = async (
   targetDirectory: string,
   pagePath: string,

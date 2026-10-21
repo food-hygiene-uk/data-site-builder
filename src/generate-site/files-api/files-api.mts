@@ -7,8 +7,8 @@ import { sleep } from "../../lib/sleep/sleep.mts";
 const APIBuildPath = join("build", "files", "api");
 
 /**
- * Formats JSON and XML files in the specified directory.
- */
+Formats JSON and XML files in the specified directory.
+*/
 const formatApiFiles = async (): Promise<void> => {
   const directoryPath = APIBuildPath;
   console.log(`Starting formatting for files in ${directoryPath}...`);
