@@ -23,7 +23,7 @@
     "jsr:@std/testing@1.0.21": "1.0.21",
     "jsr:@vento/vento@1.14.0": "1.14.0",
     "npm:@eslint/css@2.0.0": "2.0.0",
-    "npm:@playwright/test@1.64.0": "1.64.0",
+    "npm:@playwright/test@1.64.1": "1.64.1",
     "npm:@types/estree@1.0.6": "1.0.6",
     "npm:@typescript-eslint/eslint-plugin@8.71.2": "8.71.2_@typescript-eslint+parser@8.71.2_eslint@10.12.0_jiti@2.7.0",
     "npm:@typescript-eslint/parser@8.71.2": "8.71.2_eslint@10.12.0_typescript@6.0.3",
@@ -43,7 +43,7 @@
     "npm:http-server@14.1.1": "14.1.1",
     "npm:jiti@2.7.0": "2.7.0",
     "npm:meriyah@6.0.5": "6.0.5",
-    "npm:playwright@1.64.0": "1.64.0",
+    "npm:playwright@1.64.1": "1.64.1",
     "npm:postcss-preset-env@11.6.1": "11.6.1_postcss@8.5.30",
     "npm:postcss@8.5.30": "8.5.30",
     "npm:prettier@3.9.10": "3.9.10",
@@ -819,8 +819,8 @@
         "fastq"
       ]
     },
-    "@playwright/test@1.64.0": {
-      "integrity": "sha512-oTN9FNYuN6bqQMwiho6jJKLCG2/QOYCixGXuCjRmzOq23eODeukuY2XiAVoVpAECbuezMt1MHQjAiQxK8F+Y+g==",
+    "@playwright/test@1.64.1": {
+      "integrity": "sha512-IaYGml/nSOiZWROfPtuIL7neuu9qDOZ3TNvNljUIrhDMxiGTgPjzj/g9p9RxpS2tSepPDRY+UwAaEeiKtUvIAg==",
       "dependencies": [
         "playwright"
       ],
@@ -2823,12 +2823,12 @@
     "picomatch@4.0.7": {
       "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA=="
     },
-    "playwright-core@1.64.0": {
-      "integrity": "sha512-T9r+MZkTECl2+oUcZ26YgZzTrYidTsIhYYkJix+6iDOymOb1FB2RLLSOxRGnZGv5DStt+aduIVbt+E8WygXYpg==",
+    "playwright-core@1.64.1": {
+      "integrity": "sha512-BC4s8y6SEVA6Q1rSxZTto8hI1KUI3xXlHGZgvGqP4IqPdI/a6FX9H29IDNz7vKo9l21b6LfYosScPL6M3xxyDQ==",
       "bin": true
     },
-    "playwright@1.64.0": {
-      "integrity": "sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg==",
+    "playwright@1.64.1": {
+      "integrity": "sha512-HCrVhHr5QQuwYoswEUGTb7gGp522yflbv/ST8nF4sFWGuLjQCt17Q/EubpGGSNKYn1tsTCPZxqHhHCfVURu7UA==",
       "dependencies": [
         "playwright-core"
       ],
@@ -4110,7 +4110,7 @@
       "jsr:@std/testing@1.0.21",
       "jsr:@vento/vento@1.14.0",
       "npm:@eslint/css@2.0.0",
-      "npm:@playwright/test@1.64.0",
+      "npm:@playwright/test@1.64.1",
       "npm:@typescript-eslint/eslint-plugin@8.71.2",
       "npm:@typescript-eslint/parser@8.71.2",
       "npm:baseline-browser-mapping@2.11.28",
@@ -4127,7 +4127,7 @@
       "npm:fast-xml-parser@5.11.2",
       "npm:http-server@14.1.1",
       "npm:jiti@2.7.0",
-      "npm:playwright@1.64.0",
+      "npm:playwright@1.64.1",
       "npm:postcss-preset-env@11.6.1",
       "npm:postcss@8.5.30",
       "npm:prettier@3.9.10",
