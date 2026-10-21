@@ -31,21 +31,21 @@ const writeEstablishmentsFromCollection = async (
 };
 
 /**
- * Generates individual JSON files for each establishment from FHRS open data files.
- *
- * Reads all FHRS*en-GB.json and FHRS*cy-GB.json files from the specified open data directory, extracts
- * each establishment from the EstablishmentCollection array, and writes each
- * establishment to the specified establishments directory with the filename
- * `{FHRSID}-{lang}.json` where `lang` is the language code extracted from the
- * source filename (e.g. `en-GB` or `cy-GB`). Output is pretty-printed with
- * 2-space indentation.
- *
- * Duplicate FHRSIDs across files will result in the last processed establishment
- * overwriting previous ones.
- *
- * @param openDataFilesDirectory - Directory containing FHRS*en-GB.json files (default: "build/files/open-data-files")
- * @param establishmentsDirectory - Directory to write establishment JSON files (default: "build/files/establishments")
- */
+Generates individual JSON files for each establishment from FHRS open data files.
+
+Reads all FHRS*en-GB.json and FHRS*cy-GB.json files from the specified open data directory, extracts
+each establishment from the EstablishmentCollection array, and writes each
+establishment to the specified establishments directory with the filename
+`{FHRSID}-{lang}.json` where `lang` is the language code extracted from the
+source filename (e.g. `en-GB` or `cy-GB`). Output is pretty-printed with
+2-space indentation.
+
+Duplicate FHRSIDs across files will result in the last processed establishment
+overwriting previous ones.
+
+@param openDataFilesDirectory - Directory containing FHRS*en-GB.json files (default: "build/files/open-data-files")
+@param establishmentsDirectory - Directory to write establishment JSON files (default: "build/files/establishments")
+*/
 export const generateEstablishments = async (
   openDataFilesDirectory = join("build", "files", "open-data-files"),
   establishmentsDirectory = join("build", "files", "establishments"),

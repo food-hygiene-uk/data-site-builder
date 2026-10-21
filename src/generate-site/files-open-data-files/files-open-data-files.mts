@@ -9,11 +9,11 @@ import { Establishment, LocalAuthorityData } from "../../ratings-api/types.mts";
 import { sleep } from "../../lib/sleep/sleep.mts";
 
 /**
- * Sorts the EstablishmentCollection by FHRSID in ascending order.
- * Handles cases where FHRSID might not be a valid number.
- *
- * @param establishmentCollection - The collection of establishments to sort.
- */
+Sorts the EstablishmentCollection by FHRSID in ascending order.
+Handles cases where FHRSID might not be a valid number.
+
+@param establishmentCollection - The collection of establishments to sort.
+*/
 const sortEstablishments = (
   establishmentCollection:
     LocalAuthorityData["FHRSEstablishment"]["EstablishmentCollection"],
@@ -34,14 +34,14 @@ const sortEstablishments = (
 };
 
 /**
- * Parses an XML string, sorts EstablishmentDetail elements by FHRSID,
- * and serializes it back to an XML string.
- * If the expected structure for sorting is not found, or if parsing/building fails,
- * it logs a warning/error and returns the original XML string.
- *
- * @param sourceXml - The XML string to process.
- * @returns The XML string with sorted EstablishmentDetail elements, or the original if processing failed.
- */
+Parses an XML string, sorts EstablishmentDetail elements by FHRSID,
+and serializes it back to an XML string.
+If the expected structure for sorting is not found, or if parsing/building fails,
+it logs a warning/error and returns the original XML string.
+
+@param sourceXml - The XML string to process.
+@returns The XML string with sorted EstablishmentDetail elements, or the original if processing failed.
+*/
 export const sortEstablishmentsInXml = (sourceXml: string): string => {
   const parser = new XMLParser({
     ignoreAttributes: false,
@@ -109,12 +109,12 @@ export const sortEstablishmentsInXml = (sourceXml: string): string => {
 };
 
 /**
- * Ensures there is exactly one newline before each <EstablishmentDetail> tag in an XML string.
- * It replaces any existing newlines (or lack thereof) immediately preceding the tag with a single newline.
- *
- * @param xmlContent - The XML content as a string.
- * @returns The modified XML content.
- */
+Ensures there is exactly one newline before each <EstablishmentDetail> tag in an XML string.
+It replaces any existing newlines (or lack thereof) immediately preceding the tag with a single newline.
+
+@param xmlContent - The XML content as a string.
+@returns The modified XML content.
+*/
 const ensureSingleNewlineBeforeEstablishmentDetail = (
   xmlContent: string,
 ): string => {
@@ -125,10 +125,10 @@ const ensureSingleNewlineBeforeEstablishmentDetail = (
 };
 
 /**
- * Reformats a single open data XML file by sorting establishments and ensuring a newline before each <EstablishmentDetail> tag.
- *
- * @param filePath - The path to the XML file.
- */
+Reformats a single open data XML file by sorting establishments and ensuring a newline before each <EstablishmentDetail> tag.
+
+@param filePath - The path to the XML file.
+*/
 const processSingleOpenDataXmlFile = async (filePath: string) => {
   try {
     const fileContent = await Deno.readTextFile(filePath);
@@ -154,9 +154,9 @@ const processSingleOpenDataXmlFile = async (filePath: string) => {
 };
 
 /**
- * Finds and processes all XML files in the open data directory
- * to sort establishments and ensure a newline before each <EstablishmentDetail> tag.
- */
+Finds and processes all XML files in the open data directory
+to sort establishments and ensure a newline before each <EstablishmentDetail> tag.
+*/
 const processOpenDataXmlFiles = async () => {
   const openDataFilesDirectory = join("build", "files", "open-data-files");
   console.log(`Processing XML files in: ${openDataFilesDirectory}.`);
@@ -183,10 +183,10 @@ const processOpenDataXmlFiles = async () => {
 };
 
 /**
- * Reformats a single JSON file to sort establishments by FHRSID and make diffs cleaner.
- *
- * @param filePath - The path to the JSON file.
- */
+Reformats a single JSON file to sort establishments by FHRSID and make diffs cleaner.
+
+@param filePath - The path to the JSON file.
+*/
 const processSingleOpenDataJsonFile = async (filePath: string) => {
   try {
     const fileContent = await Deno.readTextFile(filePath);
@@ -224,8 +224,8 @@ const processSingleOpenDataJsonFile = async (filePath: string) => {
 };
 
 /**
- * Finds and reformats all JSON files in the open data directory.
- */
+Finds and reformats all JSON files in the open data directory.
+*/
 const processOpenDataJsonFiles = async () => {
   const openDataFilesDirectory = join("build", "files", "open-data-files");
   console.log(`Processing JSON files in: ${openDataFilesDirectory}`);
@@ -242,15 +242,15 @@ const processOpenDataJsonFiles = async () => {
 };
 
 /**
- * Generates the build file path for a given data URL.
- *
- * Extracts the filename with a `.json` or `.xml` extension from the provided `dataURL`
- * and constructs a path under the `build/files/open-data-files` directory.
- *
- * @param dataURL - The URL string pointing to a data file (must end with `.json` or `.xml`).
- * @returns The build file path as a string.
- * @throws {Error} If the `dataURL` does not match the expected pattern.
- */
+Generates the build file path for a given data URL.
+
+Extracts the filename with a `.json` or `.xml` extension from the provided `dataURL`
+and constructs a path under the `build/files/open-data-files` directory.
+
+@param dataURL - The URL string pointing to a data file (must end with `.json` or `.xml`).
+@returns The build file path as a string.
+@throws {Error} If the `dataURL` does not match the expected pattern.
+*/
 export const getBuildFileName = (dataURL: string) => {
   const match = dataURL.match(/\/([^/]*\.(json|xml))$/);
   if (!match) {

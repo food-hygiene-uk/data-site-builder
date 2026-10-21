@@ -1,11 +1,11 @@
 import { XMLBuilder, XMLParser } from "fast_xml_parser";
 
 /**
- * Formats an XML string using XSLT for pretty printing.
- *
- * @param sourceXml - The XML string to format.
- * @returns The formatted XML string.
- */
+Formats an XML string using XSLT for pretty printing.
+
+@param sourceXml - The XML string to format.
+@returns The formatted XML string.
+*/
 export const prettyPrintXml = (sourceXml: string): string => {
   // Parse the XML into a JavaScript object
   const parser = new XMLParser({

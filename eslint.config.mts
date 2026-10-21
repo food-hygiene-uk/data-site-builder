@@ -9,9 +9,9 @@ import jsdocPlugin from "eslint-plugin-jsdoc";
 import promisePlugin from "eslint-plugin-promise";
 
 /**
- * Exports the ESLint configuration using the `defineConfig` helper.
- * This configuration includes rules and plugins for TypeScript, JavaScript, and Prettier.
- */
+Exports the ESLint configuration using the `defineConfig` helper.
+This configuration includes rules and plugins for TypeScript, JavaScript, and Prettier.
+*/
 export default defineConfig([
   // tsPlugin.configs.recommended needs to be spread or included as an object
   {
@@ -77,6 +77,7 @@ export default defineConfig([
       unicorn: unicornPlugin,
     },
     rules: {
+      "jsdoc/check-alignment": "off", // Use unicorn/no-asterisk-prefix-in-documentation-comments
       "jsdoc/tag-lines": ["error", "never", { startLines: 1 }], // Ensure space after description
       "unicorn/no-typeof-undefined": ["error", { checkGlobalVariables: true }],
       "unicorn/filename-case": ["error", { case: "kebabCase" }],

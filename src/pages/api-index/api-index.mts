@@ -26,12 +26,12 @@ const [detailPageTemplate, processedPageCss] = await Promise.all([
 ]);
 
 /**
- * Generates an `index.html` file with a table for the API directory.
- * The table groups files by type, language, and extension.
- *
- * @param targetDirectory The directory for which to generate the `index.html`.
- * @returns The processed API file data, or undefined if an error occurs.
- */
+Generates an `index.html` file with a table for the API directory.
+The table groups files by type, language, and extension.
+
+@param targetDirectory The directory for which to generate the `index.html`.
+@returns The processed API file data, or undefined if an error occurs.
+*/
 const generateApiIndexData = async (targetDirectory: string) => {
   try {
     const apiFiles = new Map<
@@ -104,8 +104,8 @@ const generateApiIndexData = async (targetDirectory: string) => {
 };
 
 /**
- * Generates the API index page.
- */
+Generates the API index page.
+*/
 export const generateApiIndexPage = async () => {
   console.time("apiIndex");
 
