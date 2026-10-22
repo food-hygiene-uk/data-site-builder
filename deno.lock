@@ -29,7 +29,7 @@
     "npm:@typescript-eslint/parser@8.71.2": "8.71.2_eslint@10.12.0_typescript@6.0.3",
     "npm:baseline-browser-mapping@2.11.28": "2.11.28",
     "npm:browserslist-lint@0.4.0": "0.4.0",
-    "npm:cssnano-preset-advanced@9.7.0": "9.7.0_postcss@8.5.30",
+    "npm:cssnano-preset-advanced@10.0.0": "10.0.0_postcss@8.5.30",
     "npm:cssnano@9.8.0": "9.8.0_postcss@8.5.30",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.12.0_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_acorn@8.19.0",
@@ -1273,12 +1273,6 @@
         "postcss-selector-parser"
       ]
     },
-    "css-declaration-sorter@7.4.0_postcss@8.5.30": {
-      "integrity": "sha512-LTuzjPoyA2vMGKKcaOqKSp7Ub2eGrNfKiZH4LpezxpNrsICGCSFvsQOI29psISxNZtaXibkC2CXzrQ5enMeGGw==",
-      "dependencies": [
-        "postcss"
-      ]
-    },
     "css-functions-list@3.3.3": {
       "integrity": "sha512-8HFEBPKhOpJPEPu70wJJetjKta86Gw9+CCyCnB3sui2qQfOvRyqBy4IKLKKAwdMpWb2lHXWk9Wb4Z6AmaUT1Pg=="
     },
@@ -1311,11 +1305,9 @@
       "integrity": "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==",
       "bin": true
     },
-    "cssnano-preset-advanced@9.7.0_postcss@8.5.30": {
-      "integrity": "sha512-k7v/xRQbPEJ9ohzQfu1S4BapJ6L76XEYBVrXQKAizVz74951eWMcHTW+2LA4cKWNEIIj/u2ovw//3cqYGet86A==",
+    "cssnano-preset-advanced@10.0.0_postcss@8.5.30": {
+      "integrity": "sha512-ZGJoly9X7ItUPFx5Gw7N9hkkohnownoGf4pLBkAJaH2zKbpWXJ+8eWVIDszfBvCeG1y9MKY2EbFopHo7PbcX5w==",
       "dependencies": [
-        "autoprefixer",
-        "css-declaration-sorter",
         "cssnano-preset-default",
         "postcss",
         "postcss-discard-unused",
@@ -4119,7 +4111,7 @@
       "npm:@typescript-eslint/parser@8.71.2",
       "npm:baseline-browser-mapping@2.11.28",
       "npm:browserslist-lint@0.4.0",
-      "npm:cssnano-preset-advanced@9.7.0",
+      "npm:cssnano-preset-advanced@10.0.0",
       "npm:cssnano@9.8.0",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
