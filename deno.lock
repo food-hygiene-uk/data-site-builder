@@ -33,7 +33,7 @@
     "npm:cssnano@9.9.0": "9.9.0_postcss@8.5.31",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.13.0_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_acorn@8.19.0",
-    "npm:eslint-plugin-jsdoc@65.4.0": "65.4.0_eslint@10.13.0_typescript@6.0.3_jiti@2.7.0",
+    "npm:eslint-plugin-jsdoc@65.4.1": "65.4.1_eslint@10.13.0_typescript@6.0.3_jiti@2.7.0",
     "npm:eslint-plugin-promise@7.3.0": "7.3.0_eslint@10.13.0_jiti@2.7.0",
     "npm:eslint-plugin-unicorn@78.0.0": "78.0.0_eslint@10.13.0_typescript@6.0.3_jiti@2.7.0",
     "npm:eslint@10.13.0": "10.13.0_jiti@2.7.0",
@@ -671,16 +671,6 @@
     "@es-joy/estraverse@7.1.1": {
       "integrity": "sha512-h2d737iS0LFAqypZOmXizu54qAbHofI/RpD30Zom03O6BCXKHuFevWKPcGarZbGq82h7qSBb5G6kLdhTMO+caw=="
     },
-    "@es-joy/jsdoccomment@0.100.0": {
-      "integrity": "sha512-QuIT5kMg3XWN22Wa1rcXmR/GkfSg6Ygs/ikMiHihdSpu+o3O59LygkFV9srKa5xHplBFwNd5ZCo3bywL4k7qMQ==",
-      "dependencies": [
-        "@types/estree@1.0.9",
-        "@typescript-eslint/types",
-        "comment-parser@1.4.9",
-        "esquery",
-        "jsdoc-type-pratt-parser@9.3.0"
-      ]
-    },
     "@es-joy/jsdoccomment@0.62.0": {
       "integrity": "sha512-yWi6sm7INEwnfS7IJvE0dU+RTrwzLPFcY7e7eGpu/l5Q9lWfQ2ROwZ0qVnc242jw2TUPsfHX3XMIISkGBv57RQ==",
       "dependencies": [
@@ -689,6 +679,16 @@
         "comment-parser@1.4.1",
         "esquery",
         "jsdoc-type-pratt-parser@5.9.2"
+      ]
+    },
+    "@es-joy/jsdoccomment@1.0.0": {
+      "integrity": "sha512-jiVfUnvMioo3upHpAoxE4XkqfrL6nc/XQx7Uw7tQL6QbQDJcALm+fhdj6tjiORDF7uADJbTlmnYWR9DvJE/eiw==",
+      "dependencies": [
+        "@types/estree@1.0.9",
+        "@typescript-eslint/types",
+        "comment-parser@1.4.9",
+        "esquery",
+        "jsdoc-type-pratt-parser@9.4.0"
       ]
     },
     "@es-joy/resolve.exports@1.2.0": {
@@ -1648,11 +1648,11 @@
         "tsconfig-paths"
       ]
     },
-    "eslint-plugin-jsdoc@65.4.0_eslint@10.13.0_typescript@6.0.3_jiti@2.7.0": {
-      "integrity": "sha512-bRiU6LfCFmLL7GuePKvA6ZIcXLonhZGCg2TgQLmkcExeVdAirQp2Hsf3xeSUTmlKwAAsREVEOLbZYD8F7oA69g==",
+    "eslint-plugin-jsdoc@65.4.1_eslint@10.13.0_typescript@6.0.3_jiti@2.7.0": {
+      "integrity": "sha512-gMcDG5+s6BV/urDowAKXgKSTYZPK/tQuNP6ttjavwHQ/YYYRyp3cj/unAu2O+cdgDC8YJwKbt+Ok1mq4n4R71g==",
       "dependencies": [
         "@es-joy/escodegen",
-        "@es-joy/jsdoccomment@0.100.0",
+        "@es-joy/jsdoccomment@1.0.0",
         "@es-joy/resolve.exports",
         "@typescript-eslint/utils",
         "are-docs-informative",
@@ -2425,8 +2425,8 @@
     "jsdoc-type-pratt-parser@5.9.2": {
       "integrity": "sha512-TYzkACp/wPvDJLRY7qpHXtrhgwoAaojIOnLaaVNi+AbPU2u1kkjfKd9hXXTq0qSAGsyYXvwUXt99h9I5iCmjjw=="
     },
-    "jsdoc-type-pratt-parser@9.3.0": {
-      "integrity": "sha512-JZ8lKMCZXDlM1jAjAK5tTmtFJtgv6iFQQfjE3Fza6jBRACUueaEXLY17n1u05JO1lcPkNxgP+ddEDtiPsk5ktg==",
+    "jsdoc-type-pratt-parser@9.4.0": {
+      "integrity": "sha512-orXhi2Y06rag47r4SW4JPII6WlUJbp0xe9cIcqLaSbb/8tREcEZSq99Lu3AFfra6PAlMqTYIxV+ZHxl1dFUrWw==",
       "dependencies": [
         "@types/estree@1.0.9"
       ]
@@ -4156,7 +4156,7 @@
       "npm:cssnano@9.9.0",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
-      "npm:eslint-plugin-jsdoc@65.4.0",
+      "npm:eslint-plugin-jsdoc@65.4.1",
       "npm:eslint-plugin-promise@7.3.0",
       "npm:eslint-plugin-unicorn@78.0.0",
       "npm:eslint@10.13.0",
