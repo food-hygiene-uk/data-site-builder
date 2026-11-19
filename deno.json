@@ -28,7 +28,7 @@
     "playwright": "npm:playwright@1.65.0",
     "postcss": "npm:postcss@8.5.32",
     "postcss-preset-env": "npm:postcss-preset-env@11.6.2",
-    "prettier": "npm:prettier@3.10.0",
+    "prettier": "npm:prettier@3.10.1",
     "scripts/": "./src/scripts/",
     "stylelint-config-standard": "npm:stylelint-config-standard@40.0.0",
     "stylelint": "npm:stylelint@17.16.0",
