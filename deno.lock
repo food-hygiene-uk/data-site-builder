@@ -39,7 +39,7 @@
     "npm:eslint@10.14.0": "10.14.0_jiti@2.7.0",
     "npm:estree-walker@3.0.3": "3.0.3",
     "npm:fast-check@4.10.2": "4.10.2",
-    "npm:fast-xml-parser@5.12.0": "5.12.0",
+    "npm:fast-xml-parser@5.12.1": "5.12.1",
     "npm:http-server@14.1.1": "14.1.1",
     "npm:jiti@2.7.0": "2.7.0",
     "npm:meriyah@6.0.5": "6.0.5",
@@ -1895,8 +1895,8 @@
         "xml-naming"
       ]
     },
-    "fast-xml-parser@5.12.0": {
-      "integrity": "sha512-/pXxRBtwxY9w8z7YbgsvIPPcPvFDsTbIkWwTQJhzNJPokj+TbN6ftmcv4j/pEQDvOCNnKGDzuk5Bo2oogIOiFg==",
+    "fast-xml-parser@5.12.1": {
+      "integrity": "sha512-wR8dO/fx+z8C5exuem1e7BKOWvjsuzvjS/tvA/Xu3Z1zQqJGcXrPzXbcAiaMgp2KjreEROcTkmnnisrcmJ2hYQ==",
       "dependencies": [
         "@nodable/entities",
         "fast-xml-builder",
@@ -4149,7 +4149,7 @@
       "npm:eslint-plugin-unicorn@79.0.0",
       "npm:eslint@10.14.0",
       "npm:fast-check@4.10.2",
-      "npm:fast-xml-parser@5.12.0",
+      "npm:fast-xml-parser@5.12.1",
       "npm:http-server@14.1.1",
       "npm:jiti@2.7.0",
       "npm:playwright@1.65.0",
