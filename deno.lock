@@ -33,7 +33,7 @@
     "npm:cssnano@9.9.0": "9.9.0_postcss@8.5.33",
     "npm:eslint-config-prettier@10.1.8": "10.1.8_eslint@10.15.0_jiti@2.7.0",
     "npm:eslint-plugin-import@2.32.0": "2.32.0_eslint@9.39.5_acorn@8.19.0",
-    "npm:eslint-plugin-jsdoc@65.4.11": "65.4.11_eslint@10.15.0_typescript@6.0.3_jiti@2.7.0",
+    "npm:eslint-plugin-jsdoc@65.4.12": "65.4.12_eslint@10.15.0_typescript@6.0.3_jiti@2.7.0",
     "npm:eslint-plugin-promise@7.3.0": "7.3.0_eslint@10.15.0_jiti@2.7.0",
     "npm:eslint-plugin-unicorn@79.0.0": "79.0.0_eslint@10.15.0_typescript@6.0.3_jiti@2.7.0",
     "npm:eslint@10.15.0": "10.15.0_jiti@2.7.0",
@@ -1035,8 +1035,8 @@
     "anynum@1.0.1": {
       "integrity": "sha512-N6//FLET/tXYNM/F6ABca1oH6fWB+KlTt909Le28WMDBk8oaT4vY17DCrwg2MvmuqUKt3Ni4N5dGJ/EoBgcO6A=="
     },
-    "are-docs-informative@0.1.1": {
-      "integrity": "sha512-sqRsNQBwbKLRX0jV5Cu5uzmtflf892n4Vukz7T659ebL4pz3mpOqCMU7lxMoBTFwnp10E3YB5ZcyHM41W5bcDA=="
+    "are-docs-informative@0.1.2": {
+      "integrity": "sha512-ivIO3M7NYwWxOmC0uU9wBGF/c6b8VdKmYuIbH6cwpvfw8W5MttFaecUmMqOl77D/rZU9ipN/eB1E17ry+SEI4Q=="
     },
     "argparse@2.0.1": {
       "integrity": "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q=="
@@ -1649,8 +1649,8 @@
         "tsconfig-paths"
       ]
     },
-    "eslint-plugin-jsdoc@65.4.11_eslint@10.15.0_typescript@6.0.3_jiti@2.7.0": {
-      "integrity": "sha512-AJKIO+PFh+xriGEeRWJcOubfZgu7R1lOTipQ8358cwYri5B/tvJFQdr8y6V7xAr4T+lPnz7LsQgv7QyA58UY0w==",
+    "eslint-plugin-jsdoc@65.4.12_eslint@10.15.0_typescript@6.0.3_jiti@2.7.0": {
+      "integrity": "sha512-UY70YInoTCTr3Dt8xtocRSswey+AWMQJ2NS0xtkiAKjbxH5tSwYHRdbp+kVNbdYaxoulAuBRoPENKTfTO+bQrA==",
       "dependencies": [
         "@es-joy/escodegen",
         "@es-joy/jsdoccomment",
@@ -4152,7 +4152,7 @@
       "npm:cssnano@9.9.0",
       "npm:eslint-config-prettier@10.1.8",
       "npm:eslint-plugin-import@2.32.0",
-      "npm:eslint-plugin-jsdoc@65.4.11",
+      "npm:eslint-plugin-jsdoc@65.4.12",
       "npm:eslint-plugin-promise@7.3.0",
       "npm:eslint-plugin-unicorn@79.0.0",
       "npm:eslint@10.15.0",
