@@ -38,7 +38,7 @@
     "npm:eslint-plugin-unicorn@79.0.0": "79.0.0_eslint@10.15.0_typescript@6.0.3_jiti@2.7.0",
     "npm:eslint@10.15.0": "10.15.0_jiti@2.7.0",
     "npm:estree-walker@3.0.3": "3.0.3",
-    "npm:fast-check@4.10.2": "4.10.2",
+    "npm:fast-check@4.10.3": "4.10.3",
     "npm:fast-xml-parser@5.12.1": "5.12.1",
     "npm:http-server@14.1.1": "14.1.1",
     "npm:jiti@2.7.0": "2.7.0",
@@ -1867,8 +1867,8 @@
     "eventemitter3@4.0.7": {
       "integrity": "sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw=="
     },
-    "fast-check@4.10.2": {
-      "integrity": "sha512-iK2f+YrcmoeGqk6fA0ea2bptcu/itMIm4NfEozq6N25+aG6h7s5HZbB/k1aV7b5w5sFLMCbbtRUsTVR+BgC3xw==",
+    "fast-check@4.10.3": {
+      "integrity": "sha512-SBaU6nhh+sXxb05r2IHAKfxnR/1Pu6MqtHYaewM1BY6V5xzOxOk+4yoWO7WfeeyZG1iArFE6/DO/7iLYMUuOJg==",
       "dependencies": [
         "pure-rand"
       ]
@@ -4156,7 +4156,7 @@
       "npm:eslint-plugin-promise@7.3.0",
       "npm:eslint-plugin-unicorn@79.0.0",
       "npm:eslint@10.15.0",
-      "npm:fast-check@4.10.2",
+      "npm:fast-check@4.10.3",
       "npm:fast-xml-parser@5.12.1",
       "npm:http-server@14.1.1",
       "npm:jiti@2.7.0",
