@@ -47,7 +47,7 @@
     "npm:postcss-preset-env@11.6.2": "11.6.2_postcss@8.5.33",
     "npm:postcss@8.5.33": "8.5.33",
     "npm:prettier@3.10.1": "3.10.1",
-    "npm:stylelint-config-standard@40.0.0": "40.0.0_stylelint@17.16.0",
+    "npm:stylelint-config-standard@41.1.0": "41.1.0_stylelint@17.16.0",
     "npm:stylelint@17.16.0": "17.16.0",
     "npm:uglify-js@3.19.3": "3.19.3",
     "npm:zod@4.6.7": "4.6.7"
@@ -166,7 +166,7 @@
     "@colordx/core@7.3.0": {
       "integrity": "sha512-LVzTTPhX7wpy7TkGjouA9zbbCBIw92RGm7ZQqSKFE0oYE3sMx2FGXz90eVpgw7k/+wrrY+qJ86nHXifZWMS5jA=="
     },
-    "@csstools/cascade-layer-name-parser@3.0.2_@csstools+css-parser-algorithms@4.0.2_@csstools+css-tokenizer@4.0.2": {
+    "@csstools/cascade-layer-name-parser@3.0.2_@csstools+css-parser-algorithms@4.0.3_@csstools+css-tokenizer@4.0.3": {
       "integrity": "sha512-B731RJ9pfJj3D5GJPp8ccsaaHMdwBmlOb4QWAYQUFpmMxonxJvNeeIoo0E89CjMJaKDvQXy9MKpSXY/i7XgeFA==",
       "dependencies": [
         "@csstools/css-parser-algorithms",
@@ -176,14 +176,14 @@
     "@csstools/color-helpers@6.1.2": {
       "integrity": "sha512-grhRy3OKmniaAEKXMjua5z/EODX0MSqBGjunw8+j/3HQjOnahs2AGhvEOIYVUWcU6ScApbhLhVrQTX8XqrMrow=="
     },
-    "@csstools/css-calc@3.4.3_@csstools+css-parser-algorithms@4.0.2_@csstools+css-tokenizer@4.0.2": {
+    "@csstools/css-calc@3.4.3_@csstools+css-parser-algorithms@4.0.3_@csstools+css-tokenizer@4.0.3": {
       "integrity": "sha512-iex20d8CHVkyvg6B7UKV7uHnI2Bqo9g+EFfT9E0y+GvTvhZ/DwONJ+9aKb1dlqm0ZiGsL5RXjp0fCoJYnkeDjA==",
       "dependencies": [
         "@csstools/css-parser-algorithms",
         "@csstools/css-tokenizer"
       ]
     },
-    "@csstools/css-color-parser@4.2.7_@csstools+css-parser-algorithms@4.0.2_@csstools+css-tokenizer@4.0.2": {
+    "@csstools/css-color-parser@4.2.7_@csstools+css-parser-algorithms@4.0.3_@csstools+css-tokenizer@4.0.3": {
       "integrity": "sha512-zgm9yjQz5iJB4VL8RyVwd71TWB8Q89FSxt/NzXoWqPSkEBOVtn9L6vAPtSc9hpKfB0Awo/AL2VKFHjYetBLFHQ==",
       "dependencies": [
         "@csstools/color-helpers",
@@ -192,8 +192,8 @@
         "@csstools/css-tokenizer"
       ]
     },
-    "@csstools/css-parser-algorithms@4.0.2_@csstools+css-tokenizer@4.0.2": {
-      "integrity": "sha512-40cSKyMvK+tq4qz6Awrlye2WGuOKt3FwPgtGg6KTfbHOWNw+Rk1rzbAtZnZ6IBhsY491HLRnDXwoyBAijmmILA==",
+    "@csstools/css-parser-algorithms@4.0.3_@csstools+css-tokenizer@4.0.3": {
+      "integrity": "sha512-EpCfUDaJtwohPHC7egoXxPGT/R1/WyyAhw87MKB/7BPPZvZU+IcEqo4er5FpLnby2Gvwt9Lpxy+WNEDyFjoXtA==",
       "dependencies": [
         "@csstools/css-tokenizer"
       ]
@@ -207,17 +207,17 @@
         "css-tree"
       ]
     },
-    "@csstools/css-tokenizer@4.0.2": {
-      "integrity": "sha512-OoKoR0f76dCY666JlcbhmVTs2drYj1GUXZTYTcbUgJjh9Nv41aFfZ21bPQTERm5+L5cBDo466NltB2lplS5GBw=="
+    "@csstools/css-tokenizer@4.0.3": {
+      "integrity": "sha512-gdkFe/Z4KU1q8Y5S3GYScXGcOnO56dgWwIs5+97Ij1VIKISItOIUlCXUq4VLbdnRclF+SSQ49sLsn3KeV111AA=="
     },
-    "@csstools/custom-function-parser@1.0.0_@csstools+css-parser-algorithms@4.0.2_@csstools+css-tokenizer@4.0.2": {
+    "@csstools/custom-function-parser@1.0.0_@csstools+css-parser-algorithms@4.0.3_@csstools+css-tokenizer@4.0.3": {
       "integrity": "sha512-7RS4uOSyY1kf1BHNjgCf8rWF1t+rQaIKEr8183Z6hHXPew2ikm2FC8mWqqrj+/UFJFLJtHaoETc04NJveC9qrw==",
       "dependencies": [
         "@csstools/css-parser-algorithms",
         "@csstools/css-tokenizer"
       ]
     },
-    "@csstools/media-query-list-parser@5.0.2_@csstools+css-parser-algorithms@4.0.2_@csstools+css-tokenizer@4.0.2": {
+    "@csstools/media-query-list-parser@5.0.2_@csstools+css-parser-algorithms@4.0.3_@csstools+css-tokenizer@4.0.3": {
       "integrity": "sha512-qx19O8AbbLLbDSAcI6YOby/Vq8rV51psgIvlF5OZT/L8fQJDCyQifL6k+kYU4a8ySpzJ4RBzZkIs530bAn8y4Q==",
       "dependencies": [
         "@csstools/css-parser-algorithms",
@@ -3742,14 +3742,14 @@
         "postcss"
       ]
     },
-    "stylelint-config-recommended@18.0.0_stylelint@17.16.0": {
-      "integrity": "sha512-mxgT2XY6YZ3HWWe3Di8umG6aBmWmHTblTgu/f10rqFXnyWxjKWwNdjSWkgkwCtxIKnqjSJzvFmPT5yabVIRxZg==",
+    "stylelint-config-recommended@19.1.0_stylelint@17.16.0": {
+      "integrity": "sha512-DurXBzvz2cmVX2rM1JMDCbPIq+MRKhIPY743lFk1DjUoyx7giLfN+HR8Hilw+kE2nE5blaXhVf66edvQGnLdwA==",
       "dependencies": [
         "stylelint"
       ]
     },
-    "stylelint-config-standard@40.0.0_stylelint@17.16.0": {
-      "integrity": "sha512-EznGJxOUhtWck2r6dJpbgAdPATIzvpLdK9+i5qPd4Lx70es66TkBPljSg4wN3Qnc6c4h2n+WbUrUynQ3fanjHw==",
+    "stylelint-config-standard@41.1.0_stylelint@17.16.0": {
+      "integrity": "sha512-Z7PiQpBffnqu7U5h/FeBWCYZsRsZXa1J8MjkpgcciphLJULysDcu2jKXuSrPgnQGow9x0T+pOfblqRA5cSE6aw==",
       "dependencies": [
         "stylelint",
         "stylelint-config-recommended"
@@ -4164,7 +4164,7 @@
       "npm:postcss-preset-env@11.6.2",
       "npm:postcss@8.5.33",
       "npm:prettier@3.10.1",
-      "npm:stylelint-config-standard@40.0.0",
+      "npm:stylelint-config-standard@41.1.0",
       "npm:stylelint@17.16.0",
       "npm:uglify-js@3.19.3",
       "npm:zod@4.6.7"

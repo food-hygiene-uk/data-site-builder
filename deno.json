@@ -30,7 +30,7 @@
     "postcss-preset-env": "npm:postcss-preset-env@11.6.2",
     "prettier": "npm:prettier@3.10.1",
     "scripts/": "./src/scripts/",
-    "stylelint-config-standard": "npm:stylelint-config-standard@40.0.0",
+    "stylelint-config-standard": "npm:stylelint-config-standard@41.1.0",
     "stylelint": "npm:stylelint@17.16.0",
     "uglify-js": "npm:uglify-js@3.19.3",
     "zod": "npm:zod@4.6.7"
