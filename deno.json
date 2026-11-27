@@ -42,7 +42,7 @@
     },
     "build": {
       "description": "Builds the site",
-      "command": "BROWSERSLIST_ROOT_PATH=. deno run --allow-env=AUTOPREFIXER_GRID,CI,BROWSERSLIST,BROWSERSLIST_CONFIG,BROWSERSLIST_DISABLE_CACHE,BROWSERSLIST_ENV,BROWSERSLIST_IGNORE_OLD_DATA,BASELINE_BROWSER_MAPPING_IGNORE_OLD_DATA,BROWSERSLIST_ROOT_PATH,BROWSERSLIST_STATS,NODE_ENV,TERM,UGLIFY_BUG_REPORT --deny-env=NO_COLOR,FORCE_COLOR --allow-net=api.ratings.food.gov.uk:443,ratings.food.gov.uk:443 --allow-read=./,./assets,./build,./dist,./src --allow-write=./build,./dist --allow-sys=homedir,uid src/generate-site.mts"
+      "command": "BROWSERSLIST_ROOT_PATH=. deno run --allow-env=AUTOPREFIXER_GRID,CI,BROWSERSLIST,BROWSERSLIST_CONFIG,BROWSERSLIST_DISABLE_CACHE,BROWSERSLIST_ENV,BROWSERSLIST_IGNORE_OLD_DATA,BASELINE_BROWSER_MAPPING_IGNORE_OLD_DATA,BROWSERSLIST_ROOT_PATH,BROWSERSLIST_STATS,NODE_ENV,TERM,UGLIFY_BUG_REPORT,npm_config_loglevel --deny-env=NO_COLOR,FORCE_COLOR --allow-net=api.ratings.food.gov.uk:443,ratings.food.gov.uk:443 --allow-read=./,./assets,./build,./dist,./src --allow-write=./build,./dist --allow-sys=homedir,uid src/generate-site.mts"
     },
     "deno:lock-update": {
       "description": "Updates the lock file",
