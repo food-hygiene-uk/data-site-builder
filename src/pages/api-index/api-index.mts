@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-top-level-side-effects */
 import { join } from "@std/path/join";
 import { fromFileUrl } from "@std/path/from-file-url";
 import vento from "@vento/vento";

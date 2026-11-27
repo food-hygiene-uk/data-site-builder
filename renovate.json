@@ -35,6 +35,11 @@
       "automergeType": "pr",
       "automergeStrategy": "squash",
       "platformAutomerge": true
+    },
+    {
+      "matchPackagePatterns": ["^stylelint$", "^stylelint-config-standard$"],
+      "groupName": "Babel packages",
+      "groupSlug": "babel"
     }
   ],
   "customManagers": [
