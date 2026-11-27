@@ -252,7 +252,7 @@ and constructs a path under the `build/files/open-data-files` directory.
 @throws {Error} If the `dataURL` does not match the expected pattern.
 */
 export const getBuildFileName = (dataURL: string) => {
-  const match = dataURL.match(/\/([^/]*\.(json|xml))$/);
+  const match = /\/([^/]*\.(json|xml))$/.exec(dataURL);
   if (!match) {
     throw new Error(`Invalid dataURL: ${dataURL}`);
   }
